@@ -10,6 +10,8 @@ import Foundation
 
 struct Run {
     let index, start, length: Int
+    
+    var nextAfter: Int { return start + length }
 }
 
 func runsEx(_ row: [Mark], of mark: Mark) -> [Run] {

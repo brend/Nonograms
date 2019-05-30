@@ -132,7 +132,9 @@ puzzle.rules = [
     ZeroRule(),
     MarkFinishedRule(),
     CompleteSingularRunsRule(),
-    MarkSmallPathsRule()
+    MarkSmallPathsRule(),
+    MarkLongestHintRule(),
+    SumRule()
 ]
 
 puzzle.solve()
