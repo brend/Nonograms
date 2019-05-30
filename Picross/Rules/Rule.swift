@@ -11,10 +11,28 @@ import Foundation
 class Rule {
     var name: String { return "unnamed" }
     
+    var symmetric: Bool { return true }
+    
+    func applyExhaustively(to row: [Mark], hints: [Int]) -> [Mark] {
+        let forwardResult = apply(to: row, hints: hints)
+        
+        if symmetric {
+            return forwardResult
+        }
+        
+        return applyReversed(to: forwardResult, hints: hints);
+    }
+    
     func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         return row
     }
     
+    func applyReversed(to row: [Mark], hints: [Int]) -> [Mark] {
+        let reversedAlteredRow = apply(to: row.reversed(), hints: hints.reversed())
+        
+        return reversedAlteredRow.reversed()
+    }
+
     func chisel(_ row: [Mark], from index: Int, count: Int, mark: Mark = .chiseled) -> [Mark] {
         guard count >= 0 else { return row }
         

@@ -12,11 +12,12 @@ class CompleteFlushLeftRule: Rule {
     override var name: String { return "Complete Flush Left" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
-        guard row.first == .chiseled,
+        guard let firstNonMarkedIndex = row.firstIndex(where: {$0 != .marked}),
+            row[firstNonMarkedIndex] == .chiseled,
             let h = hints.first else {
             return row
         }
         
-        return chisel(row, from: 0, count: h)
+        return chisel(row, from: firstNonMarkedIndex, count: h)
     }
 }

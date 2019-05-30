@@ -40,33 +40,33 @@ var m = Matrix(size: 5)
 //m[4, 1] = .chiseled
 
 // killer ace of spades
-let puzzle = Puzzle(
-    rowHints:
-        [
-            [2],
-            [4],
-            [2, 3],
-            [2, 5],
-            [2, 4, 2],
-            [10],
-            [2, 2, 2],
-            [2],
-            [4],
-            [6]
-        ],
-    columnHints:
-        [
-            [2],
-            [4],
-            [2, 2, 1],
-            [2, 2, 2],
-            [2, 7],
-            [10],
-            [5, 2],
-            [2, 2, 1],
-            [4],
-            [2]
-        ])
+//let puzzle = Puzzle(
+//    rowHints:
+//        [
+//            [2],
+//            [4],
+//            [2, 3],
+//            [2, 5],
+//            [2, 4, 2],
+//            [10],
+//            [2, 2, 2],
+//            [2],
+//            [4],
+//            [6]
+//        ],
+//    columnHints:
+//        [
+//            [2],
+//            [4],
+//            [2, 2, 1],
+//            [2, 2, 2],
+//            [2, 7],
+//            [10],
+//            [5, 2],
+//            [2, 2, 1],
+//            [4],
+//            [2]
+//        ])
 
 // unsolvable without trial & error
 //let puzzle =
@@ -127,6 +127,8 @@ let puzzle = Puzzle(
 //            [0]
 //        ])
 
+let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/ninja.pea")
+
 puzzle.rules = [
     CenterRule(),
     ZeroRule(),
@@ -137,7 +139,9 @@ puzzle.rules = [
     SumRule(),
     MarkSingularRunRule(),
     CompleteFlushLeftRule(),
-    CompleteFlushRightRule()
+    CompleteFlushRightRule(),
+    CompleteFlushRule()
 ]
 
 puzzle.solve()
+

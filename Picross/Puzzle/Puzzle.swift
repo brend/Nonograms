@@ -74,7 +74,7 @@ class Puzzle {
                 for i in 0..<after.size {
                     let rowBefore = after.row(i)
                     let hints = rowHints(i)
-                    let rowAfter = rule.apply(to: rowBefore, hints: hints)
+                    let rowAfter = rule.applyExhaustively(to: rowBefore, hints: hints)
                     
                     if rowBefore == rowAfter {
                         continue
@@ -101,7 +101,7 @@ class Puzzle {
                 for i in 0..<after.size {
                     let columnBefore = after.column(i)
                     let hints = columnHints(i)
-                    let columnAfter = rule.apply(to: columnBefore, hints: hints)
+                    let columnAfter = rule.applyExhaustively(to: columnBefore, hints: hints)
                     
                     if columnBefore == columnAfter {
                         continue
@@ -131,6 +131,14 @@ class Puzzle {
             
             before = after
         } while true
+        
+        // DEBUG
+        let debugRule = CompleteFlushRule()
+        let row = before.row(10)
+        let hints = rowHints(10)
+        let result = debugRule.applyExhaustively(to: row, hints: hints)
+        
+        print("OK")
     }
     
     func rowHints(_ rowIndex: Int) -> [Int] {
