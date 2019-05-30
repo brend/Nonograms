@@ -131,14 +131,6 @@ class Puzzle {
             
             before = after
         } while true
-        
-        // DEBUG
-        let debugRule = CompleteFlushRule()
-        let row = before.row(10)
-        let hints = rowHints(10)
-        let result = debugRule.applyExhaustively(to: row, hints: hints)
-        
-        print("OK")
     }
     
     func rowHints(_ rowIndex: Int) -> [Int] {

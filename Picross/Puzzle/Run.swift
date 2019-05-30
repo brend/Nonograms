@@ -35,3 +35,25 @@ func runsEx(_ row: [Mark], of mark: Mark) -> [Run] {
     
     return runs
 }
+
+func pathsEx(_ row: [Mark]) -> [Run] {
+    var runs = [Run]()
+    var index = 0
+    var currentRunLength = 0
+    
+    for i in 0..<row.count {
+        if row[i] != .marked {
+            currentRunLength += 1
+        } else if currentRunLength > 0 {
+            runs.append(Run(index: index, start: i - currentRunLength, length: currentRunLength))
+            currentRunLength = 0
+            index += 1
+        }
+    }
+    
+    if currentRunLength > 0 {
+        runs.append(Run(index: index, start: row.count - currentRunLength, length: currentRunLength))
+    }
+    
+    return runs
+}

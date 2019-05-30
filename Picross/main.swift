@@ -127,7 +127,7 @@ var m = Matrix(size: 5)
 //            [0]
 //        ])
 
-let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/ninja.pea")
+let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
 
 puzzle.rules = [
     CenterRule(),
@@ -138,9 +138,9 @@ puzzle.rules = [
     MarkLongestHintRule(),
     SumRule(),
     MarkSingularRunRule(),
-    CompleteFlushLeftRule(),
-    CompleteFlushRightRule(),
-    CompleteFlushRule()
+    CompleteFlushRule(),
+    CompleteUnambiguousRule(),
+    PerfectFitRule()
 ]
 
 puzzle.solve()

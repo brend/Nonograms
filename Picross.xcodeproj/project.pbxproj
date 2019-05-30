@@ -45,10 +45,12 @@
 		AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */; };
 		AFAB1E47229FE78600BBA25B /* SumRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E46229FE78600BBA25B /* SumRule.swift */; };
 		AFAB1E49229FEA5800BBA25B /* MarkSingularRunRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */; };
-		AFAB1E4B229FED8600BBA25B /* CompleteFlushLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4A229FED8600BBA25B /* CompleteFlushLeftRule.swift */; };
-		AFAB1E4D229FEE5200BBA25B /* CompleteFlushRightRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4C229FEE5200BBA25B /* CompleteFlushRightRule.swift */; };
 		AFAB1E4F229FF72400BBA25B /* Puzzle (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */; };
 		AFAB1E5322A002EC00BBA25B /* CompleteFlushRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */; };
+		AFAB1E5522A00D9100BBA25B /* CompleteUnambiguousRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */; };
+		AFAB1E5722A011A600BBA25B /* PerfectFitRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */; };
+		AFAB1E5922A012D700BBA25B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5822A012D700BBA25B /* Array.swift */; };
+		AFAB1E5B22A0166D00BBA25B /* SingleFitRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5A22A0166D00BBA25B /* SingleFitRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,10 +96,12 @@
 		AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkLongestHintRule.swift; sourceTree = "<group>"; };
 		AFAB1E46229FE78600BBA25B /* SumRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumRule.swift; sourceTree = "<group>"; };
 		AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSingularRunRule.swift; sourceTree = "<group>"; };
-		AFAB1E4A229FED8600BBA25B /* CompleteFlushLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteFlushLeftRule.swift; sourceTree = "<group>"; };
-		AFAB1E4C229FEE5200BBA25B /* CompleteFlushRightRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteFlushRightRule.swift; sourceTree = "<group>"; };
 		AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Puzzle (Parsing).swift"; sourceTree = "<group>"; };
 		AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteFlushRule.swift; sourceTree = "<group>"; };
+		AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteUnambiguousRule.swift; sourceTree = "<group>"; };
+		AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectFitRule.swift; sourceTree = "<group>"; };
+		AFAB1E5822A012D700BBA25B /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		AFAB1E5A22A0166D00BBA25B /* SingleFitRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFitRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +163,10 @@
 				AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */,
 				AFAB1E46229FE78600BBA25B /* SumRule.swift */,
 				AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */,
-				AFAB1E4A229FED8600BBA25B /* CompleteFlushLeftRule.swift */,
-				AFAB1E4C229FEE5200BBA25B /* CompleteFlushRightRule.swift */,
 				AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */,
+				AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */,
+				AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */,
+				AFAB1E5A22A0166D00BBA25B /* SingleFitRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */,
 				AFAB1E40229FDE4C00BBA25B /* Run.swift */,
 				AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */,
+				AFAB1E5822A012D700BBA25B /* Array.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -301,27 +307,29 @@
 				AFAB1E0A229AB56300BBA25B /* MatchPathsRule.swift in Sources */,
 				AFAB1E03229AAA6900BBA25B /* Puzzle.swift in Sources */,
 				AFAB1E4F229FF72400BBA25B /* Puzzle (Parsing).swift in Sources */,
+				AFAB1E5722A011A600BBA25B /* PerfectFitRule.swift in Sources */,
 				AFAB1E47229FE78600BBA25B /* SumRule.swift in Sources */,
 				AF3F3C86229AA1760061D90D /* main.swift in Sources */,
 				AFAB1E3A229FCB0F00BBA25B /* Puzzleable.swift in Sources */,
 				AFAB1E06229AAA8A00BBA25B /* Matrix.swift in Sources */,
 				AFAB1E0E229AC29E00BBA25B /* PathsRule.swift in Sources */,
 				AFAB1E0C229ABEA700BBA25B /* PadPathsRule.swift in Sources */,
-				AFAB1E4D229FEE5200BBA25B /* CompleteFlushRightRule.swift in Sources */,
 				AFAB1E37229C426900BBA25B /* Auxiliary.swift in Sources */,
 				AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */,
 				AFAB1E08229AAB6600BBA25B /* MarkFinishedRule.swift in Sources */,
 				AFAB1E5322A002EC00BBA25B /* CompleteFlushRule.swift in Sources */,
 				AFAB1E41229FDE4C00BBA25B /* Run.swift in Sources */,
+				AFAB1E5522A00D9100BBA25B /* CompleteUnambiguousRule.swift in Sources */,
 				AFAB1E01229AAA0700BBA25B /* ZeroRule.swift in Sources */,
 				AFAB1E3F229FDC3500BBA25B /* CompleteSingularRunsRule.swift in Sources */,
 				AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */,
 				AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */,
 				AFAB1DFD229AA9D700BBA25B /* Rule.swift in Sources */,
+				AFAB1E5B22A0166D00BBA25B /* SingleFitRule.swift in Sources */,
+				AFAB1E5922A012D700BBA25B /* Array.swift in Sources */,
 				AFAB1E49229FEA5800BBA25B /* MarkSingularRunRule.swift in Sources */,
 				AFAB1E10229AC5CE00BBA25B /* PathCompleteRule.swift in Sources */,
 				AFAB1DFF229AA9EB00BBA25B /* CenterRule.swift in Sources */,
-				AFAB1E4B229FED8600BBA25B /* CompleteFlushLeftRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
