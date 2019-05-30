@@ -44,6 +44,9 @@
 		AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */; };
 		AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */; };
 		AFAB1E47229FE78600BBA25B /* SumRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E46229FE78600BBA25B /* SumRule.swift */; };
+		AFAB1E49229FEA5800BBA25B /* MarkSingularRunRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */; };
+		AFAB1E4B229FED8600BBA25B /* CompleteFlushLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4A229FED8600BBA25B /* CompleteFlushLeftRule.swift */; };
+		AFAB1E4D229FEE5200BBA25B /* CompleteFlushRightRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4C229FEE5200BBA25B /* CompleteFlushRightRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +91,9 @@
 		AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSmallPathsRule.swift; sourceTree = "<group>"; };
 		AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkLongestHintRule.swift; sourceTree = "<group>"; };
 		AFAB1E46229FE78600BBA25B /* SumRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumRule.swift; sourceTree = "<group>"; };
+		AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSingularRunRule.swift; sourceTree = "<group>"; };
+		AFAB1E4A229FED8600BBA25B /* CompleteFlushLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteFlushLeftRule.swift; sourceTree = "<group>"; };
+		AFAB1E4C229FEE5200BBA25B /* CompleteFlushRightRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteFlushRightRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,9 @@
 				AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */,
 				AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */,
 				AFAB1E46229FE78600BBA25B /* SumRule.swift */,
+				AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */,
+				AFAB1E4A229FED8600BBA25B /* CompleteFlushLeftRule.swift */,
+				AFAB1E4C229FEE5200BBA25B /* CompleteFlushRightRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 				AFAB1E06229AAA8A00BBA25B /* Matrix.swift in Sources */,
 				AFAB1E0E229AC29E00BBA25B /* PathsRule.swift in Sources */,
 				AFAB1E0C229ABEA700BBA25B /* PadPathsRule.swift in Sources */,
+				AFAB1E4D229FEE5200BBA25B /* CompleteFlushRightRule.swift in Sources */,
 				AFAB1E37229C426900BBA25B /* Auxiliary.swift in Sources */,
 				AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */,
 				AFAB1E08229AAB6600BBA25B /* MarkFinishedRule.swift in Sources */,
@@ -300,8 +310,10 @@
 				AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */,
 				AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */,
 				AFAB1DFD229AA9D700BBA25B /* Rule.swift in Sources */,
+				AFAB1E49229FEA5800BBA25B /* MarkSingularRunRule.swift in Sources */,
 				AFAB1E10229AC5CE00BBA25B /* PathCompleteRule.swift in Sources */,
 				AFAB1DFF229AA9EB00BBA25B /* CenterRule.swift in Sources */,
+				AFAB1E4B229FED8600BBA25B /* CompleteFlushLeftRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

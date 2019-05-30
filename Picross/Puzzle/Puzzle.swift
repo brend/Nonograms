@@ -88,6 +88,10 @@ class Puzzle {
                         fatalError("rule application leads to inconsistency with solution")
                     }
                     
+                    guard hintsAreConsistent(with: after) else {
+                        fatalError("rule application leads to hint violation")
+                    }
+                    
                     if afterBeforeIntegration != after {
                         print("\nrule \(rule.name), row \(i)")
                         after.printMatrix()
@@ -184,4 +188,29 @@ class Puzzle {
     }
     
     var size: Int { return solution.size }
+    
+    func hintsAreConsistent(with matrix: Matrix) -> Bool {
+        for i in 0..<size {
+            let rHints = rowHints(i)
+            let row = matrix.row(i)
+            
+            guard hints(rHints, areConsistentWith: row) else {
+                return false
+            }
+            
+            let cHints = columnHints(i)
+            let column = matrix.column(i)
+            
+            guard hints(cHints, areConsistentWith: column) else {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func hints(_ hints: [Int], areConsistentWith row: [Mark]) -> Bool {
+        // TODO: Implement this
+        return true
+    }
 }

@@ -40,33 +40,33 @@ var m = Matrix(size: 5)
 //m[4, 1] = .chiseled
 
 // killer ace of spades
-//let puzzle = Puzzle(
-//    rowHints:
-//        [
-//            [2],
-//            [4],
-//            [2, 3],
-//            [2, 5],
-//            [2, 4, 2],
-//            [10],
-//            [2, 2, 2],
-//            [2],
-//            [4],
-//            [6]
-//        ],
-//    columnHints:
-//        [
-//            [2],
-//            [4],
-//            [2, 2, 1],
-//            [2, 2, 2],
-//            [2, 7],
-//            [10],
-//            [5, 2],
-//            [2, 2, 1],
-//            [4],
-//            [2]
-//        ])
+let puzzle = Puzzle(
+    rowHints:
+        [
+            [2],
+            [4],
+            [2, 3],
+            [2, 5],
+            [2, 4, 2],
+            [10],
+            [2, 2, 2],
+            [2],
+            [4],
+            [6]
+        ],
+    columnHints:
+        [
+            [2],
+            [4],
+            [2, 2, 1],
+            [2, 2, 2],
+            [2, 7],
+            [10],
+            [5, 2],
+            [2, 2, 1],
+            [4],
+            [2]
+        ])
 
 // unsolvable without trial & error
 //let puzzle =
@@ -98,34 +98,34 @@ var m = Matrix(size: 5)
 //            [0]
 //        ])
 
-let puzzle =
-    Puzzle(
-        rowHints:
-        [
-            [2],
-            [1, 1],
-            [4],
-            [4],
-            [4],
-            [1],
-            [8],
-            [6],
-            [4],
-            [0]
-        ],
-        columnHints:
-        [
-            [0],
-            [1],
-            [2],
-            [9],
-            [1, 3, 3],
-            [3, 3],
-            [3, 3],
-            [2],
-            [1, 1],
-            [0]
-        ])
+//let puzzle =
+//    Puzzle(
+//        rowHints:
+//        [
+//            [2],
+//            [1, 1],
+//            [4],
+//            [4],
+//            [4],
+//            [1],
+//            [8],
+//            [6],
+//            [4],
+//            [0]
+//        ],
+//        columnHints:
+//        [
+//            [0],
+//            [1],
+//            [2],
+//            [9],
+//            [1, 3, 3],
+//            [3, 3],
+//            [3, 3],
+//            [2],
+//            [1, 1],
+//            [0]
+//        ])
 
 puzzle.rules = [
     CenterRule(),
@@ -134,7 +134,10 @@ puzzle.rules = [
     CompleteSingularRunsRule(),
     MarkSmallPathsRule(),
     MarkLongestHintRule(),
-    SumRule()
+    SumRule(),
+    MarkSingularRunRule(),
+    CompleteFlushLeftRule(),
+    CompleteFlushRightRule()
 ]
 
 puzzle.solve()
