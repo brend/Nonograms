@@ -11,12 +11,8 @@ import Foundation
 class MarkFinishedRule: Rule {
     override var name: String { return "mark finished" }
     
-    override func isApplicable(to row: [Mark], hints: [Int]) -> Bool {
-        return finished(row, hints: hints)
-    }
-    
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
-        guard isApplicable(to: row, hints: hints) else { return row }
+        guard finished(row, hints: hints) else { return row }
         
         var filled = row
         

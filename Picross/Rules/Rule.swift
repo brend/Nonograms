@@ -11,21 +11,17 @@ import Foundation
 class Rule {
     var name: String { return "unnamed" }
     
-    func isApplicable(to row: [Mark], hints: [Int]) -> Bool {
-        return true
-    }
-    
     func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         return row
     }
     
-    func chisel(_ row: [Mark], from index: Int, count: Int) -> [Mark] {
+    func chisel(_ row: [Mark], from index: Int, count: Int, mark: Mark = .chiseled) -> [Mark] {
         guard count >= 0 else { return row }
         
         var chiseled = row
         
         for i in index..<(index + count) {
-            chiseled[i] = .chiseled
+            chiseled[i] = mark
         }
         
         return chiseled

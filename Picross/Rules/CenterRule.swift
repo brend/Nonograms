@@ -11,21 +11,27 @@ import Foundation
 class CenterRule: Rule {
     override var name: String { return "center" }
     
-    override func isApplicable(to row: [Mark], hints: [Int]) -> Bool {
-        let hint = hints.first!
-        let blanks = row.count - hint
-        let numberOfColumnsToPaint = row.count - 2 * blanks
+    override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
+        guard hints.count == 1 else { return row }
         
-        return hints.count == 1 && numberOfColumnsToPaint > 0
+        guard let (startEmpty, endEmpty) = freeRangeClosed(row: row) else {
+            return row
+        }
+
+        let hint = hints.first!
+        let emptyCount = endEmpty - startEmpty + 1
+        let blanks = emptyCount - hint
+        let numberOfColumnsToPaint = emptyCount - 2 * blanks
+        
+        return chisel(row, from: startEmpty + blanks, count: numberOfColumnsToPaint)
     }
     
-    override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
-        guard isApplicable(to: row, hints: hints) else { return row }
-        
-        let hint = hints.first!
-        let blanks = row.count - hint
-        let numberOfColumnsToPaint = row.count - 2 * blanks
-        
-        return chisel(row, from: blanks, count: numberOfColumnsToPaint)
+    func freeRangeClosed(row: [Mark]) -> (Int, Int)? {
+        if let firstNonMarked = row.firstIndex(where: {$0 != .marked}),
+            let lastNonMarked = row.lastIndex(where: {$0 != .marked}) {
+            return (firstNonMarked, lastNonMarked)
+        } else {
+            return nil
+        }
     }
 }

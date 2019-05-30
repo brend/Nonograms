@@ -8,48 +8,6 @@
 
 import Foundation
 
-func render(_ row: [Mark]) -> String {
-    let something = row.reduce("") {"\($0)|\($1.rawValue)"}
-    
-    return something + "|"
-}
-
-enum Mark: String {
-    case unknown = "_",
-    chiseled = "▓",
-    marked = "x"
-    
-    func integrates(with mark: Mark) -> Bool {
-        switch self {
-        case .unknown:
-            return true
-        case .chiseled:
-            return mark == .unknown || mark == .chiseled
-        case .marked:
-            return mark == .unknown || mark == .marked
-        }
-    }
-}
-
-func paths(in row: [Mark]) -> [Range<Int>] {
-    var paths = [Range<Int>]()
-    var lastMark = -1
-    
-    for (i, m) in row.enumerated() {
-        if m == .marked {
-            if lastMark < i - 1 {
-                paths.append((lastMark + 1) ..< i)
-            }
-            lastMark = i
-        }
-    }
-    
-    if row.count > 0 && row.last! != .marked {
-        paths.append((lastMark + 1)..<row.count)
-    }
-    
-    return paths
-}
 
 
 
@@ -168,5 +126,13 @@ let puzzle =
             [1, 1],
             [0]
         ])
+
+puzzle.rules = [
+    CenterRule(),
+    ZeroRule(),
+    MarkFinishedRule(),
+    CompleteSingularRunsRule(),
+    MarkSmallPathsRule()
+]
 
 puzzle.solve()

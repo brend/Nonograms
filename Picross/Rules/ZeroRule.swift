@@ -11,12 +11,8 @@ import Foundation
 class ZeroRule: Rule {
     override var name: String { return "zero" }
     
-    override func isApplicable(to row: [Mark], hints: [Int]) -> Bool {
-        return hints == [0]
-    }
-    
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
-        guard isApplicable(to: row, hints: hints) else { return row }
+        guard hints == [0] else { return row }
         
         return Array(repeating: .marked, count: row.count)
     }

@@ -18,6 +18,30 @@
 		AFAB1E0C229ABEA700BBA25B /* PadPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E0B229ABEA700BBA25B /* PadPathsRule.swift */; };
 		AFAB1E0E229AC29E00BBA25B /* PathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E0D229AC29E00BBA25B /* PathsRule.swift */; };
 		AFAB1E10229AC5CE00BBA25B /* PathCompleteRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E0F229AC5CE00BBA25B /* PathCompleteRule.swift */; };
+		AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */; };
+		AFAB1E1A229C3C5D00BBA25B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E19229C3C5D00BBA25B /* Assets.xcassets */; };
+		AFAB1E1D229C3C5D00BBA25B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */; };
+		AFAB1E24229C3E2300BBA25B /* PuzzleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E23229C3E2300BBA25B /* PuzzleView.xib */; };
+		AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */; };
+		AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */; };
+		AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E29229C41B900BBA25B /* Mark.swift */; };
+		AFAB1E2B229C41CD00BBA25B /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E29229C41B900BBA25B /* Mark.swift */; };
+		AFAB1E2C229C41D100BBA25B /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E02229AAA6900BBA25B /* Puzzle.swift */; };
+		AFAB1E2D229C41D400BBA25B /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E05229AAA8A00BBA25B /* Matrix.swift */; };
+		AFAB1E2E229C41F300BBA25B /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFC229AA9D700BBA25B /* Rule.swift */; };
+		AFAB1E2F229C41F300BBA25B /* CenterRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */; };
+		AFAB1E30229C41F300BBA25B /* ZeroRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */; };
+		AFAB1E31229C41F300BBA25B /* MarkFinishedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E07229AAB6600BBA25B /* MarkFinishedRule.swift */; };
+		AFAB1E32229C41F300BBA25B /* MatchPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E09229AB56300BBA25B /* MatchPathsRule.swift */; };
+		AFAB1E33229C41F300BBA25B /* PadPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E0B229ABEA700BBA25B /* PadPathsRule.swift */; };
+		AFAB1E34229C41F300BBA25B /* PathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E0D229AC29E00BBA25B /* PathsRule.swift */; };
+		AFAB1E35229C41F300BBA25B /* PathCompleteRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E0F229AC5CE00BBA25B /* PathCompleteRule.swift */; };
+		AFAB1E37229C426900BBA25B /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E36229C426900BBA25B /* Auxiliary.swift */; };
+		AFAB1E38229C428200BBA25B /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E36229C426900BBA25B /* Auxiliary.swift */; };
+		AFAB1E3A229FCB0F00BBA25B /* Puzzleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */; };
+		AFAB1E3F229FDC3500BBA25B /* CompleteSingularRunsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */; };
+		AFAB1E41229FDE4C00BBA25B /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E40229FDE4C00BBA25B /* Run.swift */; };
+		AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,10 +69,32 @@
 		AFAB1E0B229ABEA700BBA25B /* PadPathsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadPathsRule.swift; sourceTree = "<group>"; };
 		AFAB1E0D229AC29E00BBA25B /* PathsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsRule.swift; sourceTree = "<group>"; };
 		AFAB1E0F229AC5CE00BBA25B /* PathCompleteRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathCompleteRule.swift; sourceTree = "<group>"; };
+		AFAB1E15229C3C5A00BBA25B /* Peacross.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peacross.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AFAB1E19229C3C5D00BBA25B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFAB1E1C229C3C5D00BBA25B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AFAB1E1E229C3C5D00BBA25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFAB1E1F229C3C5D00BBA25B /* Peacross.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Peacross.entitlements; sourceTree = "<group>"; };
+		AFAB1E23229C3E2300BBA25B /* PuzzleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PuzzleView.xib; sourceTree = "<group>"; };
+		AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewDelegate.swift; sourceTree = "<group>"; };
+		AFAB1E29229C41B900BBA25B /* Mark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
+		AFAB1E36229C426900BBA25B /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxiliary.swift; sourceTree = "<group>"; };
+		AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzleable.swift; sourceTree = "<group>"; };
+		AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSingularRunsRule.swift; sourceTree = "<group>"; };
+		AFAB1E40229FDE4C00BBA25B /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSmallPathsRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AF3F3C7F229AA1760061D90D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFAB1E12229C3C5A00BBA25B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3F3C84229AA1760061D90D /* Picross */,
+				AFAB1E16229C3C5A00BBA25B /* Peacross */,
 				AF3F3C83229AA1760061D90D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3F3C82229AA1760061D90D /* Picross */,
+				AFAB1E15229C3C5A00BBA25B /* Peacross.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,14 +135,13 @@
 		AFAB1DFB229AA9CB00BBA25B /* Rules */ = {
 			isa = PBXGroup;
 			children = (
+				AFAB1E3B229FCCAC00BBA25B /* Unsafe */,
 				AFAB1DFC229AA9D700BBA25B /* Rule.swift */,
 				AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */,
 				AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */,
 				AFAB1E07229AAB6600BBA25B /* MarkFinishedRule.swift */,
-				AFAB1E09229AB56300BBA25B /* MatchPathsRule.swift */,
-				AFAB1E0B229ABEA700BBA25B /* PadPathsRule.swift */,
-				AFAB1E0D229AC29E00BBA25B /* PathsRule.swift */,
-				AFAB1E0F229AC5CE00BBA25B /* PathCompleteRule.swift */,
+				AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */,
+				AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -104,8 +151,38 @@
 			children = (
 				AFAB1E02229AAA6900BBA25B /* Puzzle.swift */,
 				AFAB1E05229AAA8A00BBA25B /* Matrix.swift */,
+				AFAB1E29229C41B900BBA25B /* Mark.swift */,
+				AFAB1E36229C426900BBA25B /* Auxiliary.swift */,
+				AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */,
+				AFAB1E40229FDE4C00BBA25B /* Run.swift */,
 			);
 			path = Puzzle;
+			sourceTree = "<group>";
+		};
+		AFAB1E16229C3C5A00BBA25B /* Peacross */ = {
+			isa = PBXGroup;
+			children = (
+				AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */,
+				AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */,
+				AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */,
+				AFAB1E19229C3C5D00BBA25B /* Assets.xcassets */,
+				AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */,
+				AFAB1E23229C3E2300BBA25B /* PuzzleView.xib */,
+				AFAB1E1E229C3C5D00BBA25B /* Info.plist */,
+				AFAB1E1F229C3C5D00BBA25B /* Peacross.entitlements */,
+			);
+			path = Peacross;
+			sourceTree = "<group>";
+		};
+		AFAB1E3B229FCCAC00BBA25B /* Unsafe */ = {
+			isa = PBXGroup;
+			children = (
+				AFAB1E0D229AC29E00BBA25B /* PathsRule.swift */,
+				AFAB1E0F229AC5CE00BBA25B /* PathCompleteRule.swift */,
+				AFAB1E0B229ABEA700BBA25B /* PadPathsRule.swift */,
+				AFAB1E09229AB56300BBA25B /* MatchPathsRule.swift */,
+			);
+			path = Unsafe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +205,23 @@
 			productReference = AF3F3C82229AA1760061D90D /* Picross */;
 			productType = "com.apple.product-type.tool";
 		};
+		AFAB1E14229C3C5A00BBA25B /* Peacross */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFAB1E20229C3C5D00BBA25B /* Build configuration list for PBXNativeTarget "Peacross" */;
+			buildPhases = (
+				AFAB1E11229C3C5A00BBA25B /* Sources */,
+				AFAB1E12229C3C5A00BBA25B /* Frameworks */,
+				AFAB1E13229C3C5A00BBA25B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Peacross;
+			productName = Peacross;
+			productReference = AFAB1E15229C3C5A00BBA25B /* Peacross.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,6 +235,9 @@
 					AF3F3C81229AA1760061D90D = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
+					AFAB1E14229C3C5A00BBA25B = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = AF3F3C7D229AA1760061D90D /* Build configuration list for PBXProject "Picross" */;
@@ -149,6 +246,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AF3F3C79229AA1760061D90D;
 			productRefGroup = AF3F3C83229AA1760061D90D /* Products */;
@@ -156,9 +254,23 @@
 			projectRoot = "";
 			targets = (
 				AF3F3C81229AA1760061D90D /* Picross */,
+				AFAB1E14229C3C5A00BBA25B /* Peacross */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFAB1E13229C3C5A00BBA25B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFAB1E1A229C3C5D00BBA25B /* Assets.xcassets in Resources */,
+				AFAB1E1D229C3C5D00BBA25B /* MainMenu.xib in Resources */,
+				AFAB1E24229C3E2300BBA25B /* PuzzleView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF3F3C7E229AA1760061D90D /* Sources */ = {
@@ -168,18 +280,57 @@
 				AFAB1E0A229AB56300BBA25B /* MatchPathsRule.swift in Sources */,
 				AFAB1E03229AAA6900BBA25B /* Puzzle.swift in Sources */,
 				AF3F3C86229AA1760061D90D /* main.swift in Sources */,
+				AFAB1E3A229FCB0F00BBA25B /* Puzzleable.swift in Sources */,
 				AFAB1E06229AAA8A00BBA25B /* Matrix.swift in Sources */,
 				AFAB1E0E229AC29E00BBA25B /* PathsRule.swift in Sources */,
 				AFAB1E0C229ABEA700BBA25B /* PadPathsRule.swift in Sources */,
+				AFAB1E37229C426900BBA25B /* Auxiliary.swift in Sources */,
+				AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */,
 				AFAB1E08229AAB6600BBA25B /* MarkFinishedRule.swift in Sources */,
+				AFAB1E41229FDE4C00BBA25B /* Run.swift in Sources */,
 				AFAB1E01229AAA0700BBA25B /* ZeroRule.swift in Sources */,
+				AFAB1E3F229FDC3500BBA25B /* CompleteSingularRunsRule.swift in Sources */,
+				AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */,
 				AFAB1DFD229AA9D700BBA25B /* Rule.swift in Sources */,
 				AFAB1E10229AC5CE00BBA25B /* PathCompleteRule.swift in Sources */,
 				AFAB1DFF229AA9EB00BBA25B /* CenterRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFAB1E11229C3C5A00BBA25B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFAB1E34229C41F300BBA25B /* PathsRule.swift in Sources */,
+				AFAB1E31229C41F300BBA25B /* MarkFinishedRule.swift in Sources */,
+				AFAB1E2C229C41D100BBA25B /* Puzzle.swift in Sources */,
+				AFAB1E2B229C41CD00BBA25B /* Mark.swift in Sources */,
+				AFAB1E2D229C41D400BBA25B /* Matrix.swift in Sources */,
+				AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */,
+				AFAB1E2F229C41F300BBA25B /* CenterRule.swift in Sources */,
+				AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */,
+				AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */,
+				AFAB1E2E229C41F300BBA25B /* Rule.swift in Sources */,
+				AFAB1E32229C41F300BBA25B /* MatchPathsRule.swift in Sources */,
+				AFAB1E33229C41F300BBA25B /* PadPathsRule.swift in Sources */,
+				AFAB1E30229C41F300BBA25B /* ZeroRule.swift in Sources */,
+				AFAB1E35229C41F300BBA25B /* PathCompleteRule.swift in Sources */,
+				AFAB1E38229C428200BBA25B /* Auxiliary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFAB1E1C229C3C5D00BBA25B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AF3F3C87229AA1760061D90D /* Debug */ = {
@@ -317,6 +468,44 @@
 			};
 			name = Release;
 		};
+		AFAB1E21229C3C5D00BBA25B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Peacross/Peacross.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CF3W365R86;
+				INFOPLIST_FILE = Peacross/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.entenwolf.Peacross;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AFAB1E22229C3C5D00BBA25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Peacross/Peacross.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CF3W365R86;
+				INFOPLIST_FILE = Peacross/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.entenwolf.Peacross;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,6 +523,15 @@
 			buildConfigurations = (
 				AF3F3C8A229AA1760061D90D /* Debug */,
 				AF3F3C8B229AA1760061D90D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFAB1E20229C3C5D00BBA25B /* Build configuration list for PBXNativeTarget "Peacross" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFAB1E21229C3C5D00BBA25B /* Debug */,
+				AFAB1E22229C3C5D00BBA25B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

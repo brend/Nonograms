@@ -30,19 +30,36 @@ class Puzzle {
         self.userColumnHints = columnHints
     }
     
-    var rules = [
-        CenterRule(),
-        ZeroRule(),
-        MarkFinishedRule(),
-        MatchPathsRule(),
-        PadPathsRule(),
-        PathCompleteRule()
-    ]
+    static var demo: Puzzle {
+        var matrix = Matrix(size: 10)
+        
+        matrix[1, 2] = .chiseled
+        
+        let puzzle = Puzzle(solution: matrix)
+        
+        return puzzle
+    }
+    
+    func mark(rowIndex: Int, columnIndex: Int) -> Mark {
+        guard rowIndex >= 0 && rowIndex < size
+            && columnIndex >= 0 && columnIndex < size else {
+            fatalError("invalid access \(rowIndex), \(columnIndex)")
+        }
+        
+        return solution[rowIndex, columnIndex]
+    }
+    
+    var rules = [Rule]()
     
     func solve() {
         if self.userRowHints == nil {
             print("this is the solution:")
             solution.printMatrix()
+        }
+        
+        if rules.isEmpty {
+            print("ruleset is empty")
+            return
         }
         
         var before = Matrix(size: size)
@@ -57,12 +74,12 @@ class Puzzle {
                 for i in 0..<after.size {
                     let rowBefore = after.row(i)
                     let hints = rowHints(i)
+                    let rowAfter = rule.apply(to: rowBefore, hints: hints)
                     
-                    guard rule.isApplicable(to: rowBefore, hints: hints) else {
+                    if rowBefore == rowAfter {
                         continue
                     }
                     
-                    let rowAfter = rule.apply(to: rowBefore, hints: hints)
                     let afterBeforeIntegration = after
                     
                     after.integrate(row: rowAfter, at: i)
@@ -80,12 +97,12 @@ class Puzzle {
                 for i in 0..<after.size {
                     let columnBefore = after.column(i)
                     let hints = columnHints(i)
+                    let columnAfter = rule.apply(to: columnBefore, hints: hints)
                     
-                    guard rule.isApplicable(to: columnBefore, hints: hints) else {
+                    if columnBefore == columnAfter {
                         continue
                     }
                     
-                    let columnAfter = rule.apply(to: columnBefore, hints: hints)
                     let afterBeforeIntegration = after
                     
                     after.integrate(column: columnAfter, at: i)
