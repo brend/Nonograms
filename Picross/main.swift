@@ -127,6 +127,10 @@ var m = Matrix(size: 5)
 //            [0]
 //        ])
 
+let row = Array(repeating: Mark.unknown, count: 15)
+let rule = ShrinkRule()
+let alt = rule.apply(to: row, hints: [1, 7, 4])
+
 let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
 
 puzzle.rules = [
@@ -140,7 +144,8 @@ puzzle.rules = [
     MarkSingularRunRule(),
     CompleteFlushRule(),
     CompleteUnambiguousRule(),
-    PerfectFitRule()
+    PerfectFitRule(),
+    ShrinkRule()
 ]
 
 puzzle.solve()
