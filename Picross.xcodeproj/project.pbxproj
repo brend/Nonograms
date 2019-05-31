@@ -43,6 +43,7 @@
 		AFAB1E5722A011A600BBA25B /* PerfectFitRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */; };
 		AFAB1E5922A012D700BBA25B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5822A012D700BBA25B /* Array.swift */; };
 		AFAB1E5D22A02BB500BBA25B /* ShrinkRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */; };
+		AFAB1E5F22A12E4300BBA25B /* DistanceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +91,7 @@
 		AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectFitRule.swift; sourceTree = "<group>"; };
 		AFAB1E5822A012D700BBA25B /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkRule.swift; sourceTree = "<group>"; };
+		AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */,
 				AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */,
 				AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */,
+				AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFAB1E03229AAA6900BBA25B /* Puzzle.swift in Sources */,
+				AFAB1E5F22A12E4300BBA25B /* DistanceRule.swift in Sources */,
 				AFAB1E4F229FF72400BBA25B /* Puzzle (Parsing).swift in Sources */,
 				AFAB1E5722A011A600BBA25B /* PerfectFitRule.swift in Sources */,
 				AFAB1E5D22A02BB500BBA25B /* ShrinkRule.swift in Sources */,

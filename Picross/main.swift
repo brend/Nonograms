@@ -127,9 +127,15 @@ var m = Matrix(size: 5)
 //            [0]
 //        ])
 
-let row = Array(repeating: Mark.unknown, count: 15)
-let rule = ShrinkRule()
-let alt = rule.apply(to: row, hints: [1, 7, 4])
+var row = Array(repeating: Mark.unknown, count: 15)
+
+row[4] = .chiseled
+row[5] = .chiseled
+row[8] = .chiseled
+row[9] = .chiseled
+
+let rule = DistanceRule()
+let alt = rule.applyExhaustively(to: row, hints: [3, 3])
 
 let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
 
@@ -145,7 +151,8 @@ puzzle.rules = [
     CompleteFlushRule(),
     CompleteUnambiguousRule(),
     PerfectFitRule(),
-    ShrinkRule()
+    ShrinkRule(),
+    DistanceRule()
 ]
 
 puzzle.solve()
