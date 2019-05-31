@@ -13,6 +13,8 @@ protocol PuzzleViewDelegate {
     
     func getMark(row: Int, column: Int) -> Mark
     
+    func setMark(row: Int, column: Int, mark: Mark)
+    
     func rowHints(for rowIndex: Int) -> [Int]
     
     func columnHints(for columnIndex: Int) -> [Int]

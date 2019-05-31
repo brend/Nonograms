@@ -54,11 +54,21 @@ struct Matrix: Equatable {
         return col
     }
     
-    func printMatrix() {
+    func renderMatrix() -> String {
+        var text = ""
+
         for i in 0..<size {
             let r = row(i)
-            print(render(r))
+            
+            text.append(render(r))
+            text.append("\n")
         }
+        
+        return text
+    }
+    
+    func printMatrix() {
+        print(renderMatrix())
     }
     
     mutating func integrate(row: [Mark], at rowIndex: Int) {

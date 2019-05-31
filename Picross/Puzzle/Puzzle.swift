@@ -9,7 +9,7 @@
 import Foundation
 
 class Puzzle {
-    let solution: Matrix
+    var solution: Matrix
     
     let userRowHints: [[Int]]?
     let userColumnHints: [[Int]]?
@@ -47,6 +47,15 @@ class Puzzle {
         }
         
         return solution[rowIndex, columnIndex]
+    }
+    
+    func set(mark: Mark, rowIndex: Int, columnIndex: Int) {
+        guard rowIndex >= 0 && rowIndex < size
+            && columnIndex >= 0 && columnIndex < size else {
+                fatalError("invalid access \(rowIndex), \(columnIndex)")
+        }
+        
+        solution[rowIndex, columnIndex] = mark
     }
     
     var rules = [Rule]()
@@ -133,42 +142,11 @@ class Puzzle {
         } while true
     }
     
-    func rowHints(_ rowIndex: Int) -> [Int] {
-        
-        if let userRowHints = userRowHints {
-            return userRowHints[rowIndex]
-        }
-        
+    func arrayHints(row: [Mark]) -> [Int] {
         var hints = [Int]()
         var run = 0
         
-        for mark in solution.row(rowIndex) {
-            switch mark {
-            case .chiseled:
-                run += 1
-            case .unknown:
-                hints.append(run)
-                run = 0
-            default:
-                fatalError()
-            }
-        }
-        
-        hints.append(run)
-        
-        return hints.filter {$0 != 0}
-    }
-    
-    func columnHints(_ columnIndex: Int) -> [Int] {
-        
-        if let userColumnHints = userColumnHints {
-            return userColumnHints[columnIndex]
-        }
-        
-        var hints = [Int]()
-        var run = 0
-        
-        for mark in solution.column(columnIndex) {
+        for mark in row {
             switch mark {
             case .chiseled:
                 run += 1
@@ -185,6 +163,22 @@ class Puzzle {
         let withoutZeroes = hints.filter {$0 != 0}
         
         return withoutZeroes.count > 0 ? withoutZeroes : [0]
+    }
+    
+    func rowHints(_ rowIndex: Int) -> [Int] {
+        if let userRowHints = userRowHints {
+            return userRowHints[rowIndex]
+        }
+        
+        return arrayHints(row: solution.row(rowIndex))
+    }
+    
+    func columnHints(_ columnIndex: Int) -> [Int] {
+        if let userColumnHints = userColumnHints {
+            return userColumnHints[columnIndex]
+        }
+        
+        return arrayHints(row: solution.column(columnIndex))
     }
     
     var size: Int { return solution.size }
@@ -212,5 +206,27 @@ class Puzzle {
     func hints(_ hints: [Int], areConsistentWith row: [Mark]) -> Bool {
         // TODO: Implement this
         return true
+    }
+    
+    func toPeaFile() -> String {
+        var text = ""
+        
+        text.append("comment\n")
+        text.append(solution.renderMatrix())
+        
+        text.append("rows\n")
+        for rowIndex in 0..<size {
+            let rh = rowHints(rowIndex).map {String($0)}.joined(separator: ",")
+            text.append(rh + "\n")
+        }
+        
+        text.append("columns\n")
+        for columnIndex in 0..<size {
+            let ch = columnHints(columnIndex).map {String($0)}.joined(separator: ",")
+            text.append(ch + "\n")
+        }
+        
+        
+        return text
     }
 }

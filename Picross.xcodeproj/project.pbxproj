@@ -179,6 +179,7 @@
 		AFAB1E16229C3C5A00BBA25B /* Peacross */ = {
 			isa = PBXGroup;
 			children = (
+				AFAB1E6122A1553000BBA25B /* Resources */,
 				AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */,
 				AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */,
 				AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */,
@@ -189,6 +190,13 @@
 				AFAB1E1F229C3C5D00BBA25B /* Peacross.entitlements */,
 			);
 			path = Peacross;
+			sourceTree = "<group>";
+		};
+		AFAB1E6122A1553000BBA25B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +251,11 @@
 					};
 					AFAB1E14229C3C5A00BBA25B = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

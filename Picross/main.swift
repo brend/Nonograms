@@ -137,7 +137,7 @@ row[9] = .chiseled
 let rule = DistanceRule()
 let alt = rule.applyExhaustively(to: row, hints: [3, 3])
 
-let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
+let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/boat")
 
 puzzle.rules = [
     CenterRule(),

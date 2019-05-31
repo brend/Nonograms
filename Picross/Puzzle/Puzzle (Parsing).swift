@@ -20,7 +20,7 @@ extension Puzzle {
                 .map {$0.trimmingCharacters(in: .whitespaces)}
         
         enum ActiveSet {
-            case none, rows, columns
+            case none, rows, columns, ignore
         }
         
         var rowHints = [[Int]]()
@@ -33,11 +33,17 @@ extension Puzzle {
                 active = .rows
             case "columns":
                 active = .columns
+            case "comment":
+                active = .ignore
             case "":
                 continue
             default:
                 if active == .none {
                     fatalError("no hint set")
+                }
+                
+                if active == .ignore {
+                    continue;
                 }
                 
                 let numbers = line.components(separatedBy: ",").map({Int($0) ?? -1})
