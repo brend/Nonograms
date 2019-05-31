@@ -64,5 +64,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
             print("\(error)")
         }
     }
+    
+    @IBAction func openDocument(_ sender: Any) {
+        let openPanel = NSOpenPanel()
+        
+        guard openPanel.runModal() == .OK,
+            let url = openPanel.url else {
+                return
+        }
+        
+        let puzzle = Puzzle.parse(file: url.path)
+        
+        self.puzzle = puzzle
+        
+        puzzleView.setNeedsDisplay(puzzleView.bounds)
+    }
+    
 }
 

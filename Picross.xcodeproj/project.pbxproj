@@ -44,6 +44,9 @@
 		AFAB1E5922A012D700BBA25B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5822A012D700BBA25B /* Array.swift */; };
 		AFAB1E5D22A02BB500BBA25B /* ShrinkRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */; };
 		AFAB1E5F22A12E4300BBA25B /* DistanceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */; };
+		AFEBEE1722A16059001BF05D /* Puzzle (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */; };
+		AFEBEE1922A179B9001BF05D /* CloseToLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */; };
+		AFEBEE1B22A17E3D001BF05D /* FullFirstHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -92,6 +95,8 @@
 		AFAB1E5822A012D700BBA25B /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkRule.swift; sourceTree = "<group>"; };
 		AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceRule.swift; sourceTree = "<group>"; };
+		AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseToLeftRule.swift; sourceTree = "<group>"; };
+		AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +162,8 @@
 				AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */,
 				AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */,
 				AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */,
+				AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */,
+				AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -306,6 +313,7 @@
 				AFAB1E3A229FCB0F00BBA25B /* Puzzleable.swift in Sources */,
 				AFAB1E06229AAA8A00BBA25B /* Matrix.swift in Sources */,
 				AFAB1E37229C426900BBA25B /* Auxiliary.swift in Sources */,
+				AFEBEE1B22A17E3D001BF05D /* FullFirstHintRule.swift in Sources */,
 				AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */,
 				AFAB1E08229AAB6600BBA25B /* MarkFinishedRule.swift in Sources */,
 				AFAB1E5322A002EC00BBA25B /* CompleteFlushRule.swift in Sources */,
@@ -316,6 +324,7 @@
 				AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */,
 				AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */,
 				AFAB1DFD229AA9D700BBA25B /* Rule.swift in Sources */,
+				AFEBEE1922A179B9001BF05D /* CloseToLeftRule.swift in Sources */,
 				AFAB1E5922A012D700BBA25B /* Array.swift in Sources */,
 				AFAB1E49229FEA5800BBA25B /* MarkSingularRunRule.swift in Sources */,
 				AFAB1DFF229AA9EB00BBA25B /* CenterRule.swift in Sources */,
@@ -330,6 +339,7 @@
 				AFAB1E2C229C41D100BBA25B /* Puzzle.swift in Sources */,
 				AFAB1E2B229C41CD00BBA25B /* Mark.swift in Sources */,
 				AFAB1E2D229C41D400BBA25B /* Matrix.swift in Sources */,
+				AFEBEE1722A16059001BF05D /* Puzzle (Parsing).swift in Sources */,
 				AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */,
 				AFAB1E2F229C41F300BBA25B /* CenterRule.swift in Sources */,
 				AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */,

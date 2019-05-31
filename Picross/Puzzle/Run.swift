@@ -14,10 +14,14 @@ struct Run {
     
     var nextAfter: Int { return start + length }
     
-    init(start: Int, length: Int) {
+    init(start: Int, length: Int, associatedHintIndex: Int? = nil) {
         self.start = start
         self.length = length
-        self.associatedHintIndex = nil
+        self.associatedHintIndex = associatedHintIndex
+    }
+    
+    func associate(with hintIndex: Int) -> Run {
+        return Run(start: start, length: length, associatedHintIndex: hintIndex)
     }
 }
 
@@ -50,6 +54,22 @@ func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
 }
 
 func associate(runs: [Run], to hints: [Int]) -> [Run] {
+//    guard runs.count >= hints.count else { return runs }
+//
+//    if hints.count == 1 {
+//        return runs.map { $0.associate(with: 0) }
+//    }
+//
+//    guard let runPairs = runs.pairs() else { return runs }
+//
+//    // |hints| > 1, |runs| >= |hints|
+//    var currentHintIndex = 0
+//    var asscociations = [0: [runs[0]]]
+//
+//    for (r1, r2) in runPairs {
+//        if r1.lengthCombined(with: r2) >
+//    }
+    
     return runs
 }
 

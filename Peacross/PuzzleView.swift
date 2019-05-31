@@ -98,6 +98,12 @@ class PuzzleView: NSView {
         let left = NSPoint(x: area.minX, y: y)
         let right = NSPoint(x: area.maxX, y: y)
         
+        if rowIndex.isMultiple(of: 5) {
+            NSColor(deviceRed: 0.51, green: 0.80, blue: 96, alpha: 1).setStroke()
+        } else {
+            NSColor.white.setStroke()
+        }
+        
         NSBezierPath.strokeLine(from: left, to: right)
     }
     
@@ -106,6 +112,12 @@ class PuzzleView: NSView {
         let x = area.minX + CGFloat(columnIndex) * boxSize.width
         let top = NSPoint(x: x, y: area.maxY)
         let bottom = NSPoint(x: x, y: area.minY)
+        
+        if columnIndex.isMultiple(of: 5) {
+            NSColor(deviceRed: 0.51, green: 0.80, blue: 96, alpha: 1).setStroke()
+        } else {
+            NSColor.white.setStroke()
+        }
         
         NSBezierPath.strokeLine(from: top, to: bottom)
     }

@@ -31,7 +31,7 @@ class Puzzle {
     }
     
     static var demo: Puzzle {
-        var matrix = Matrix(size: 10)
+        var matrix = Matrix(size: 15)
         
         matrix[1, 2] = .chiseled
         
@@ -211,7 +211,7 @@ class Puzzle {
     func toPeaFile() -> String {
         var text = ""
         
-        text.append("comment\n")
+        text.append("solution\n")
         text.append(solution.renderMatrix())
         
         text.append("rows\n")

@@ -20,12 +20,13 @@ extension Puzzle {
                 .map {$0.trimmingCharacters(in: .whitespaces)}
         
         enum ActiveSet {
-            case none, rows, columns, ignore
+            case none, rows, columns, ignore, solution
         }
         
         var rowHints = [[Int]]()
         var columnHints = [[Int]]()
         var active = ActiveSet.none
+        var solution = [String]()
         
         for line in lines {
             switch line {
@@ -35,23 +36,26 @@ extension Puzzle {
                 active = .columns
             case "comment":
                 active = .ignore
+            case "solution":
+                active = .solution
             case "":
                 continue
             default:
-                if active == .none {
-                    fatalError("no hint set")
-                }
-                
-                if active == .ignore {
+                switch active {
+                case .none:
+                    fatalError("no action set")
+                case .ignore:
                     continue;
-                }
-                
-                let numbers = line.components(separatedBy: ",").map({Int($0) ?? -1})
-                
-                if active == .rows {
-                    rowHints.append(numbers)
-                } else {
-                    columnHints.append(numbers)
+                case .solution:
+                    solution.append(line)
+                case .rows, .columns:
+                    let numbers = line.components(separatedBy: ",").map({Int($0) ?? -1})
+                    
+                    if active == .rows {
+                        rowHints.append(numbers)
+                    } else {
+                        columnHints.append(numbers)
+                    }
                 }
             }
         }
@@ -64,6 +68,26 @@ extension Puzzle {
             fatalError("expected hint count to be multiple of 5")
         }
         
-        return Puzzle(rowHints: rowHints, columnHints: columnHints)
+        let puzzle: Puzzle
+        
+        if solution.isEmpty {
+            puzzle = Puzzle(rowHints: rowHints, columnHints: columnHints)
+        } else {
+            var solutionMatrix = Matrix(size: rowHints.count)
+            
+            for (rowIndex, line) in solution.enumerated() {
+                let interestingChars = line.filter({$0=="_" || $0=="▓"})
+                
+                for (columnIndex, c) in interestingChars.enumerated() {
+                    if c == "▓" {
+                        solutionMatrix[rowIndex, columnIndex] = .chiseled
+                    }
+                }
+            }
+            
+            puzzle = Puzzle(solution: solutionMatrix)
+        }
+            
+        return puzzle
     }
 }
