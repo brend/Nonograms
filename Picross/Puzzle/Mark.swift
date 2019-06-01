@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Mark: String {
+enum Mark: String, CustomStringConvertible {
     case unknown = "_",
     chiseled = "▓",
     marked = "x"
@@ -22,5 +22,9 @@ enum Mark: String {
         case .marked:
             return mark == .unknown || mark == .marked
         }
+    }
+    
+    var description: String {
+        return self.rawValue
     }
 }

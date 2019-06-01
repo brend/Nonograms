@@ -71,7 +71,7 @@ class Puzzle {
         return rowsAndColumns
     }
     
-    func solve() {
+    func solve() -> [SolutionStep]? {
         if self.userRowHints == nil {
             print("this is the solution:")
             solution.printMatrix()
@@ -79,9 +79,10 @@ class Puzzle {
         
         if rules.isEmpty {
             print("ruleset is empty")
-            return
+            return nil
         }
         
+        var steps = [SolutionStep]()
         var before = Matrix(size: size)
         
         print("\nbeginning to solve...")
@@ -90,33 +91,8 @@ class Puzzle {
         repeat {
             var after = before
             
-            for rule in rules {
-                for data in rowsAndColumns(of: before) {
-                    let rowBefore = data.data(from: after)
-                    let hints = data.hints(self)
-                    let rowAfter = rule.applyExhaustively(to: rowBefore, hints: hints)
-                    
-                    if rowBefore == rowAfter {
-                        continue
-                    }
-                    
-                    let afterBeforeIntegration = after
-                    
-                    data.integrate(data: rowAfter, into: &after)
-                    
-                    guard solution.isConsistent(with: after) else {
-                        fatalError("rule application leads to inconsistency with solution")
-                    }
-                    
-                    guard hintsAreConsistent(with: after) else {
-                        fatalError("rule application leads to hint violation")
-                    }
-                    
-                    if afterBeforeIntegration != after {
-                        print("\nrule \(rule.name), \(data)")
-                        after.printMatrix()
-                    }
-                }
+            applyRules(to: &after, before: before) {
+                step in steps.append(step)
             }
             
             if after == before {
@@ -125,6 +101,43 @@ class Puzzle {
             
             before = after
         } while true
+        
+        return steps
+    }
+    
+    func applyRules(to after: inout Matrix, before: Matrix, foundStep: (SolutionStep) -> ()) {
+        for rule in rules {
+            for data in rowsAndColumns(of: before) {
+                let rowBefore = data.data(from: after)
+                let hints = data.hints(self)
+                let rowAfter = rule.applyExhaustively(to: rowBefore, hints: hints)
+                
+                if rowBefore == rowAfter {
+                    continue
+                }
+                
+                let afterBeforeIntegration = after
+                
+                data.integrate(data: rowAfter, into: &after)
+                
+                guard solution.isConsistent(with: after) else {
+                    fatalError("rule application leads to inconsistency with solution")
+                }
+                
+                guard hintsAreConsistent(with: after) else {
+                    fatalError("rule application leads to hint violation")
+                }
+                
+                if afterBeforeIntegration != after {
+                    print("\nrule \(rule.name), \(data)")
+                    after.printMatrix()
+                    
+                    let step = SolutionStep(row: data, before: rowBefore, after: rowAfter, rule: rule)
+                    
+                    foundStep(step)
+                }
+            }
+        }
     }
     
     func arrayHints(row: [Mark]) -> [Int] {

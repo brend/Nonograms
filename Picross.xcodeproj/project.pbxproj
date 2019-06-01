@@ -48,6 +48,7 @@
 		AFEBEE1922A179B9001BF05D /* CloseToLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */; };
 		AFEBEE1B22A17E3D001BF05D /* FullFirstHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */; };
 		AFEBEE1D22A29A1C001BF05D /* Integratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1C22A29A1C001BF05D /* Integratable.swift */; };
+		AFEBEE1F22A29FA5001BF05D /* SolutionStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +100,7 @@
 		AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseToLeftRule.swift; sourceTree = "<group>"; };
 		AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintRule.swift; sourceTree = "<group>"; };
 		AFEBEE1C22A29A1C001BF05D /* Integratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integratable.swift; sourceTree = "<group>"; };
+		AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */,
 				AFAB1E5822A012D700BBA25B /* Array.swift */,
 				AFEBEE1C22A29A1C001BF05D /* Integratable.swift */,
+				AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				AFAB1E5522A00D9100BBA25B /* CompleteUnambiguousRule.swift in Sources */,
 				AFAB1E01229AAA0700BBA25B /* ZeroRule.swift in Sources */,
 				AFEBEE1D22A29A1C001BF05D /* Integratable.swift in Sources */,
+				AFEBEE1F22A29FA5001BF05D /* SolutionStep.swift in Sources */,
 				AFAB1E3F229FDC3500BBA25B /* CompleteSingularRunsRule.swift in Sources */,
 				AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */,
 				AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */,

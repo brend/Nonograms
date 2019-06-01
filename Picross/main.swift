@@ -155,5 +155,6 @@ puzzle.rules = [
     FullFirstHintRule()
 ]
 
-puzzle.solve()
+let steps = puzzle.solve()
 
+print("end")

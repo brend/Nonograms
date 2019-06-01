@@ -14,7 +14,7 @@ protocol Integratable {
     func hints(_ puzzle: Puzzle) -> [Int]
 }
 
-struct ColumnIntegratable: Integratable {
+struct ColumnIntegratable: Integratable, CustomStringConvertible {
     let columnIndex: Int
     
     func integrate(data: [Mark], into matrix: inout Matrix) {
@@ -28,9 +28,13 @@ struct ColumnIntegratable: Integratable {
     func hints(_ puzzle: Puzzle) -> [Int] {
         return puzzle.columnHints(columnIndex)
     }
+    
+    var description: String {
+        return "column \(columnIndex)"
+    }
 }
 
-struct RowIntegratable: Integratable {
+struct RowIntegratable: Integratable, CustomStringConvertible {
     let rowIndex: Int
     
     func data(from matrix: Matrix) -> [Mark] {
@@ -43,5 +47,9 @@ struct RowIntegratable: Integratable {
     
     func hints(_ puzzle: Puzzle) -> [Int] {
         return puzzle.rowHints(rowIndex)
+    }
+    
+    var description: String {
+        return "row \(rowIndex)"
     }
 }
