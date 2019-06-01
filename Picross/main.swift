@@ -135,7 +135,7 @@ row[4] = .chiseled
 let rule = FullFirstHintRule()
 let alt = rule.applyExhaustively(to: row, hints: [2, 4])
 
-let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
+let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/submarine.pea")
 
 puzzle.rules = [
     CenterRule(),

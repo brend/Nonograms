@@ -60,6 +60,17 @@ class Puzzle {
     
     var rules = [Rule]()
     
+    func rowsAndColumns(of matrix: Matrix) -> [Integratable] {
+        var rowsAndColumns = [Integratable]()
+        
+        for i in 0..<matrix.size {
+            rowsAndColumns.append(RowIntegratable(rowIndex: i))
+            rowsAndColumns.append(ColumnIntegratable(columnIndex: i))
+        }
+        
+        return rowsAndColumns
+    }
+    
     func solve() {
         if self.userRowHints == nil {
             print("this is the solution:")
@@ -80,9 +91,9 @@ class Puzzle {
             var after = before
             
             for rule in rules {
-                for i in 0..<after.size {
-                    let rowBefore = after.row(i)
-                    let hints = rowHints(i)
+                for data in rowsAndColumns(of: before) {
+                    let rowBefore = data.data(from: after)
+                    let hints = data.hints(self)
                     let rowAfter = rule.applyExhaustively(to: rowBefore, hints: hints)
                     
                     if rowBefore == rowAfter {
@@ -91,7 +102,7 @@ class Puzzle {
                     
                     let afterBeforeIntegration = after
                     
-                    after.integrate(row: rowAfter, at: i)
+                    data.integrate(data: rowAfter, into: &after)
                     
                     guard solution.isConsistent(with: after) else {
                         fatalError("rule application leads to inconsistency with solution")
@@ -102,37 +113,11 @@ class Puzzle {
                     }
                     
                     if afterBeforeIntegration != after {
-                        print("\nrule \(rule.name), row \(i)")
-                        after.printMatrix()
-                    }
-                }
-                
-                for i in 0..<after.size {
-                    let columnBefore = after.column(i)
-                    let hints = columnHints(i)
-                    let columnAfter = rule.applyExhaustively(to: columnBefore, hints: hints)
-                    
-                    if columnBefore == columnAfter {
-                        continue
-                    }
-                    
-                    let afterBeforeIntegration = after
-                    
-                    after.integrate(column: columnAfter, at: i)
-                    
-                    guard solution.isConsistent(with: after) else {
-                        fatalError("rule application leads to inconsistency with solution")
-                    }
-                    
-                    if afterBeforeIntegration != after {
-                        print("\nrule \(rule.name), column \(i)")
+                        print("\nrule \(rule.name), \(data)")
                         after.printMatrix()
                     }
                 }
             }
-            
-            //            print()
-            //            after.printMatrix()
             
             if after == before {
                 break

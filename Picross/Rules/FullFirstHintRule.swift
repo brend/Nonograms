@@ -23,7 +23,10 @@ class FullFirstHintRule: Rule {
         var alteredRow = row
         
         alteredRow = chisel(alteredRow, from: 0, count: r.start, mark: .marked)
-        alteredRow = chisel(alteredRow, from: r.nextAfter, count: 1, mark: .marked)
+        
+        if r.nextAfter < row.count {
+            alteredRow = chisel(alteredRow, from: r.nextAfter, count: 1, mark: .marked)
+        }
         
         return alteredRow
     }

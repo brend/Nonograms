@@ -80,5 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
         puzzleView.setNeedsDisplay(puzzleView.bounds)
     }
     
+    @IBAction func nextStep(_ sender: Any) {
+    }
 }
 
