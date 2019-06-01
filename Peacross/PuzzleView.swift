@@ -17,6 +17,20 @@ class PuzzleView: NSView {
         }
     }
     
+    // MARK: - Puzzle Data
+
+    var markedRow: Int? {
+        didSet {
+            setNeedsDisplay(bounds)
+        }
+    }
+    
+    var markedColumn: Int? {
+        didSet {
+            setNeedsDisplay(bounds)
+        }
+    }
+    
     // MARK: - Geometry
     
     var boxArea: NSRect {
@@ -41,6 +55,17 @@ class PuzzleView: NSView {
         return NSSize(width: boxWidth, height: boxHeight)
     }
     
+    func boxRect(rowIndex: Int, columnIndex: Int) -> NSRect {
+        let bs = boxSize
+        let area = boxArea
+        
+        return
+            NSRect(x: area.minX + CGFloat(columnIndex) * bs.width,
+                   y: area.maxY - CGFloat(rowIndex + 1) * bs.height,
+               width: bs.width,
+               height: bs.height)
+    }
+    
     // MARK: - Rendering
     
     override func draw(_ dirtyRect: NSRect) {
@@ -62,8 +87,9 @@ class PuzzleView: NSView {
             }
         }
         
+        highlightRowAndColumn()
+        
         for i in 0..<delegate.puzzleSize {
-            NSColor.white.setStroke()
             strokeRow(i)
             strokeColumn(i)
             drawRowHints(i)
@@ -72,24 +98,24 @@ class PuzzleView: NSView {
     }
     
     func paint(mark: Mark, row: Int, column: Int, size: Int) {
-        let area = boxArea
-        let bs = boxSize
-        
-        let boxRect = NSRect(x: area.minX + CGFloat(column) * bs.width,
-                             y: area.maxY - CGFloat(row + 1) * bs.height,
-                         width: bs.width,
-                        height: bs.height)
+        let br = boxRect(rowIndex: row, columnIndex: column)
         
         switch mark {
         case .unknown:
             NSColor.lightGray.setFill()
+            NSBezierPath.fill(br)
         case .chiseled:
             NSColor.darkGray.setFill()
+            NSBezierPath.fill(br)
         case .marked:
-            NSColor.red.setFill()
+            //NSColor.red.setFill()
+            NSColor.lightGray.setFill()
+            NSBezierPath.fill(br)
+            NSColor.darkGray.setStroke()
+            let insetBoxRect = br.insetBy(dx: br.width / 8, dy: br.height / 8)
+            NSBezierPath.strokeLine(from: insetBoxRect.topLeft, to: insetBoxRect.bottomRight)
+            NSBezierPath.strokeLine(from: insetBoxRect.topRight, to: insetBoxRect.bottomLeft)
         }
-        
-        NSBezierPath.fill(boxRect)
     }
     
     func strokeRow(_ rowIndex: Int) {
@@ -142,11 +168,86 @@ class PuzzleView: NSView {
         let hintText = hints.map {String($0)}.joined(separator: "\n") as NSString
         let attrs = [NSAttributedString.Key.font: hintFont as Any]
         //let textSize = hintText.size(withAttributes: attrs)
-        let hintCoords = CGPoint(x: boxArea.minX + boxSize.width * CGFloat(columnIndex),
+        let hintCoords = CGPoint(x: boxArea.minX + boxSize.width * (CGFloat(columnIndex) + 0.3),
                                  y: boxArea.maxY)
         
         hintText.draw(at: hintCoords, withAttributes: attrs)
     }
+    
+    func highlightRowAndColumn() {
+        NSColor(deviceRed: 0, green: 0, blue: 1, alpha: 0.2).setFill()
+        
+        if let columnIndex = markedColumn {
+            let colRect = NSRect(x: boxArea.minX + boxSize.width * CGFloat(columnIndex),
+                                 y: boxArea.minY,
+                                 width: boxSize.width,
+                                 height: boxArea.height)
+            
+            NSBezierPath.fill(colRect)
+        }
+        
+        if let rowIndex = markedRow,
+            let size = delegate?.puzzleSize {
+            let rowRect = NSRect(x: boxArea.minX,
+                                 y: boxArea.minY + CGFloat(size - (rowIndex + 1)) * boxSize.height,
+                                 width: boxArea.width,
+                                 height: boxSize.height)
+
+            NSBezierPath.fill(rowRect)
+        }
+    }
+    
+//    func previewNextStep() {
+//        guard phase == .displayIntegration,
+//            let step = step
+//        else { return }
+//
+//        NSColor(deviceRed: 1, green: 0, blue: 0, alpha: 0.3).setFill()
+//
+//        switch step.row {
+//        case let c as ColumnIntegratable:
+//            let colRect = NSRect(x: boxArea.minX + boxSize.width * CGFloat(c.columnIndex), y: boxArea.maxY, width: boxSize.width, height: boxArea.height)
+//            NSBezierPath.fill(colRect)
+//
+//            for (i, mark) in step.after.enumerated() {
+//                switch mark {
+//                case .chiseled:
+//                    NSBezierPath.fill(boxRect(rowIndex: i, columnIndex: c.columnIndex))
+//                case .marked:
+//                    break
+//                default:
+//                    break
+//                }
+//            }
+//
+//            break
+//        case let r as RowIntegratable:
+//            let rowRect = NSRect(x: boxArea.minX, y: boxArea.minY + CGFloat(r.rowIndex) * boxSize.height, width: boxArea.width, height: boxSize.height)
+//
+//            NSBezierPath.fill(rowRect)
+//
+//            for (i, mark) in step.after.enumerated() {
+//                switch mark {
+//                case .chiseled:
+//                    NSColor.green.setFill()
+//                    NSBezierPath.fill(boxRect(rowIndex: r.rowIndex, columnIndex: i))
+//                case .marked:
+//                    let boxRect = NSRect(x: boxArea.minX + boxSize.width * CGFloat(i), y: boxArea.minY + CGFloat(r.rowIndex) * boxSize.height, width: boxSize.width, height: boxSize.height)
+//
+//                    NSColor.red.setFill()
+//                    NSBezierPath.fill(boxRect)
+//                default:
+//                    break
+//                }
+//            }
+//
+//            break
+//        default:
+//            break
+//        }
+//
+//        NSString("preview").draw(at: NSPoint(x: 10, y: 10), withAttributes: nil)
+//    }
     
     // MARK: - User Interaction
     

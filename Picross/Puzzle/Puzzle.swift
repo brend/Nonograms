@@ -31,11 +31,10 @@ class Puzzle {
     }
     
     static var demo: Puzzle {
-        var matrix = Matrix(size: 15)
+        let puzzle =
+            Puzzle.parse(file: "/Users/waldrumpus/Downloads/submarine.pea")
         
-        matrix[1, 2] = .chiseled
-        
-        let puzzle = Puzzle(solution: matrix)
+        puzzle.rules = Rule.defaultSet
         
         return puzzle
     }

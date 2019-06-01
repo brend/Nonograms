@@ -12,6 +12,7 @@ protocol Integratable {
     func data(from matrix: Matrix) -> [Mark]
     func integrate(data: [Mark], into matrix: inout Matrix)
     func hints(_ puzzle: Puzzle) -> [Int]
+    func unpack() -> (rowIndex: Int?, columnIndex: Int?)
 }
 
 struct ColumnIntegratable: Integratable, CustomStringConvertible {
@@ -32,6 +33,10 @@ struct ColumnIntegratable: Integratable, CustomStringConvertible {
     var description: String {
         return "column \(columnIndex)"
     }
+    
+    func unpack() -> (rowIndex: Int?, columnIndex: Int?) {
+        return (nil, columnIndex)
+    }
 }
 
 struct RowIntegratable: Integratable, CustomStringConvertible {
@@ -51,5 +56,9 @@ struct RowIntegratable: Integratable, CustomStringConvertible {
     
     var description: String {
         return "row \(rowIndex)"
+    }
+    
+    func unpack() -> (rowIndex: Int?, columnIndex: Int?) {
+        return (rowIndex, nil)
     }
 }

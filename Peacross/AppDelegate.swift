@@ -16,7 +16,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     var puzzleSize: Int { return puzzle?.size ?? 0 }
     
     func getMark(row: Int, column: Int) -> Mark {
-        return puzzle?.mark(rowIndex: row, columnIndex: column) ?? .unknown
+        
+        if let state = solutionState {
+            return state[row, column]
+        } else {
+            return puzzle?.mark(rowIndex: row, columnIndex: column) ?? .unknown
+        }
     }
     
     func setMark(row: Int, column: Int, mark: Mark) {
@@ -36,6 +41,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
 
     @IBOutlet weak var puzzleView: PuzzleView!
 
+    @IBOutlet weak var ruleLabel: NSTextField!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         puzzleView.delegate = self
         print(puzzleView.becomeFirstResponder())
@@ -80,7 +87,45 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
         puzzleView.setNeedsDisplay(puzzleView.bounds)
     }
     
+    // MARK: - Stepping Through the Solution
+    
+    var steps: [SolutionStep]?
+    
+    var stepIndex = 0
+    
+    var solutionState: Matrix?
+    
     @IBAction func nextStep(_ sender: Any) {
+        
+        guard let puzzle = puzzle else { return }
+        
+        if steps == nil {
+            steps = puzzle.solve()
+            solutionState = Matrix(size: puzzle.size)
+            stepIndex = 0
+            ruleLabel.stringValue = ""
+        }
+        
+        guard let steps = steps,
+            var state = solutionState,
+            stepIndex < steps.count
+        else { return }
+        
+        let step = steps[stepIndex]
+        let row = step.row
+        
+        row.integrate(data: step.after, into: &state)
+        
+        solutionState = state
+        
+        let (rowIndex, columnIndex) = row.unpack()
+        
+        puzzleView.markedRow = rowIndex
+        puzzleView.markedColumn = columnIndex
+        
+        ruleLabel.stringValue = step.rule.name
+        
+        stepIndex += 1
     }
 }
 

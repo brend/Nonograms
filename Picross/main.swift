@@ -137,23 +137,7 @@ let alt = rule.applyExhaustively(to: row, hints: [2, 4])
 
 let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/submarine.pea")
 
-puzzle.rules = [
-    CenterRule(),
-    ZeroRule(),
-    MarkFinishedRule(),
-    CompleteSingularRunsRule(),
-    MarkSmallPathsRule(),
-    MarkLongestHintRule(),
-    SumRule(),
-    MarkSingularRunRule(),
-    CompleteFlushRule(),
-    CompleteUnambiguousRule(),
-    PerfectFitRule(),
-    ShrinkRule(),
-    DistanceRule(),
-    CloseToLeftRule(),
-    FullFirstHintRule()
-]
+puzzle.rules = Rule.defaultSet
 
 let steps = puzzle.solve()
 

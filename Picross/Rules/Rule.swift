@@ -68,4 +68,24 @@ class Rule {
         
         return runs.filter {$0 > 0}
     }
+    
+    static var defaultSet: [Rule] {
+        return [
+            CenterRule(),
+            ZeroRule(),
+            MarkFinishedRule(),
+            CompleteSingularRunsRule(),
+            MarkSmallPathsRule(),
+            MarkLongestHintRule(),
+            SumRule(),
+            MarkSingularRunRule(),
+            CompleteFlushRule(),
+            CompleteUnambiguousRule(),
+            PerfectFitRule(),
+            ShrinkRule(),
+            DistanceRule(),
+            CloseToLeftRule(),
+            FullFirstHintRule()
+        ]
+    }
 }
