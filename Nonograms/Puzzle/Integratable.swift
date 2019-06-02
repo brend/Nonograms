@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Integratable {
+public protocol Integratable {
     func data(from matrix: Matrix) -> [Mark]
     func integrate(data: [Mark], into matrix: inout Matrix)
     func hints(_ puzzle: Puzzle) -> [Int]

@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CloseToLeftRule: Rule {
-    override var name: String { return "Close to Left" }
+public class CloseToLeftRule: Rule {
+    public override var name: String { return "Close to Left" }
     
     override var symmetric: Bool { return false }
     

@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MarkSingularRunRule: Rule {
-    override var name: String { return "Mark Singular Run" }
+public class MarkSingularRunRule: Rule {
+    public override var name: String { return "Mark Singular Run" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         guard hints.count == 1 else {

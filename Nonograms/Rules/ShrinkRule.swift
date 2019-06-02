@@ -14,8 +14,8 @@ extension Array where Element == Int {
     }
 }
 
-class ShrinkRule: Rule {
-    override var name: String { return "Shrink" }
+public class ShrinkRule: Rule {
+    public override var name: String { return "Shrink" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         

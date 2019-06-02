@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SumRule: Rule {
-    override var name: String { return "Sum" }
+public class SumRule: Rule {
+    public override var name: String { return "Sum" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         let spaceCount = row.filter {$0 != .marked}.count

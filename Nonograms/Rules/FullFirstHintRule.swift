@@ -8,8 +8,8 @@
 
 import Foundation
 
-class FullFirstHintRule: Rule {
-    override var name: String { return "Full First Hint" }
+public class FullFirstHintRule: Rule {
+    public override var name: String { return "Full First Hint" }
     
     override var symmetric: Bool { return false }
     

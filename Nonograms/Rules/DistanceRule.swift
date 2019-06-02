@@ -23,8 +23,8 @@ extension Array {
     }
 }
 
-class DistanceRule: Rule {
-    override var name: String { return "Distance" }
+public class DistanceRule: Rule {
+    public override var name: String { return "Distance" }
     
     override var symmetric: Bool { return false }
     

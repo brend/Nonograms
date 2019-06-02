@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MarkSmallPathsRule: Rule {
-    override var name: String { return "Mark Small Paths" }
+public class MarkSmallPathsRule: Rule {
+    public override var name: String { return "Mark Small Paths" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         guard let smallestHint = hints.min() else {

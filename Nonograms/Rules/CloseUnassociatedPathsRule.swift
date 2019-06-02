@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CloseUnassociatedPathsRule: Rule {
-    override var name: String { return "Close Unassociated Paths" }
+public class CloseUnassociatedPathsRule: Rule {
+    public override var name: String { return "Close Unassociated Paths" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         let runs = runsEx(row, of: .chiseled, hints: hints)

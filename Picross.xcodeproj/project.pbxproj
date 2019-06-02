@@ -8,70 +8,57 @@
 
 /* Begin PBXBuildFile section */
 		AF3F3C86229AA1760061D90D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F3C85229AA1760061D90D /* main.swift */; };
-		AFAB1DFD229AA9D700BBA25B /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFC229AA9D700BBA25B /* Rule.swift */; };
-		AFAB1DFF229AA9EB00BBA25B /* CenterRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */; };
-		AFAB1E01229AAA0700BBA25B /* ZeroRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */; };
-		AFAB1E03229AAA6900BBA25B /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E02229AAA6900BBA25B /* Puzzle.swift */; };
-		AFAB1E06229AAA8A00BBA25B /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E05229AAA8A00BBA25B /* Matrix.swift */; };
-		AFAB1E08229AAB6600BBA25B /* MarkFinishedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E07229AAB6600BBA25B /* MarkFinishedRule.swift */; };
 		AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */; };
 		AFAB1E1A229C3C5D00BBA25B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E19229C3C5D00BBA25B /* Assets.xcassets */; };
 		AFAB1E1D229C3C5D00BBA25B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */; };
 		AFAB1E24229C3E2300BBA25B /* PuzzleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E23229C3E2300BBA25B /* PuzzleView.xib */; };
 		AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */; };
 		AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */; };
-		AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E29229C41B900BBA25B /* Mark.swift */; };
-		AFAB1E2B229C41CD00BBA25B /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E29229C41B900BBA25B /* Mark.swift */; };
-		AFAB1E2C229C41D100BBA25B /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E02229AAA6900BBA25B /* Puzzle.swift */; };
-		AFAB1E2D229C41D400BBA25B /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E05229AAA8A00BBA25B /* Matrix.swift */; };
-		AFAB1E2E229C41F300BBA25B /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFC229AA9D700BBA25B /* Rule.swift */; };
-		AFAB1E2F229C41F300BBA25B /* CenterRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */; };
-		AFAB1E30229C41F300BBA25B /* ZeroRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */; };
-		AFAB1E31229C41F300BBA25B /* MarkFinishedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E07229AAB6600BBA25B /* MarkFinishedRule.swift */; };
-		AFAB1E37229C426900BBA25B /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E36229C426900BBA25B /* Auxiliary.swift */; };
-		AFAB1E38229C428200BBA25B /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E36229C426900BBA25B /* Auxiliary.swift */; };
-		AFAB1E3A229FCB0F00BBA25B /* Puzzleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */; };
-		AFAB1E3F229FDC3500BBA25B /* CompleteSingularRunsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */; };
-		AFAB1E41229FDE4C00BBA25B /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E40229FDE4C00BBA25B /* Run.swift */; };
-		AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */; };
-		AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */; };
-		AFAB1E47229FE78600BBA25B /* SumRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E46229FE78600BBA25B /* SumRule.swift */; };
-		AFAB1E49229FEA5800BBA25B /* MarkSingularRunRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */; };
-		AFAB1E4F229FF72400BBA25B /* Puzzle (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */; };
-		AFAB1E5322A002EC00BBA25B /* CompleteFlushRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */; };
-		AFAB1E5522A00D9100BBA25B /* CompleteUnambiguousRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */; };
-		AFAB1E5722A011A600BBA25B /* PerfectFitRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */; };
-		AFAB1E5922A012D700BBA25B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5822A012D700BBA25B /* Array.swift */; };
-		AFAB1E5D22A02BB500BBA25B /* ShrinkRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */; };
-		AFAB1E5F22A12E4300BBA25B /* DistanceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */; };
-		AFEBEE1722A16059001BF05D /* Puzzle (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */; };
-		AFEBEE1922A179B9001BF05D /* CloseToLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */; };
-		AFEBEE1B22A17E3D001BF05D /* FullFirstHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */; };
-		AFEBEE1D22A29A1C001BF05D /* Integratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1C22A29A1C001BF05D /* Integratable.swift */; };
-		AFEBEE1F22A29FA5001BF05D /* SolutionStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */; };
-		AFEBEE2022A2A2ED001BF05D /* Integratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1C22A29A1C001BF05D /* Integratable.swift */; };
-		AFEBEE2122A2A2ED001BF05D /* SolutionStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */; };
-		AFEBEE2422A2A6AE001BF05D /* Puzzleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */; };
-		AFEBEE2522A2A6AE001BF05D /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E40229FDE4C00BBA25B /* Run.swift */; };
-		AFEBEE2622A2A6AE001BF05D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5822A012D700BBA25B /* Array.swift */; };
-		AFEBEE2722A2A6DB001BF05D /* CompleteSingularRunsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */; };
-		AFEBEE2822A2A6DB001BF05D /* MarkSmallPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */; };
-		AFEBEE2922A2A6DB001BF05D /* MarkLongestHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */; };
-		AFEBEE2A22A2A6DB001BF05D /* SumRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E46229FE78600BBA25B /* SumRule.swift */; };
-		AFEBEE2B22A2A6DB001BF05D /* MarkSingularRunRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */; };
-		AFEBEE2C22A2A6DB001BF05D /* CompleteFlushRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */; };
-		AFEBEE2D22A2A6DB001BF05D /* CompleteUnambiguousRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */; };
-		AFEBEE2E22A2A6DB001BF05D /* PerfectFitRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */; };
-		AFEBEE2F22A2A6DB001BF05D /* ShrinkRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */; };
-		AFEBEE3022A2A6DB001BF05D /* DistanceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */; };
-		AFEBEE3122A2A6DB001BF05D /* CloseToLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */; };
-		AFEBEE3222A2A6DB001BF05D /* FullFirstHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */; };
+		AFBE6D9E22A3C6A90017A3D8 /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
+		AFBE6DA322A3C6A90017A3D8 /* NonogramsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE6DA222A3C6A90017A3D8 /* NonogramsTests.swift */; };
+		AFBE6DA522A3C6A90017A3D8 /* Nonograms.h in Headers */ = {isa = PBXBuildFile; fileRef = AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3322A2DAF6001BF05D /* NSRect.swift */; };
-		AFEBEE3622A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */; };
-		AFEBEE3722A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */; };
-		AFEBEE3922A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */; };
-		AFEBEE3A22A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */; };
+		AFEE501B22A3C6DF00EA7CDF /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
+		AFEE501C22A3C6E600EA7CDF /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
+		AFEE501D22A3C8A800EA7CDF /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFC229AA9D700BBA25B /* Rule.swift */; };
+		AFEE501E22A3C8A800EA7CDF /* CenterRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */; };
+		AFEE501F22A3C8A800EA7CDF /* ZeroRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */; };
+		AFEE502022A3C8A800EA7CDF /* MarkFinishedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E07229AAB6600BBA25B /* MarkFinishedRule.swift */; };
+		AFEE502122A3C8A800EA7CDF /* CompleteSingularRunsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */; };
+		AFEE502222A3C8A800EA7CDF /* MarkSmallPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */; };
+		AFEE502322A3C8A800EA7CDF /* MarkLongestHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */; };
+		AFEE502422A3C8A800EA7CDF /* SumRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E46229FE78600BBA25B /* SumRule.swift */; };
+		AFEE502522A3C8A800EA7CDF /* MarkSingularRunRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */; };
+		AFEE502622A3C8A800EA7CDF /* CompleteFlushRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */; };
+		AFEE502722A3C8A800EA7CDF /* CompleteUnambiguousRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */; };
+		AFEE502822A3C8A800EA7CDF /* PerfectFitRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */; };
+		AFEE502922A3C8A800EA7CDF /* ShrinkRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */; };
+		AFEE502A22A3C8A900EA7CDF /* DistanceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */; };
+		AFEE502B22A3C8A900EA7CDF /* CloseToLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */; };
+		AFEE502C22A3C8A900EA7CDF /* FullFirstHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */; };
+		AFEE502D22A3C8A900EA7CDF /* ShrinkAssociatedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */; };
+		AFEE502E22A3C8A900EA7CDF /* CloseUnassociatedPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */; };
+		AFEE502F22A3C91500EA7CDF /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E02229AAA6900BBA25B /* Puzzle.swift */; };
+		AFEE503022A3C91500EA7CDF /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E05229AAA8A00BBA25B /* Matrix.swift */; };
+		AFEE503122A3C91500EA7CDF /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E29229C41B900BBA25B /* Mark.swift */; };
+		AFEE503222A3C91500EA7CDF /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E36229C426900BBA25B /* Auxiliary.swift */; };
+		AFEE503322A3C91500EA7CDF /* Puzzleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */; };
+		AFEE503422A3C91500EA7CDF /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E40229FDE4C00BBA25B /* Run.swift */; };
+		AFEE503522A3C91500EA7CDF /* Puzzle (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */; };
+		AFEE503622A3C91500EA7CDF /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5822A012D700BBA25B /* Array.swift */; };
+		AFEE503722A3C91500EA7CDF /* Integratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1C22A29A1C001BF05D /* Integratable.swift */; };
+		AFEE503822A3C91500EA7CDF /* SolutionStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AFBE6D9F22A3C6A90017A3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF3F3C7A229AA1760061D90D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFBE6D9422A3C6A90017A3D8;
+			remoteInfo = Nonograms;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		AF3F3C80229AA1760061D90D /* CopyFiles */ = {
@@ -119,6 +106,12 @@
 		AFAB1E5822A012D700BBA25B /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkRule.swift; sourceTree = "<group>"; };
 		AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceRule.swift; sourceTree = "<group>"; };
+		AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nonograms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nonograms.h; sourceTree = "<group>"; };
+		AFBE6D9822A3C6A90017A3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFBE6D9D22A3C6A90017A3D8 /* NonogramsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonogramsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBE6DA222A3C6A90017A3D8 /* NonogramsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonogramsTests.swift; sourceTree = "<group>"; };
+		AFBE6DA422A3C6A90017A3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseToLeftRule.swift; sourceTree = "<group>"; };
 		AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintRule.swift; sourceTree = "<group>"; };
 		AFEBEE1C22A29A1C001BF05D /* Integratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integratable.swift; sourceTree = "<group>"; };
@@ -133,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEE501B22A3C6DF00EA7CDF /* Nonograms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +134,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEE501C22A3C6E600EA7CDF /* Nonograms.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBE6D9222A3C6A90017A3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBE6D9A22A3C6A90017A3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBE6D9E22A3C6A90017A3D8 /* Nonograms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +161,10 @@
 			children = (
 				AF3F3C84229AA1760061D90D /* Picross */,
 				AFAB1E16229C3C5A00BBA25B /* Peacross */,
+				AFBE6D9622A3C6A90017A3D8 /* Nonograms */,
+				AFBE6DA122A3C6A90017A3D8 /* NonogramsTests */,
 				AF3F3C83229AA1760061D90D /* Products */,
+				AFEE501A22A3C6DF00EA7CDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +173,8 @@
 			children = (
 				AF3F3C82229AA1760061D90D /* Picross */,
 				AFAB1E15229C3C5A00BBA25B /* Peacross.app */,
+				AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */,
+				AFBE6D9D22A3C6A90017A3D8 /* NonogramsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,8 +182,6 @@
 		AF3F3C84229AA1760061D90D /* Picross */ = {
 			isa = PBXGroup;
 			children = (
-				AFAB1E04229AAA6E00BBA25B /* Puzzle */,
-				AFAB1DFB229AA9CB00BBA25B /* Rules */,
 				AF3F3C85229AA1760061D90D /* main.swift */,
 			);
 			path = Picross;
@@ -240,7 +253,45 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		AFBE6D9622A3C6A90017A3D8 /* Nonograms */ = {
+			isa = PBXGroup;
+			children = (
+				AFAB1E04229AAA6E00BBA25B /* Puzzle */,
+				AFAB1DFB229AA9CB00BBA25B /* Rules */,
+				AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */,
+				AFBE6D9822A3C6A90017A3D8 /* Info.plist */,
+			);
+			path = Nonograms;
+			sourceTree = "<group>";
+		};
+		AFBE6DA122A3C6A90017A3D8 /* NonogramsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AFBE6DA222A3C6A90017A3D8 /* NonogramsTests.swift */,
+				AFBE6DA422A3C6A90017A3D8 /* Info.plist */,
+			);
+			path = NonogramsTests;
+			sourceTree = "<group>";
+		};
+		AFEE501A22A3C6DF00EA7CDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AFBE6D9022A3C6A90017A3D8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBE6DA522A3C6A90017A3D8 /* Nonograms.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		AF3F3C81229AA1760061D90D /* Picross */ = {
@@ -277,6 +328,42 @@
 			productReference = AFAB1E15229C3C5A00BBA25B /* Peacross.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AFBE6D9422A3C6A90017A3D8 /* Nonograms */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFBE6DAA22A3C6A90017A3D8 /* Build configuration list for PBXNativeTarget "Nonograms" */;
+			buildPhases = (
+				AFBE6D9022A3C6A90017A3D8 /* Headers */,
+				AFBE6D9122A3C6A90017A3D8 /* Sources */,
+				AFBE6D9222A3C6A90017A3D8 /* Frameworks */,
+				AFBE6D9322A3C6A90017A3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nonograms;
+			productName = Nonograms;
+			productReference = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AFBE6D9C22A3C6A90017A3D8 /* NonogramsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFBE6DAB22A3C6A90017A3D8 /* Build configuration list for PBXNativeTarget "NonogramsTests" */;
+			buildPhases = (
+				AFBE6D9922A3C6A90017A3D8 /* Sources */,
+				AFBE6D9A22A3C6A90017A3D8 /* Frameworks */,
+				AFBE6D9B22A3C6A90017A3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFBE6DA022A3C6A90017A3D8 /* PBXTargetDependency */,
+			);
+			name = NonogramsTests;
+			productName = NonogramsTests;
+			productReference = AFBE6D9D22A3C6A90017A3D8 /* NonogramsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -298,6 +385,13 @@
 							};
 						};
 					};
+					AFBE6D9422A3C6A90017A3D8 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+					AFBE6D9C22A3C6A90017A3D8 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = AF3F3C7D229AA1760061D90D /* Build configuration list for PBXProject "Picross" */;
@@ -315,6 +409,8 @@
 			targets = (
 				AF3F3C81229AA1760061D90D /* Picross */,
 				AFAB1E14229C3C5A00BBA25B /* Peacross */,
+				AFBE6D9422A3C6A90017A3D8 /* Nonograms */,
+				AFBE6D9C22A3C6A90017A3D8 /* NonogramsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +426,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFBE6D9322A3C6A90017A3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBE6D9B22A3C6A90017A3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -337,35 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFEBEE3922A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */,
-				AFAB1E03229AAA6900BBA25B /* Puzzle.swift in Sources */,
-				AFAB1E5F22A12E4300BBA25B /* DistanceRule.swift in Sources */,
-				AFAB1E4F229FF72400BBA25B /* Puzzle (Parsing).swift in Sources */,
-				AFAB1E5722A011A600BBA25B /* PerfectFitRule.swift in Sources */,
-				AFAB1E5D22A02BB500BBA25B /* ShrinkRule.swift in Sources */,
-				AFAB1E47229FE78600BBA25B /* SumRule.swift in Sources */,
 				AF3F3C86229AA1760061D90D /* main.swift in Sources */,
-				AFAB1E3A229FCB0F00BBA25B /* Puzzleable.swift in Sources */,
-				AFAB1E06229AAA8A00BBA25B /* Matrix.swift in Sources */,
-				AFAB1E37229C426900BBA25B /* Auxiliary.swift in Sources */,
-				AFEBEE1B22A17E3D001BF05D /* FullFirstHintRule.swift in Sources */,
-				AFAB1E43229FE0FF00BBA25B /* MarkSmallPathsRule.swift in Sources */,
-				AFAB1E08229AAB6600BBA25B /* MarkFinishedRule.swift in Sources */,
-				AFAB1E5322A002EC00BBA25B /* CompleteFlushRule.swift in Sources */,
-				AFAB1E41229FDE4C00BBA25B /* Run.swift in Sources */,
-				AFAB1E5522A00D9100BBA25B /* CompleteUnambiguousRule.swift in Sources */,
-				AFEBEE3622A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */,
-				AFAB1E01229AAA0700BBA25B /* ZeroRule.swift in Sources */,
-				AFEBEE1D22A29A1C001BF05D /* Integratable.swift in Sources */,
-				AFEBEE1F22A29FA5001BF05D /* SolutionStep.swift in Sources */,
-				AFAB1E3F229FDC3500BBA25B /* CompleteSingularRunsRule.swift in Sources */,
-				AFAB1E2A229C41B900BBA25B /* Mark.swift in Sources */,
-				AFAB1E45229FE4A000BBA25B /* MarkLongestHintRule.swift in Sources */,
-				AFAB1DFD229AA9D700BBA25B /* Rule.swift in Sources */,
-				AFEBEE1922A179B9001BF05D /* CloseToLeftRule.swift in Sources */,
-				AFAB1E5922A012D700BBA25B /* Array.swift in Sources */,
-				AFAB1E49229FEA5800BBA25B /* MarkSingularRunRule.swift in Sources */,
-				AFAB1DFF229AA9EB00BBA25B /* CenterRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,42 +455,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFEBEE2122A2A2ED001BF05D /* SolutionStep.swift in Sources */,
-				AFAB1E31229C41F300BBA25B /* MarkFinishedRule.swift in Sources */,
-				AFAB1E2C229C41D100BBA25B /* Puzzle.swift in Sources */,
-				AFEBEE2A22A2A6DB001BF05D /* SumRule.swift in Sources */,
-				AFAB1E2B229C41CD00BBA25B /* Mark.swift in Sources */,
-				AFEBEE2D22A2A6DB001BF05D /* CompleteUnambiguousRule.swift in Sources */,
-				AFAB1E2D229C41D400BBA25B /* Matrix.swift in Sources */,
-				AFEBEE2F22A2A6DB001BF05D /* ShrinkRule.swift in Sources */,
 				AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */,
-				AFEBEE3722A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */,
-				AFEBEE2022A2A2ED001BF05D /* Integratable.swift in Sources */,
-				AFEBEE1722A16059001BF05D /* Puzzle (Parsing).swift in Sources */,
-				AFEBEE2722A2A6DB001BF05D /* CompleteSingularRunsRule.swift in Sources */,
 				AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */,
-				AFEBEE2622A2A6AE001BF05D /* Array.swift in Sources */,
-				AFEBEE3222A2A6DB001BF05D /* FullFirstHintRule.swift in Sources */,
-				AFEBEE2822A2A6DB001BF05D /* MarkSmallPathsRule.swift in Sources */,
-				AFEBEE2C22A2A6DB001BF05D /* CompleteFlushRule.swift in Sources */,
-				AFEBEE2422A2A6AE001BF05D /* Puzzleable.swift in Sources */,
-				AFAB1E2F229C41F300BBA25B /* CenterRule.swift in Sources */,
 				AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */,
-				AFEBEE2B22A2A6DB001BF05D /* MarkSingularRunRule.swift in Sources */,
 				AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */,
-				AFAB1E2E229C41F300BBA25B /* Rule.swift in Sources */,
-				AFEBEE3A22A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */,
-				AFEBEE3122A2A6DB001BF05D /* CloseToLeftRule.swift in Sources */,
-				AFAB1E30229C41F300BBA25B /* ZeroRule.swift in Sources */,
-				AFEBEE2522A2A6AE001BF05D /* Run.swift in Sources */,
-				AFEBEE3022A2A6DB001BF05D /* DistanceRule.swift in Sources */,
-				AFAB1E38229C428200BBA25B /* Auxiliary.swift in Sources */,
-				AFEBEE2922A2A6DB001BF05D /* MarkLongestHintRule.swift in Sources */,
-				AFEBEE2E22A2A6DB001BF05D /* PerfectFitRule.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBE6D9122A3C6A90017A3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFEE501E22A3C8A800EA7CDF /* CenterRule.swift in Sources */,
+				AFEE503522A3C91500EA7CDF /* Puzzle (Parsing).swift in Sources */,
+				AFEE503422A3C91500EA7CDF /* Run.swift in Sources */,
+				AFEE501D22A3C8A800EA7CDF /* Rule.swift in Sources */,
+				AFEE503722A3C91500EA7CDF /* Integratable.swift in Sources */,
+				AFEE502B22A3C8A900EA7CDF /* CloseToLeftRule.swift in Sources */,
+				AFEE502F22A3C91500EA7CDF /* Puzzle.swift in Sources */,
+				AFEE502122A3C8A800EA7CDF /* CompleteSingularRunsRule.swift in Sources */,
+				AFEE502822A3C8A800EA7CDF /* PerfectFitRule.swift in Sources */,
+				AFEE502922A3C8A800EA7CDF /* ShrinkRule.swift in Sources */,
+				AFEE503622A3C91500EA7CDF /* Array.swift in Sources */,
+				AFEE502022A3C8A800EA7CDF /* MarkFinishedRule.swift in Sources */,
+				AFEE503222A3C91500EA7CDF /* Auxiliary.swift in Sources */,
+				AFEE502522A3C8A800EA7CDF /* MarkSingularRunRule.swift in Sources */,
+				AFEE503822A3C91500EA7CDF /* SolutionStep.swift in Sources */,
+				AFEE502C22A3C8A900EA7CDF /* FullFirstHintRule.swift in Sources */,
+				AFEE501F22A3C8A800EA7CDF /* ZeroRule.swift in Sources */,
+				AFEE503322A3C91500EA7CDF /* Puzzleable.swift in Sources */,
+				AFEE502E22A3C8A900EA7CDF /* CloseUnassociatedPathsRule.swift in Sources */,
+				AFEE502422A3C8A800EA7CDF /* SumRule.swift in Sources */,
+				AFEE502622A3C8A800EA7CDF /* CompleteFlushRule.swift in Sources */,
+				AFEE502A22A3C8A900EA7CDF /* DistanceRule.swift in Sources */,
+				AFEE502D22A3C8A900EA7CDF /* ShrinkAssociatedRule.swift in Sources */,
+				AFEE503022A3C91500EA7CDF /* Matrix.swift in Sources */,
+				AFEE503122A3C91500EA7CDF /* Mark.swift in Sources */,
+				AFEE502722A3C8A800EA7CDF /* CompleteUnambiguousRule.swift in Sources */,
+				AFEE502222A3C8A800EA7CDF /* MarkSmallPathsRule.swift in Sources */,
+				AFEE502322A3C8A800EA7CDF /* MarkLongestHintRule.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBE6D9922A3C6A90017A3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBE6DA322A3C6A90017A3D8 /* NonogramsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AFBE6DA022A3C6A90017A3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFBE6D9422A3C6A90017A3D8 /* Nonograms */;
+			targetProxy = AFBE6D9F22A3C6A90017A3D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */ = {
@@ -595,6 +700,105 @@
 			};
 			name = Release;
 		};
+		AFBE6DA622A3C6A90017A3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CF3W365R86;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Nonograms/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.entenwolf.Nonograms;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFBE6DA722A3C6A90017A3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CF3W365R86;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Nonograms/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.entenwolf.Nonograms;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AFBE6DA822A3C6A90017A3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CF3W365R86;
+				INFOPLIST_FILE = NonogramsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.entenwolf.NonogramsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AFBE6DA922A3C6A90017A3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CF3W365R86;
+				INFOPLIST_FILE = NonogramsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.entenwolf.NonogramsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -621,6 +825,24 @@
 			buildConfigurations = (
 				AFAB1E21229C3C5D00BBA25B /* Debug */,
 				AFAB1E22229C3C5D00BBA25B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFBE6DAA22A3C6A90017A3D8 /* Build configuration list for PBXNativeTarget "Nonograms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFBE6DA622A3C6A90017A3D8 /* Debug */,
+				AFBE6DA722A3C6A90017A3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFBE6DAB22A3C6A90017A3D8 /* Build configuration list for PBXNativeTarget "NonogramsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFBE6DA822A3C6A90017A3D8 /* Debug */,
+				AFBE6DA922A3C6A90017A3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

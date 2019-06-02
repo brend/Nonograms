@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MarkLongestHintRule: Rule {
-    override var name: String { return "Mark Longest Hint" }
+public class MarkLongestHintRule: Rule {
+    public override var name: String { return "Mark Longest Hint" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         guard let longestHint = hints.max() else {

@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import Nonograms
 
 class PuzzleView: NSView {
     

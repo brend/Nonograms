@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Rule {
-    var name: String { return "unnamed" }
+public class Rule {
+    public var name: String { return "unnamed" }
     
     var symmetric: Bool { return true }
     
@@ -69,7 +69,7 @@ class Rule {
         return runs.filter {$0 > 0}
     }
     
-    static var defaultSet: [Rule] {
+    public static var defaultSet: [Rule] {
         return [
             CenterRule(),
             ZeroRule(),

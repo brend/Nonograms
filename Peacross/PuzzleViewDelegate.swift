@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Nonograms
 
 protocol PuzzleViewDelegate {
     var puzzleSize: Int { get }

@@ -9,7 +9,7 @@
 import Foundation
 
 extension Puzzle {
-    static func parse(file: String) -> Puzzle {
+    public static func parse(file: String) -> Puzzle {
         guard let text = try? String(contentsOfFile: file) else {
             fatalError("could not read file")
         }

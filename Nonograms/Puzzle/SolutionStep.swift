@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct SolutionStep: CustomStringConvertible {
-    let row: Integratable
-    let before, after: [Mark]
-    let rule: Rule
+public struct SolutionStep: CustomStringConvertible {
+    public let row: Integratable
+    public let before, after: [Mark]
+    public let rule: Rule
     
-    var description: String {
+    public var description: String {
         return "apply \(rule.name) to \(row): \(before) -> \(after)"
     }
 }

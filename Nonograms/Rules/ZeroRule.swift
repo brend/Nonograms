@@ -8,8 +8,8 @@
 
 import Foundation
 
-class ZeroRule: Rule {
-    override var name: String { return "zero" }
+public class ZeroRule: Rule {
+    public override var name: String { return "zero" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         guard hints == [0] else { return row }

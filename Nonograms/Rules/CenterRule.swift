@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CenterRule: Rule {
-    override var name: String { return "center" }
+public class CenterRule: Rule {
+    public override var name: String { return "center" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         guard hints.count == 1 else { return row }

@@ -7,11 +7,7 @@
 //
 
 import Foundation
-
-
-
-
-var m = Matrix(size: 5)
+import Nonograms
 
 // test: the letter "L"
 //m[0,1] = .chiseled
@@ -136,9 +132,6 @@ row[5] = .chiseled
 row[7] = .chiseled
 
 row [12] = .chiseled
-
-let rule = CloseUnassociatedPathsRule()
-let res = rule.apply(to: row, hints: [3, 4])
 
 let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
 

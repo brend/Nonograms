@@ -8,8 +8,8 @@
 
 import Foundation
 
-class ShrinkAssociatedRule: Rule {
-    override var name: String { return "Shrink Associated" }
+public class ShrinkAssociatedRule: Rule {
+    public override var name: String { return "Shrink Associated" }
     
     let shrinkRule = ShrinkRule()
     

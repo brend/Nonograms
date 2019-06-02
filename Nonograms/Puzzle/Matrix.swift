@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Matrix: Equatable {
+public struct Matrix: Equatable {
     var values: [Mark]
-    let size: Int
+    public let size: Int
     
-    init(size: Int) {
+    public init(size: Int) {
         self.size = size
         self.values = Array(repeating: .unknown, count: size * size)
     }
     
-    subscript(row: Int, column: Int) -> Mark {
+    public subscript(row: Int, column: Int) -> Mark {
         get {
             guard row >= 0 && row < size && column >= 0 && column < size else {
                 fatalError("invalid subscript: (\(row), \(column))")
@@ -32,7 +32,7 @@ struct Matrix: Equatable {
         }
     }
     
-    func row(_ index: Int) -> [Mark] {
+    public func row(_ index: Int) -> [Mark] {
         guard index >= 0 && index < size else {
             fatalError("invalid index: \(index)")
         }
@@ -40,7 +40,7 @@ struct Matrix: Equatable {
         return Array(values[index * size..<(index+1)*size])
     }
     
-    func column(_ index: Int) -> [Mark] {
+    public func column(_ index: Int) -> [Mark] {
         guard index >= 0 && index < size else {
             fatalError("invalid index :\(index)")
         }
@@ -54,7 +54,7 @@ struct Matrix: Equatable {
         return col
     }
     
-    func renderMatrix() -> String {
+    public func renderMatrix() -> String {
         var text = ""
 
         for i in 0..<size {
@@ -67,11 +67,11 @@ struct Matrix: Equatable {
         return text
     }
     
-    func printMatrix() {
+    public func printMatrix() {
         print(renderMatrix())
     }
     
-    mutating func integrate(row: [Mark], at rowIndex: Int) {
+    public mutating func integrate(row: [Mark], at rowIndex: Int) {
         for (i, m) in row.enumerated() {
             if m != .unknown {
                 guard self[rowIndex, i].integrates(with: m) else {
@@ -83,7 +83,7 @@ struct Matrix: Equatable {
         }
     }
     
-    mutating func integrate(column: [Mark], at columnIndex: Int) {
+    public mutating func integrate(column: [Mark], at columnIndex: Int) {
         for (i, m) in column.enumerated() {
             if m != .unknown {
                 guard self[i, columnIndex].integrates(with: m) else {
@@ -95,7 +95,7 @@ struct Matrix: Equatable {
         }
     }
     
-    func isConsistent(with matrix: Matrix) -> Bool {
+    public func isConsistent(with matrix: Matrix) -> Bool {
 //        for row in 0..<size {
 //            for column in 0..<size {
 //                let mine = self[row, column]

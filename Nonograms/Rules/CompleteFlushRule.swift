@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CompleteFlushRule: Rule {
-    override var name: String { return "Complete Flush" }
+public class CompleteFlushRule: Rule {
+    public override var name: String { return "Complete Flush" }
     
     override var symmetric: Bool { return false }
     

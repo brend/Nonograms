@@ -1,5 +1,5 @@
 //
-//  CompleteUnambiguousRule.swift
+//  PerfectFitRule.swift
 //  Picross
 //
 //  Created by Philipp Brendel on 30.05.19.
@@ -8,15 +8,20 @@
 
 import Foundation
 
-class CompleteUnambiguousRule: Rule {
-    override var name: String { return "Complete Unambiguous" }
+public class PerfectFitRule: Rule {
+    public override var name: String { return "Perfect Fit" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
-        guard hints.reduce(0, +) + hints.count - 1 == row.count else {
+        let paths = pathsEx(row)
+        
+        guard paths.count == 1,
+            let path = paths.first,
+            path.length == minimalLength(hints: hints)
+        else {
             return row
         }
         
-        var start = 0
+        var start = path.start
         var alteredRow = row
         
         for h in hints {

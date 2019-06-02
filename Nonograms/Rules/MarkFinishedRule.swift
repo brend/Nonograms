@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MarkFinishedRule: Rule {
-    override var name: String { return "mark finished" }
+public class MarkFinishedRule: Rule {
+    public override var name: String { return "mark finished" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
         guard finished(row, hints: hints) else { return row }
