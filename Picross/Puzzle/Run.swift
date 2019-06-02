@@ -8,20 +8,24 @@
 
 import Foundation
 
+typealias Path = Range<Int>
+
 struct Run {
     let start, length: Int
     let associatedHintIndex: Int?
+    let associatedPath: Path?
     
     var nextAfter: Int { return start + length }
     
-    init(start: Int, length: Int, associatedHintIndex: Int? = nil) {
+    init(start: Int, length: Int, associatedHintIndex: Int? = nil, associatedPath: Path? = nil) {
         self.start = start
         self.length = length
         self.associatedHintIndex = associatedHintIndex
+        self.associatedPath = associatedPath
     }
     
-    func associate(with hintIndex: Int) -> Run {
-        return Run(start: start, length: length, associatedHintIndex: hintIndex)
+    func associate(with hintIndex: Int, path: Path) -> Run {
+        return Run(start: start, length: length, associatedHintIndex: hintIndex, associatedPath: path)
     }
 }
 
@@ -45,7 +49,7 @@ func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
     }
     
     if let hints = hints {
-        let associatedRuns = associate(runs: runs, to: hints)
+        let associatedRuns = associate(runs: runs, to: hints, row: row)
         
         return associatedRuns
     } else {
@@ -53,24 +57,40 @@ func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
     }
 }
 
-func associate(runs: [Run], to hints: [Int]) -> [Run] {
-//    guard runs.count >= hints.count else { return runs }
-//
-//    if hints.count == 1 {
-//        return runs.map { $0.associate(with: 0) }
-//    }
-//
-//    guard let runPairs = runs.pairs() else { return runs }
-//
-//    // |hints| > 1, |runs| >= |hints|
-//    var currentHintIndex = 0
-//    var asscociations = [0: [runs[0]]]
-//
-//    for (r1, r2) in runPairs {
-//        if r1.lengthCombined(with: r2) >
-//    }
+func associate(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
+    guard runs.count >= hints.count else { return runs }
+
+    let ps = paths(in: row)
     
-    return runs
+    // group runs by paths they occur in
+    let runsGroupedByPaths =
+        Dictionary(grouping: runs) {
+        run -> Range<Int> in
+        
+        let path = ps.first(where: { path in path.contains(run.start) })
+            
+        return path!
+    }
+    
+    // the number of paths with at least one run in it
+    // must equal the number of hints
+    guard runsGroupedByPaths.keys.count == hints.count else {
+        return runs
+    }
+    
+    // each path that has at least one run in it corresponds to exactly one hint
+    let usedPaths = runsGroupedByPaths.keys.sorted(by: { $0.lowerBound < $1.lowerBound })
+    var associatedRuns = [Run]()
+    
+    for (hintIndex, path) in usedPaths.enumerated() {
+        for run in runsGroupedByPaths[path]! {
+            associatedRuns.append(run.associate(with: hintIndex, path: path))
+        }
+    }
+    
+    assert(associatedRuns.count == runs.count)
+    
+    return associatedRuns
 }
 
 func pathsEx(_ row: [Mark]) -> [Run] {

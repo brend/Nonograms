@@ -67,6 +67,10 @@
 		AFEBEE3122A2A6DB001BF05D /* CloseToLeftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */; };
 		AFEBEE3222A2A6DB001BF05D /* FullFirstHintRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */; };
 		AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3322A2DAF6001BF05D /* NSRect.swift */; };
+		AFEBEE3622A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */; };
+		AFEBEE3722A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */; };
+		AFEBEE3922A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */; };
+		AFEBEE3A22A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -120,6 +124,8 @@
 		AFEBEE1C22A29A1C001BF05D /* Integratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integratable.swift; sourceTree = "<group>"; };
 		AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionStep.swift; sourceTree = "<group>"; };
 		AFEBEE3322A2DAF6001BF05D /* NSRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRect.swift; sourceTree = "<group>"; };
+		AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkAssociatedRule.swift; sourceTree = "<group>"; };
+		AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseUnassociatedPathsRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,8 @@
 				AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */,
 				AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */,
 				AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */,
+				AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */,
+				AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -329,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEBEE3922A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */,
 				AFAB1E03229AAA6900BBA25B /* Puzzle.swift in Sources */,
 				AFAB1E5F22A12E4300BBA25B /* DistanceRule.swift in Sources */,
 				AFAB1E4F229FF72400BBA25B /* Puzzle (Parsing).swift in Sources */,
@@ -345,6 +354,7 @@
 				AFAB1E5322A002EC00BBA25B /* CompleteFlushRule.swift in Sources */,
 				AFAB1E41229FDE4C00BBA25B /* Run.swift in Sources */,
 				AFAB1E5522A00D9100BBA25B /* CompleteUnambiguousRule.swift in Sources */,
+				AFEBEE3622A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */,
 				AFAB1E01229AAA0700BBA25B /* ZeroRule.swift in Sources */,
 				AFEBEE1D22A29A1C001BF05D /* Integratable.swift in Sources */,
 				AFEBEE1F22A29FA5001BF05D /* SolutionStep.swift in Sources */,
@@ -372,6 +382,7 @@
 				AFAB1E2D229C41D400BBA25B /* Matrix.swift in Sources */,
 				AFEBEE2F22A2A6DB001BF05D /* ShrinkRule.swift in Sources */,
 				AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */,
+				AFEBEE3722A2ED63001BF05D /* ShrinkAssociatedRule.swift in Sources */,
 				AFEBEE2022A2A2ED001BF05D /* Integratable.swift in Sources */,
 				AFEBEE1722A16059001BF05D /* Puzzle (Parsing).swift in Sources */,
 				AFEBEE2722A2A6DB001BF05D /* CompleteSingularRunsRule.swift in Sources */,
@@ -386,6 +397,7 @@
 				AFEBEE2B22A2A6DB001BF05D /* MarkSingularRunRule.swift in Sources */,
 				AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */,
 				AFAB1E2E229C41F300BBA25B /* Rule.swift in Sources */,
+				AFEBEE3A22A2F12C001BF05D /* CloseUnassociatedPathsRule.swift in Sources */,
 				AFEBEE3122A2A6DB001BF05D /* CloseToLeftRule.swift in Sources */,
 				AFAB1E30229C41F300BBA25B /* ZeroRule.swift in Sources */,
 				AFEBEE2522A2A6AE001BF05D /* Run.swift in Sources */,

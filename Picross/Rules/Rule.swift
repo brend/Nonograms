@@ -85,7 +85,10 @@ class Rule {
             ShrinkRule(),
             DistanceRule(),
             CloseToLeftRule(),
-            FullFirstHintRule()
+            FullFirstHintRule(),
+            
+            ShrinkAssociatedRule(),
+            CloseUnassociatedPathsRule()
         ]
     }
 }

@@ -129,13 +129,18 @@ var m = Matrix(size: 5)
 
 var row = Array(repeating: Mark.unknown, count: 15)
 
-row[3] = .chiseled
-row[4] = .chiseled
+row[3] = .marked
+row[10] = .marked
 
-let rule = FullFirstHintRule()
-let alt = rule.applyExhaustively(to: row, hints: [2, 4])
+row[5] = .chiseled
+row[7] = .chiseled
 
-let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/submarine.pea")
+row [12] = .chiseled
+
+let rule = CloseUnassociatedPathsRule()
+let res = rule.apply(to: row, hints: [3, 4])
+
+let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
 
 puzzle.rules = Rule.defaultSet
 
