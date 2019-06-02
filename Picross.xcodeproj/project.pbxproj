@@ -11,6 +11,11 @@
 		AF4E5FDC22A3D02500CEAB86 /* MarkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */; };
 		AF4E5FDE22A3D8AC00CEAB86 /* AssocGen1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */; };
 		AF4E5FE022A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */; };
+		AF4E5FE322A3DFBF00CEAB86 /* CompleteReverseFlushRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FE222A3DFBF00CEAB86 /* CompleteReverseFlushRule.swift */; };
+		AF4E5FE522A3E5C800CEAB86 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FE422A3E5C800CEAB86 /* Paths.swift */; };
+		AF4E5FE722A3ED6700CEAB86 /* AssocGen2Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FE622A3ED6700CEAB86 /* AssocGen2Test.swift */; };
+		AF4E5FE922A3F37100CEAB86 /* AssocGen3Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FE822A3F37100CEAB86 /* AssocGen3Test.swift */; };
+		AF4E5FEB22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FEA22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift */; };
 		AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */; };
 		AFAB1E1A229C3C5D00BBA25B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E19229C3C5D00BBA25B /* Assets.xcassets */; };
 		AFAB1E1D229C3C5D00BBA25B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */; };
@@ -81,6 +86,11 @@
 		AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTest.swift; sourceTree = "<group>"; };
 		AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssocGen1Test.swift; sourceTree = "<group>"; };
 		AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseUnassociatedPathsRuleTest.swift; sourceTree = "<group>"; };
+		AF4E5FE222A3DFBF00CEAB86 /* CompleteReverseFlushRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteReverseFlushRule.swift; sourceTree = "<group>"; };
+		AF4E5FE422A3E5C800CEAB86 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		AF4E5FE622A3ED6700CEAB86 /* AssocGen2Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssocGen2Test.swift; sourceTree = "<group>"; };
+		AF4E5FE822A3F37100CEAB86 /* AssocGen3Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssocGen3Test.swift; sourceTree = "<group>"; };
+		AF4E5FEA22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkAssociatedRuleTest.swift; sourceTree = "<group>"; };
 		AFAB1DFC229AA9D700BBA25B /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterRule.swift; sourceTree = "<group>"; };
 		AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroRule.swift; sourceTree = "<group>"; };
@@ -197,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */,
+				AF4E5FEA22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -214,6 +225,7 @@
 				AFAB1E46229FE78600BBA25B /* SumRule.swift */,
 				AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */,
 				AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */,
+				AF4E5FE222A3DFBF00CEAB86 /* CompleteReverseFlushRule.swift */,
 				AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */,
 				AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */,
 				AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */,
@@ -239,6 +251,7 @@
 				AFAB1E5822A012D700BBA25B /* Array.swift */,
 				AFEBEE1C22A29A1C001BF05D /* Integratable.swift */,
 				AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */,
+				AF4E5FE422A3E5C800CEAB86 /* Paths.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -284,6 +297,8 @@
 				AF4E5FE122A3DC8800CEAB86 /* Rules */,
 				AFBE6DA222A3C6A90017A3D8 /* RunsTest.swift */,
 				AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */,
+				AF4E5FE622A3ED6700CEAB86 /* AssocGen2Test.swift */,
+				AF4E5FE822A3F37100CEAB86 /* AssocGen3Test.swift */,
 				AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */,
 				AFBE6DA422A3C6A90017A3D8 /* Info.plist */,
 			);
@@ -489,6 +504,7 @@
 				AFEE501D22A3C8A800EA7CDF /* Rule.swift in Sources */,
 				AFEE503722A3C91500EA7CDF /* Integratable.swift in Sources */,
 				AFEE502B22A3C8A900EA7CDF /* CloseToLeftRule.swift in Sources */,
+				AF4E5FE522A3E5C800CEAB86 /* Paths.swift in Sources */,
 				AFEE502F22A3C91500EA7CDF /* Puzzle.swift in Sources */,
 				AFEE502122A3C8A800EA7CDF /* CompleteSingularRunsRule.swift in Sources */,
 				AFEE502822A3C8A800EA7CDF /* PerfectFitRule.swift in Sources */,
@@ -497,6 +513,7 @@
 				AFEE502022A3C8A800EA7CDF /* MarkFinishedRule.swift in Sources */,
 				AFEE503222A3C91500EA7CDF /* Auxiliary.swift in Sources */,
 				AFEE502522A3C8A800EA7CDF /* MarkSingularRunRule.swift in Sources */,
+				AF4E5FE322A3DFBF00CEAB86 /* CompleteReverseFlushRule.swift in Sources */,
 				AFEE503822A3C91500EA7CDF /* SolutionStep.swift in Sources */,
 				AFEE502C22A3C8A900EA7CDF /* FullFirstHintRule.swift in Sources */,
 				AFEE501F22A3C8A800EA7CDF /* ZeroRule.swift in Sources */,
@@ -518,9 +535,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4E5FEB22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift in Sources */,
+				AF4E5FE722A3ED6700CEAB86 /* AssocGen2Test.swift in Sources */,
 				AF4E5FE022A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift in Sources */,
 				AF4E5FDE22A3D8AC00CEAB86 /* AssocGen1Test.swift in Sources */,
 				AF4E5FDC22A3D02500CEAB86 /* MarkTest.swift in Sources */,
+				AF4E5FE922A3F37100CEAB86 /* AssocGen3Test.swift in Sources */,
 				AFBE6DA322A3C6A90017A3D8 /* RunsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

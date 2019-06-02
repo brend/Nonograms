@@ -9,11 +9,14 @@
 import Foundation
 
 public class Rule {
+    public init() {
+    }
+    
     public var name: String { return "unnamed" }
     
     var symmetric: Bool { return true }
     
-    func applyExhaustively(to row: [Mark], hints: [Int]) -> [Mark] {
+    public func applyExhaustively(to row: [Mark], hints: [Int]) -> [Mark] {
         let forwardResult = apply(to: row, hints: hints)
         
         if symmetric {
@@ -80,6 +83,7 @@ public class Rule {
             SumRule(),
             MarkSingularRunRule(),
             CompleteFlushRule(),
+            CompleteReverseFlushRule(),
             CompleteUnambiguousRule(),
             PerfectFitRule(),
             ShrinkRule(),

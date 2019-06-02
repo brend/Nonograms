@@ -18,6 +18,10 @@ public class CloseUnassociatedPathsRule: Rule {
         
         let associatedPaths = runs.map {$0.associatedPath}
         
+        let associatedHintIndices = runs.map({run in run.associatedHintIndex})
+        
+        guard associatedHintIndices.count == hints.count else { return row }
+        
         guard !associatedPaths.contains(nil) else { return row }
         
         var alteredRow = row

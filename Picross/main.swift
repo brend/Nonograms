@@ -123,16 +123,6 @@ import Nonograms
 //            [0]
 //        ])
 
-var row = Array(repeating: Mark.unknown, count: 15)
-
-row[3] = .marked
-row[10] = .marked
-
-row[5] = .chiseled
-row[7] = .chiseled
-
-row [12] = .chiseled
-
 let puzzle = Puzzle.parse(file: "/Users/waldrumpus/Downloads/mario.pea")
 
 puzzle.rules = Rule.defaultSet

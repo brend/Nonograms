@@ -101,6 +101,10 @@ public class Puzzle {
             before = after
         } while true
         
+        // DEBUG
+//        let rule = ShrinkAssociatedRule()
+//        let debug = rule.apply(to: before.row(14), hints: rowHints(14))
+        
         return steps
     }
     

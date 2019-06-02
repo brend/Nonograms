@@ -25,6 +25,9 @@ struct Run {
     }
     
     func associate(with hintIndex: Int, path: Path) -> Run {
+        assert(self.associatedHintIndex == nil || self.associatedHintIndex == hintIndex)
+        assert(self.associatedPath == nil || self.associatedPath == path)
+        
         return Run(start: start, length: length, associatedHintIndex: hintIndex, associatedPath: path)
     }
 }
@@ -49,15 +52,17 @@ func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
     }
     
     if let hints = hints {
-        let associatedRuns = associate(runs: runs, to: hints, row: row)
+        let assocGen1 = associateGen1(runs: runs, to: hints, row: row)
+        let assocGen2 = associateGen2(runs: assocGen1, to: hints, row: row)
+        let assocGen3 = associateGen3(runs: assocGen2, to: hints, row: row)
         
-        return associatedRuns
+        return assocGen3
     } else {
         return runs
     }
 }
 
-func associate(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
+func associateGen1(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
     guard runs.count >= hints.count else { return runs }
 
     let ps = paths(in: row)
@@ -93,24 +98,90 @@ func associate(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
     return associatedRuns
 }
 
-func pathsEx(_ row: [Mark]) -> [Run] {
-    var runs = [Run]()
-    var index = 0
-    var currentRunLength = 0
+func associateGen2(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
+    /*
+    * If all paths up to p_i have been filled up with chisels,
+    * and |p_i| <= h_i + h_(i+1),
+    * then hint(p_i) = h_i
+    * Goes forward and backward
+ */
     
-    for i in 0..<row.count {
-        if row[i] != .marked {
-            currentRunLength += 1
-        } else if currentRunLength > 0 {
-            runs.append(Run(start: i - currentRunLength, length: currentRunLength))
-            currentRunLength = 0
-            index += 1
+    var remainingRuns = runs
+    var associatedRuns = [Run]()
+    let ps = paths(in: row)
+    var hintIndex = 0
+    
+    for path in ps {
+        // ALSO: if it doesn't contain a chisel and is smaller than the current hint, we can skip it
+        if row[path].contains(.chiseled)
+            && ((hintIndex + 1 >= hints.count)
+                || (path.count <= hints[hintIndex] + hints[hintIndex + 1])) {
+            
+            // all runs in this path are associated with hintIndex
+            while let run = remainingRuns.first,
+                path.contains(run.start) {
+                associatedRuns.append(run.associate(with: hintIndex, path: path))
+                remainingRuns.removeFirst()
+            }
+            
+            hintIndex += 1
+        } else {
+            // if the first path that does not contain a chisel
+            break
         }
     }
     
-    if currentRunLength > 0 {
-        runs.append(Run(start: row.count - currentRunLength, length: currentRunLength))
+    associatedRuns.append(contentsOf: remainingRuns)
+    
+    return associatedRuns
+}
+
+/*
+ * If the number of paths equals the number of hints,
+ * and no two sequential hints fit in the same path,
+ * the association is unique
+ */
+func associateGen3(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
+    
+    guard !runs.isEmpty else { return runs }
+    
+    let ps = paths(in: row)
+    
+    guard ps.count == hints.count else {
+        return runs
     }
     
-    return runs
+    var remainingRuns = runs
+    var associatedRuns = [Run]()
+    
+    for hintIndex in 0..<hints.count {
+        let path = ps[hintIndex]
+        let hint = hints[hintIndex]
+        
+        if hintIndex + 1 < hints.count {
+            let nextHint = hints[hintIndex + 1]
+            
+            if hint + nextHint < path.count {
+                return runs
+            }
+        }
+        
+        if hintIndex > 0 {
+            let previousHint = hints[hintIndex - 1]
+
+            if hint + previousHint < path.count {
+                return runs
+            }
+        }
+        
+        while let run = remainingRuns.first,
+            path.contains(run.start) {
+            associatedRuns.append(run.associate(with: hintIndex, path: path))
+            remainingRuns.removeFirst()
+        }
+    }
+    
+    associatedRuns.append(contentsOf: remainingRuns)
+    
+    return associatedRuns
 }

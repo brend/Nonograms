@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ *          1 2 x▓xx▓__ -> x▓xx▓▓_
+ */
+
 public class CompleteFlushRule: Rule {
     public override var name: String { return "Complete Flush" }
     
