@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AF3F3C86229AA1760061D90D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F3C85229AA1760061D90D /* main.swift */; };
+		AF4E5FDC22A3D02500CEAB86 /* MarkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */; };
+		AF4E5FDE22A3D8AC00CEAB86 /* AssocGen1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */; };
+		AF4E5FE022A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */; };
 		AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */; };
 		AFAB1E1A229C3C5D00BBA25B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E19229C3C5D00BBA25B /* Assets.xcassets */; };
 		AFAB1E1D229C3C5D00BBA25B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */; };
@@ -15,7 +18,7 @@
 		AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */; };
 		AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */; };
 		AFBE6D9E22A3C6A90017A3D8 /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
-		AFBE6DA322A3C6A90017A3D8 /* NonogramsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE6DA222A3C6A90017A3D8 /* NonogramsTests.swift */; };
+		AFBE6DA322A3C6A90017A3D8 /* RunsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE6DA222A3C6A90017A3D8 /* RunsTest.swift */; };
 		AFBE6DA522A3C6A90017A3D8 /* Nonograms.h in Headers */ = {isa = PBXBuildFile; fileRef = AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3322A2DAF6001BF05D /* NSRect.swift */; };
 		AFEE501B22A3C6DF00EA7CDF /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
@@ -75,6 +78,9 @@
 /* Begin PBXFileReference section */
 		AF3F3C82229AA1760061D90D /* Picross */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Picross; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3F3C85229AA1760061D90D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTest.swift; sourceTree = "<group>"; };
+		AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssocGen1Test.swift; sourceTree = "<group>"; };
+		AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseUnassociatedPathsRuleTest.swift; sourceTree = "<group>"; };
 		AFAB1DFC229AA9D700BBA25B /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterRule.swift; sourceTree = "<group>"; };
 		AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroRule.swift; sourceTree = "<group>"; };
@@ -110,7 +116,7 @@
 		AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nonograms.h; sourceTree = "<group>"; };
 		AFBE6D9822A3C6A90017A3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFBE6D9D22A3C6A90017A3D8 /* NonogramsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonogramsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFBE6DA222A3C6A90017A3D8 /* NonogramsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonogramsTests.swift; sourceTree = "<group>"; };
+		AFBE6DA222A3C6A90017A3D8 /* RunsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsTest.swift; sourceTree = "<group>"; };
 		AFBE6DA422A3C6A90017A3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseToLeftRule.swift; sourceTree = "<group>"; };
 		AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintRule.swift; sourceTree = "<group>"; };
@@ -185,6 +191,14 @@
 				AF3F3C85229AA1760061D90D /* main.swift */,
 			);
 			path = Picross;
+			sourceTree = "<group>";
+		};
+		AF4E5FE122A3DC8800CEAB86 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */,
+			);
+			path = Rules;
 			sourceTree = "<group>";
 		};
 		AFAB1DFB229AA9CB00BBA25B /* Rules */ = {
@@ -267,7 +281,10 @@
 		AFBE6DA122A3C6A90017A3D8 /* NonogramsTests */ = {
 			isa = PBXGroup;
 			children = (
-				AFBE6DA222A3C6A90017A3D8 /* NonogramsTests.swift */,
+				AF4E5FE122A3DC8800CEAB86 /* Rules */,
+				AFBE6DA222A3C6A90017A3D8 /* RunsTest.swift */,
+				AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */,
+				AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */,
 				AFBE6DA422A3C6A90017A3D8 /* Info.plist */,
 			);
 			path = NonogramsTests;
@@ -501,7 +518,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFBE6DA322A3C6A90017A3D8 /* NonogramsTests.swift in Sources */,
+				AF4E5FE022A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift in Sources */,
+				AF4E5FDE22A3D8AC00CEAB86 /* AssocGen1Test.swift in Sources */,
+				AF4E5FDC22A3D02500CEAB86 /* MarkTest.swift in Sources */,
+				AFBE6DA322A3C6A90017A3D8 /* RunsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,8 @@ import Foundation
 
 public enum Mark: String, CustomStringConvertible {
     case unknown = "_",
-    chiseled = "▓",
-    marked = "x"
+        chiseled = "▓",
+        marked = "x"
     
     func integrates(with mark: Mark) -> Bool {
         switch self {
@@ -26,5 +26,12 @@ public enum Mark: String, CustomStringConvertible {
     
     public var description: String {
         return self.rawValue
+    }
+    
+    public static func parse(_ row: String) -> [Mark] {
+        return row
+            .map {Mark(rawValue: $0.description)}
+            .filter {$0 != nil}
+            .map {$0!}
     }
 }
