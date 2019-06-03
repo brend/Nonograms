@@ -15,8 +15,8 @@ class ShrinkAssociatedRuleTest: XCTestCase {
     
     func testShrink1() {
         let row      = Mark.parse("|_|_|_|_|_|x|_|▓|_|x|_|_|_|_|_|")
-        let expected = Mark.parse("|_|_|_|_|_|x|▓|▓|▓|x|_|_|_|_|_|")
-     // let expected = Mark.parse("|_|_|▓|_|_|x|▓|▓|▓|x|_|_|▓|_|_|")
+        //let expected = Mark.parse("|_|_|_|_|_|x|▓|▓|▓|x|_|_|_|_|_|")
+        let expected = Mark.parse("|_|_|▓|_|_|x|▓|▓|▓|x|_|_|▓|_|_|")
         let altered = rule.apply(to: row, hints: [3, 3, 3])
         
         XCTAssertEqual(altered, expected)

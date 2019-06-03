@@ -85,7 +85,7 @@ public class Rule {
             CompleteFlushRule(),
             CompleteReverseFlushRule(),
             CompleteUnambiguousRule(),
-            PerfectFitRule(),
+            //PerfectFitRule(),
             ShrinkRule(),
             DistanceRule(),
             CloseToLeftRule(),

@@ -8,23 +8,23 @@
 
 import Foundation
 
-typealias Path = Range<Int>
-
 struct Run {
     let start, length: Int
     let associatedHintIndex: Int?
-    let associatedPath: Path?
+    let associatedPath: Range<Int>?
     
     var nextAfter: Int { return start + length }
     
-    init(start: Int, length: Int, associatedHintIndex: Int? = nil, associatedPath: Path? = nil) {
+    init(start: Int, length: Int,
+         associatedHintIndex: Int? = nil,
+              associatedPath: Range<Int>? = nil) {
         self.start = start
         self.length = length
         self.associatedHintIndex = associatedHintIndex
-        self.associatedPath = associatedPath
+        self.associatedPath = associatedPath        
     }
     
-    func associate(with hintIndex: Int, path: Path) -> Run {
+    func associate(with hintIndex: Int, path: Range<Int>) -> Run {
         assert(self.associatedHintIndex == nil || self.associatedHintIndex == hintIndex)
         assert(self.associatedPath == nil || self.associatedPath == path)
         
@@ -55,8 +55,9 @@ func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
         let assocGen1 = associateGen1(runs: runs, to: hints, row: row)
         let assocGen2 = associateGen2(runs: assocGen1, to: hints, row: row)
         let assocGen3 = associateGen3(runs: assocGen2, to: hints, row: row)
+        let assocGen4 = associateGen4(runs: assocGen3, to: hints, row: row)
         
-        return assocGen3
+        return assocGen4
     } else {
         return runs
     }
@@ -182,6 +183,42 @@ func associateGen3(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
     }
     
     associatedRuns.append(contentsOf: remainingRuns)
+    
+    return associatedRuns
+}
+
+func associateGen4(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
+    guard let longestHint = hints.max(),
+        let secondLongestHint = hints.filter({$0 < longestHint}).max(),
+        let incompleteRun = runs.first(where: {$0.length > secondLongestHint
+                                            && $0.length < longestHint})
+    else { return runs }
+    
+
+    // associate with hint length, but not index?
+    // can't know the index if multiple max length
+    
+    // HACK: only do this if longest hint is unique
+    guard let firstLongestHintIndex = hints.firstIndex(of: longestHint),
+        let lastLongestHintIndex = hints.lastIndex(of: longestHint),
+        firstLongestHintIndex == lastLongestHintIndex
+    else { return runs }
+    
+    var associatedRuns = [Run]()
+    
+    let paths = pathsEx(row, hints: hints)
+    
+    for run in runs {
+        if run.start == incompleteRun.start {
+            let path = paths.first(where: {$0.contains(run.start)})!
+            let associatedRun =
+                incompleteRun.associate(with: firstLongestHintIndex, path: path.range)
+            
+            associatedRuns.append(associatedRun)
+        } else {
+            associatedRuns.append(run)
+        }
+    }
     
     return associatedRuns
 }

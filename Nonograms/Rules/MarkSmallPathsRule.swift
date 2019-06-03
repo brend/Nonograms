@@ -25,6 +25,12 @@ public class MarkSmallPathsRule: Rule {
             }
         }
         
+        for path in pathsEx(row, hints: hints) {
+            if path.length < smallestHint {
+                alteredRow = chisel(row, from: path.start, count: path.length, mark: .marked)
+            }
+        }
+        
         return alteredRow
     }
 }

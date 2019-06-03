@@ -44,16 +44,18 @@ class AssocGen1Test: XCTestCase {
     func testAssoc3() {
         // Gen1 cannot separate the two hints if they're not on separate paths
         // to do so would be correct in general but a mistake for Gen1
+        
+        // MODIFIED: Gen4 can detect that the run of length 4 must belong to the hint 6
         let row = Mark.parse("___▓_▓▓▓▓____▓▓")
         let runs = runsEx(row, of: .chiseled, hints: [6, 3])
         
         XCTAssert(runs.count == 3)
-        XCTAssert(runs[0].associatedHintIndex == nil)
-        XCTAssert(runs[0].associatedPath == nil)
-        XCTAssert(runs[1].associatedHintIndex == nil)
-        XCTAssert(runs[1].associatedPath == nil)
-        XCTAssert(runs[2].associatedHintIndex == nil)
-        XCTAssert(runs[2].associatedPath == nil)
+        XCTAssertEqual(runs[0].associatedHintIndex, nil)
+        XCTAssertEqual(runs[0].associatedPath, nil)
+        XCTAssertEqual(runs[1].associatedHintIndex, 0)
+        XCTAssertEqual(runs[1].associatedPath, 0..<15)
+        XCTAssertEqual(runs[2].associatedHintIndex, nil)
+        XCTAssertEqual(runs[2].associatedPath, nil)
     }
     
     func testAssoc4() {

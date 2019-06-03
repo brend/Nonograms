@@ -31,6 +31,18 @@ public class ShrinkAssociatedRule: Rule {
             }
         }
         
+        for path in pathsEx(row, hints: hints) {
+            guard let hintIndex = path.associatedHintIndex
+            else { continue }
+            
+            let runData = path.slice(row)
+            let alteredData = shrinkRule.apply(to: runData, hints: [hints[hintIndex]])
+            
+            for (i, mark) in alteredData.enumerated() {
+                alteredRow[path.start + i] = mark
+            }
+        }
+        
         return alteredRow
     }
 }

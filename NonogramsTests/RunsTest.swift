@@ -108,4 +108,15 @@ class RunsTest: XCTestCase {
         XCTAssert(runs[1].start == 13)
         XCTAssert(runs[1].length == 2)
     }
+    
+    func testRuns8() {
+        let row = Mark.parse("______x__x_▓▓__")
+        let runs = runsEx(row, of: .chiseled, hints: [1, 4])
+        
+        XCTAssertEqual(runs.count, 1)
+        XCTAssertEqual(runs[0].start, 11)
+        XCTAssertEqual(runs[0].length, 2)
+        XCTAssertEqual(runs[0].associatedHintIndex, 1)
+        XCTAssertEqual(runs[0].associatedPath, 10..<15)
+    }
 }

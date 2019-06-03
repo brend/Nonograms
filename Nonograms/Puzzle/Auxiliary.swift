@@ -14,22 +14,3 @@ func render(_ row: [Mark]) -> String {
     return something + "|"
 }
 
-func paths(in row: [Mark]) -> [Range<Int>] {
-    var paths = [Range<Int>]()
-    var lastMark = -1
-    
-    for (i, m) in row.enumerated() {
-        if m == .marked {
-            if lastMark < i - 1 {
-                paths.append((lastMark + 1) ..< i)
-            }
-            lastMark = i
-        }
-    }
-    
-    if row.count > 0 && row.last! != .marked {
-        paths.append((lastMark + 1)..<row.count)
-    }
-    
-    return paths
-}
