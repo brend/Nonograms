@@ -68,7 +68,7 @@ class AssociationTest: XCTestCase {
                         Channel(startIndex: 3, length: 1),
                         Channel(startIndex: 7, length: 3)]
         let hints = [2, 3]
-        let expected = [Channel(startIndex: 0, length: 2),
+        let expected = [Channel(startIndex: 0, length: 2, associatedHintIndex: 0),
                         Channel(startIndex: 3, length: 1),
                         Channel(startIndex: 7, length: 3, associatedHintIndex: 1)]
         let actual = association.associate(channels: channels, hints: hints)

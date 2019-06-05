@@ -119,7 +119,7 @@ class MaximumHintAssociator: Associator {
         for (channelIndex, channel) in channels.enumerated() {
             guard channel.length >= maxHint else { continue }
             
-            hintIndex = hints.index(maxHint, offsetBy: hintIndex + 1)
+            hintIndex = hints.index(of: maxHint, startIndex: hintIndex + 1) ?? -1
             
             assert(hintIndex >= 0)
             
@@ -127,7 +127,7 @@ class MaximumHintAssociator: Associator {
                 return channels
             }
             
-            if hintIndex + 1 < hints.length && maxHint + hints[hintIndex + 1] < channel.length {
+            if hintIndex + 1 < hints.count && maxHint + hints[hintIndex + 1] < channel.length {
                 return channels
             }
             

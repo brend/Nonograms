@@ -15,3 +15,19 @@ func minimalLength(hints: [Int]) -> Int {
     
     return hints.reduce(0, +) + hints.count - 1
 }
+
+extension Array where Element: Equatable {
+    func index(of element: Element, startIndex: Int) -> Int? {
+        guard startIndex >= 0 else { fatalError() }
+        
+        guard startIndex < self.count else { return nil }
+        
+        for i in startIndex..<self.count {
+            if element == self[i] {
+                return i
+            }
+        }
+        
+        return nil
+    }
+}
