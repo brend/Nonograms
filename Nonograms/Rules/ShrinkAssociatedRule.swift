@@ -43,6 +43,22 @@ public class ShrinkAssociatedRule: Rule {
             }
         }
         
+        let channels = Channel.from(row: row)
+        let association = Association()
+        let associatedChannels = association.associate(channels: channels, hints: hints)
+        
+        for channel in associatedChannels {
+            guard let hintIndex = channel.associatedHintIndex
+            else { continue }
+            
+            let runData = channel.slice(row)
+            let alteredData = shrinkRule.apply(to: runData, hints: [hints[hintIndex]])
+            
+            for (i, mark) in alteredData.enumerated() {
+                alteredRow[channel.startIndex + i] = mark
+            }
+        }
+        
         return alteredRow
     }
 }

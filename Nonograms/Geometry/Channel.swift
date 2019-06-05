@@ -13,6 +13,9 @@ struct Channel: Equatable, CustomStringConvertible {
     let associatedHintIndex: Int?
     
     init(startIndex: Int, length: Int, associatedHintIndex: Int? = nil) {
+        guard startIndex >= 0 else { fatalError() }
+        guard length >= 0 else { fatalError() }
+        
         self.startIndex = startIndex
         self.length = length
         self.associatedHintIndex = associatedHintIndex
@@ -29,6 +32,12 @@ struct Channel: Equatable, CustomStringConvertible {
         else { fatalError() }
         
         return Channel(startIndex: startIndex, length: length, associatedHintIndex: hintIndex)
+    }
+    
+    func slice(_ row: [Mark]) -> [Mark] {
+        guard upperBound <= row.count else { fatalError() }
+        
+        return Array(row[startIndex..<upperBound])
     }
     
     static func from(row: [Mark]) -> [Channel] {
