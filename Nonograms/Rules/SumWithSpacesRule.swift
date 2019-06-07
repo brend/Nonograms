@@ -8,52 +8,67 @@
 
 import Foundation
 
-
 public class SumWithSpacesRule: Rule {
     public override var name: String { return "Sum With Spaces" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
-        var alteredRow = row
         var hintIndex = 0
+        var alteredRow = row
+        var currentRunLength = 0
         
         for i in 0..<alteredRow.count {
+            guard hintIndex < hints.count else { break }
+            
             let mark = alteredRow[i]
+            let currentHint = hints[hintIndex]
             
             switch mark {
-            case .chiseled:
-                continue
-            case .marked:
-                continue
-            case .unknown:
+            case .chiseled, .unknown:
                 alteredRow[i] = .chiseled
-            }
-            
-            if runLength(alteredRow, anIndex: i, hint: hints[hintIndex]) == hints[hintIndex] {
-                if i + 1 < row.count {
-                    alteredRow[i + 1] = .marked
+                currentRunLength += 1
+                
+                if currentRunLength == currentHint {
+                    if i + 1 < alteredRow.count {
+                        guard row[i + 1] != .chiseled else { return row }
+                        
+                        // don't overwrite an actual mark
+                        if row[i + 1] == .unknown {
+                            alteredRow[i + 1] = .hypotheticalMark
+                        }
+                    }
+                    
+                    hintIndex += 1
+                    currentRunLength = 0
                 }
                 
-                hintIndex += 1
+            case .marked, .hypotheticalMark:
+                currentRunLength = 0
             }
         }
         
+        if hintIndex < hints.count {
+            return row
+        }
+        
+        if alteredRow.contains(.unknown) {
+            return row
+        }
+        
+        for i in 0..<(alteredRow.count - 1) {
+            guard alteredRow[i...(i+1)] != [.hypotheticalMark, .marked]
+            else { return row }
+        }
+        
+        if let lastMark = alteredRow.last,
+            lastMark == .hypotheticalMark {
+            return row
+        }
+        
+        guard alteredRow.filter({$0 == .chiseled}).count == hints.reduce(0, +)
+        else { return row }
+        
+        alteredRow.replace(.hypotheticalMark, with: .marked)
+        
         return alteredRow
-    }
-    
-    func runLength(_ row: [Mark], anIndex: Int, hint: Int) -> Int {
-        guard row[anIndex] == .chiseled else { return 0 }
-        
-        var startIndex = anIndex
-        var endIndex = anIndex
-        
-        while startIndex > 0 && row[startIndex - 1] == .chiseled {
-            startIndex -= 1
-        }
-        
-        while endIndex + 1 < row.count && row[endIndex + 1] == .chiseled {
-            endIndex += 1
-        }
-        
-        return endIndex - startIndex + 1
     }
 }

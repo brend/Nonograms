@@ -30,4 +30,12 @@ extension Array where Element: Equatable {
         
         return nil
     }
+    
+    mutating func replace(_ element: Element, with anotherElement: Element) {
+        for i in 0..<count {
+            if self[i] == element {
+            self[i] = anotherElement
+            }
+        }
+    }
 }

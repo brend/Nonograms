@@ -94,26 +94,4 @@ public struct Matrix: Equatable {
             }
         }
     }
-    
-    public func isConsistent(with matrix: Matrix) -> Bool {
-//        for row in 0..<size {
-//            for column in 0..<size {
-//                let mine = self[row, column]
-//                let theirs = matrix[row, column]
-//
-//                switch theirs {
-//                case .unknown:
-//                    continue
-//                case .chiseled:
-//                    if mine != .chiseled {
-//                        return false
-//                    }
-//                case .marked:
-//                    if mine == .
-//                }
-//            }
-//        }
-        
-        return true
-    }
 }

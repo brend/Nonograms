@@ -81,6 +81,7 @@ public class Rule {
             MarkSmallPathsRule(),
             MarkLongestHintRule(),
             SumRule(),
+            SumWithSpacesRule(),
             MarkSingularRunRule(),
             CompleteFlushRule(),
             CompleteReverseFlushRule(),

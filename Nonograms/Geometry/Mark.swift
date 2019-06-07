@@ -13,6 +13,8 @@ public enum Mark: String, CustomStringConvertible {
         chiseled = "▓",
         marked = "x"
     
+    case hypotheticalMark = "+"
+    
     func integrates(with mark: Mark) -> Bool {
         switch self {
         case .unknown:
@@ -21,6 +23,8 @@ public enum Mark: String, CustomStringConvertible {
             return mark == .unknown || mark == .chiseled
         case .marked:
             return mark == .unknown || mark == .marked
+        default:
+            fatalError()
         }
     }
     

@@ -123,7 +123,7 @@ public class Puzzle {
                 
                 data.integrate(data: rowAfter, into: &after)
                 
-                guard solution.isConsistent(with: after) else {
+                guard self.solutionIsConsistent(with: after) else {
                     fatalError("rule application leads to inconsistency with solution")
                 }
                 
@@ -229,5 +229,22 @@ public class Puzzle {
         
         
         return text
+    }
+    
+    func solutionIsConsistent(with matrix: Matrix) -> Bool {
+        for rowIndex in 0..<size {
+            for columnIndex in 0..<size {
+                switch (matrix[rowIndex, columnIndex], solution[rowIndex, columnIndex]) {
+                case (.chiseled, .unknown):
+                    fatalError()
+                case (.marked, .chiseled):
+                    fatalError()
+                default:
+                    break
+                }
+            }
+        }
+        
+        return true
     }
 }

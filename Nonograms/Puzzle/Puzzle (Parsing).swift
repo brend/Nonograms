@@ -73,7 +73,9 @@ extension Puzzle {
         if solution.isEmpty {
             puzzle = Puzzle(rowHints: rowHints, columnHints: columnHints)
         } else {
-            var solutionMatrix = Matrix(size: rowHints.count)
+            // var solutionMatrix = Matrix(size: rowHints.count)
+            // TODO: FIX
+            var solutionMatrix = Matrix(size: 15)
             
             for (rowIndex, line) in solution.enumerated() {
                 let interestingChars = line.filter({$0=="_" || $0=="▓"})

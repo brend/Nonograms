@@ -18,6 +18,13 @@ public class ShrinkRule: Rule {
     public override var name: String { return "Shrink" }
     
     override func apply(to row: [Mark], hints: [Int]) -> [Mark] {
+
+        // test row length; can become too small from shrinking
+        guard let maxHint = hints.max(),
+            row.count >= maxHint
+        else {
+                return row
+        }
         
         var alteredRow = row
         
