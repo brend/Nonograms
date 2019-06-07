@@ -33,6 +33,7 @@
 		AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */; };
 		AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */; };
 		AFBDABD122A97C78005FA6E9 /* FullFirstHintRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDABD022A97C78005FA6E9 /* FullFirstHintRuleTest.swift */; };
+		AFBDABD322AB057C005FA6E9 /* FullFirstHintAssociatedRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDABD222AB057C005FA6E9 /* FullFirstHintAssociatedRule.swift */; };
 		AFBE6D9E22A3C6A90017A3D8 /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
 		AFBE6DA322A3C6A90017A3D8 /* RunsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE6DA222A3C6A90017A3D8 /* RunsTest.swift */; };
 		AFBE6DA522A3C6A90017A3D8 /* Nonograms.h in Headers */ = {isa = PBXBuildFile; fileRef = AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -144,6 +145,7 @@
 		AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkRule.swift; sourceTree = "<group>"; };
 		AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceRule.swift; sourceTree = "<group>"; };
 		AFBDABD022A97C78005FA6E9 /* FullFirstHintRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintRuleTest.swift; sourceTree = "<group>"; };
+		AFBDABD222AB057C005FA6E9 /* FullFirstHintAssociatedRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintAssociatedRule.swift; sourceTree = "<group>"; };
 		AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nonograms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nonograms.h; sourceTree = "<group>"; };
 		AFBE6D9822A3C6A90017A3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */,
 				AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */,
 				AF2C01D822A84A82001CAB36 /* SumWithSpacesRule.swift */,
+				AFBDABD222AB057C005FA6E9 /* FullFirstHintAssociatedRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				AFEE502022A3C8A800EA7CDF /* MarkFinishedRule.swift in Sources */,
 				AFEE503222A3C91500EA7CDF /* Auxiliary.swift in Sources */,
 				AFEE502522A3C8A800EA7CDF /* MarkSingularRunRule.swift in Sources */,
+				AFBDABD322AB057C005FA6E9 /* FullFirstHintAssociatedRule.swift in Sources */,
 				AF4E5FE322A3DFBF00CEAB86 /* CompleteReverseFlushRule.swift in Sources */,
 				AFEE503822A3C91500EA7CDF /* SolutionStep.swift in Sources */,
 				AFEE502C22A3C8A900EA7CDF /* FullFirstHintRule.swift in Sources */,

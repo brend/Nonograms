@@ -56,8 +56,9 @@ func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
         let assocGen2 = associateGen2(runs: assocGen1, to: hints, row: row)
         let assocGen3 = associateGen3(runs: assocGen2, to: hints, row: row)
         let assocGen4 = associateGen4(runs: assocGen3, to: hints, row: row)
+        let assocGen5 = associateGen5(runs: assocGen4, to: hints, row: row)
         
-        return assocGen4
+        return assocGen5
     } else {
         return runs
     }
@@ -222,3 +223,58 @@ func associateGen4(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
     
     return associatedRuns
 }
+
+func associateGen5(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
+    
+    var associatedRuns = [Run]()
+    var hintIndex = 0
+    var remainingRuns = runs
+    
+    let paths = pathsEx(row, hints: hints)
+    
+    while !remainingRuns.isEmpty {
+        let run = remainingRuns.removeFirst()
+        let hint = hints[hintIndex]
+        
+        guard run.length == hint
+            && !row.prefix(upTo: run.start).contains(.unknown)
+        else {
+            associatedRuns.append(run)
+            break
+        }
+        
+        let path = paths.first(where: {$0.contains(run.start)})!
+        
+        associatedRuns.append(run.associate(with: hintIndex, path: path.range))
+        hintIndex += 1
+    }
+    
+    associatedRuns.append(contentsOf: remainingRuns)
+    
+    // and backwards
+    remainingRuns = associatedRuns
+    associatedRuns = []
+    hintIndex = hints.count - 1
+    
+    while !remainingRuns.isEmpty {
+        let run = remainingRuns.removeLast()
+        let hint = hints[hintIndex]
+        
+        guard run.length == hint
+            && !row.suffix(row.count - run.nextAfter).contains(.unknown)
+        else {
+            associatedRuns.append(run)
+            break
+        }
+        
+        let path = paths.first(where: {$0.contains(run.start)})!
+        
+        associatedRuns.append(run.associate(with: hintIndex, path: path.range))
+        hintIndex -= 1
+    }
+    
+    associatedRuns.append(contentsOf: remainingRuns.reversed())
+    
+    return associatedRuns.reversed()
+}
+
