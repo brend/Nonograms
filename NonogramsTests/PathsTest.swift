@@ -40,5 +40,48 @@ class PathsTest: XCTestCase {
         XCTAssertEqual(paths[1], Path(start: 8, length: 3, associatedHintIndex: nil))
         XCTAssertEqual(paths[2], Path(start: 12, length: 5, associatedHintIndex: nil))
     }
+    
+    func testPlacements1() {
+        // 2 3   __x___x___
+        let hints = [2, 3]
+        let p0 = Path(0..<2), p1 = Path(3..<6), p2 = Path(7..<10)
+        let emptyPaths = [p0, p1, p2]
+        let expected = [[Placement(hintIndex: 0, path: p0), Placement(hintIndex: 1, path: p1)],
+                        [Placement(hintIndex: 0, path: p0), Placement(hintIndex: 1, path: p2)],
+                        [Placement(hintIndex: 0, path: p1), Placement(hintIndex: 1, path: p2)]]
+        let actual = findAllPlacements(hints: hints,
+                                       hintIndicesToDistribute: [0, 1],
+                                       emptyPaths: emptyPaths)
+                
+        XCTAssertEqual(expected, actual)
+    }
+
+    func testPlacements2() {
+        // 2 3   ____x▓x___
+        //       0123456789
+        let hints = [2, 3]
+        let p0 = Path(0..<4), p1 = Path(7..<10)
+        let emptyPaths = [p0, p1]
+        let expected = [[Placement(hintIndex: 0, path: p0), Placement(hintIndex: 1, path: p1)]]
+        let actual = findAllPlacements(hints: hints,
+                                       hintIndicesToDistribute: [0, 1],
+                                       emptyPaths: emptyPaths)
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+//    func testPlacements3() {
+//        // 2 3   ______x___
+//        //       0123456789
+//        let hints = [2, 3]
+//        let p0 = Path(0..<6), p1 = Path(7..<10)
+//        let emptyPaths = [p0, p1]
+//        let expected = [[Placement]]()
+//        let actual = findAllPlacements(hints: hints,
+//                                       hintIndicesToDistribute: [0, 1],
+//                                       emptyPaths: emptyPaths)
+//
+//        XCTAssertEqual(expected, actual)
+//    }
 
 }

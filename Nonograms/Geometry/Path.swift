@@ -28,7 +28,7 @@ func paths(in row: [Mark]) -> [Range<Int>] {
     return paths
 }
 
-struct Path: Equatable {
+struct Path: Equatable, CustomStringConvertible {
     let start, length: Int
     let associatedHintIndex: Int?
     
@@ -46,6 +46,10 @@ struct Path: Equatable {
         associatedHintIndex = nil
     }
     
+    var description: String {
+        return "\(range)"
+    }
+    
     var nextAfter: Int { return start + length }
     
     func associate(with hintIndex: Int) -> Path {
@@ -61,6 +65,10 @@ struct Path: Equatable {
     }
     
     var range: Range<Int> { return start..<nextAfter }
+    
+    func fits(hint: Int) -> Bool {
+        return hint <= length
+    }
 }
 
 func pathsEx(_ row: [Mark], hints: [Int]) -> [Path] {
@@ -96,4 +104,53 @@ func pathsEx(_ row: [Mark], hints: [Int]) -> [Path] {
     }
     
     return associatedPaths
+}
+
+func emptyPathsEx(_ row: [Mark], hints: [Int]) -> [Path] {
+    let paths = pathsEx(row, hints: hints)
+    
+    return paths.filter({!$0.slice(row).contains(.chiseled)})
+}
+
+struct Placement: Equatable, CustomStringConvertible {
+    let hintIndex: Int
+    let path: Path
+    
+    var description: String {
+        return "h\(hintIndex) -> \(path)"
+    }
+}
+
+func findAllPlacements(hints: [Int], hintIndicesToDistribute: [Int], emptyPaths: [Path]) -> [[Placement]] {
+    guard !hintIndicesToDistribute.isEmpty else { return [] }
+    
+    guard hintIndicesToDistribute.count <= emptyPaths.count else { return [] }
+    
+    var indices = hintIndicesToDistribute
+    let hintIndex = indices.removeFirst()
+    let hint = hints[hintIndex]
+    var results = [[Placement]]()
+    
+    for (i, path) in emptyPaths.enumerated() {
+        if path.fits(hint: hint) {
+            let myPlacement = Placement(hintIndex: hintIndex, path: path)
+            
+            if indices.isEmpty {
+                results.append([myPlacement])
+            } else {
+                let remainingPaths = Array(emptyPaths.suffix(from: i + 1))
+                let subResults = findAllPlacements(hints: hints,
+                                                   hintIndicesToDistribute: indices,
+                                                   emptyPaths: remainingPaths)
+                
+                for subResult in subResults {
+                    let myselfAdded = [myPlacement] + subResult
+                    
+                    results.append(myselfAdded)
+                }
+            }
+        }
+    }
+    
+    return results
 }

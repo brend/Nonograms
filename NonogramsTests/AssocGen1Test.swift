@@ -50,8 +50,8 @@ class AssocGen1Test: XCTestCase {
         let runs = runsEx(row, of: .chiseled, hints: [6, 3])
         
         XCTAssert(runs.count == 3)
-        XCTAssertEqual(runs[0].associatedHintIndex, nil)
-        XCTAssertEqual(runs[0].associatedPath, nil)
+        XCTAssertEqual(runs[0].associatedHintIndex, 0)
+        XCTAssertEqual(runs[0].associatedPath, 0..<15)
         XCTAssertEqual(runs[1].associatedHintIndex, 0)
         XCTAssertEqual(runs[1].associatedPath, 0..<15)
         XCTAssertEqual(runs[2].associatedHintIndex, nil)

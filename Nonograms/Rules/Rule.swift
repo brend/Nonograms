@@ -90,10 +90,15 @@ public class Rule {
             ShrinkRule(),
             DistanceRule(),
             CloseToLeftRule(),
+            CloseToLeftAssociatedRule(),
             FullFirstHintRule(),
             
             ShrinkAssociatedRule(),
-            CloseUnassociatedPathsRule()
+            CloseUnassociatedPathsRule(),
+            
+//            CloseUnusablePathsRule(),
+            CenterUniqueEmptyPathsRule(),
+            ShrinkBoundedRule()
         ]
     }
 }
