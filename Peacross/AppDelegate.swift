@@ -185,5 +185,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
         
         ruleLabel.stringValue = step.rule.name
     }
+    
+    @IBAction func autoplay(_ sender: Any) {
+        Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) {timer in
+            if self.stepIndex >= (self.steps?.count ?? 0) {
+                timer.invalidate()
+            }
+            
+            self.nextStep(self)
+        }
+    }
 }
 
