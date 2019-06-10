@@ -119,8 +119,7 @@ public class Puzzle {
     
     public var size: Int { return rowHints.count }
     
-    public func toPeaFile() -> String {
-        fatalError("not implemented")
+//    public func toPeaFile() -> String {
 //        var text = ""
 //
 //        text.append("solution\n")
@@ -140,7 +139,7 @@ public class Puzzle {
 //
 //
 //        return text
-    }
+//    }
     
     func consistent(solution: Matrix, with matrix: Matrix) -> Bool {
         for rowIndex in 0..<size {

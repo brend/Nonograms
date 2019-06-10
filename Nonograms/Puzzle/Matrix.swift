@@ -138,4 +138,7 @@ public struct Matrix: Equatable {
         return rowsAndColumns
     }
     
+    public func toMatrixFile() -> String {
+        return renderMatrix()
+    }
 }

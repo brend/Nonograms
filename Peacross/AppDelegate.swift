@@ -60,24 +60,36 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     }
 
     @IBAction func saveDocument(_ sender: Any?) {
+        switch mode {
+        case .editPuzzle:
+            let savePanel = NSSavePanel()
+            
+            guard savePanel.runModal() == .OK,
+                let url = savePanel.url
+                else { return }
+            
+            writeSolutionState(url: url)
+        case .solvePuzzle:
+            let alert = NSAlert()
+            
+            alert.messageText = "Saving is only possible in edit mode. You are currently in solve mode.";
+            
+            alert.runModal()
+        @unknown default:
+            fatalError()
+        }
+    }
+    
+    func writeSolutionState(url: URL) {
+        let text = solutionState.toMatrixFile()
         
-        fatalError("not implemented")
+        guard let data = text.data(using: .utf8) else { return }
         
-        let savePanel = NSSavePanel()
-        
-        guard savePanel.runModal() == .OK,
-            let url = savePanel.url
-            else { return }
-        
-//        let text = puzzle.toPeaFile()
-//
-//        guard let data = text.data(using: .utf8) else { return }
-//
-//        do {
-//            try data.write(to: url)
-//        } catch {
-//            print("\(error)")
-//        }
+        do {
+            try data.write(to: url)
+        } catch {
+            NSAlert(error: error).runModal()
+        }
     }
     
     var mode = DocMode.editPuzzle
