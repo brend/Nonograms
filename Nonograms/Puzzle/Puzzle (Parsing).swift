@@ -8,8 +8,13 @@
 
 import Foundation
 
+struct PuzzleParseError: Error {
+    let message: String
+}
+
 extension Puzzle {
-    public static func parse(file: String) -> Puzzle {
+    
+    public static func parse(peaFile file: String) throws -> Puzzle {
         guard let text = try? String(contentsOfFile: file) else {
             fatalError("could not read file")
         }
@@ -20,13 +25,12 @@ extension Puzzle {
                 .map {$0.trimmingCharacters(in: .whitespaces)}
         
         enum ActiveSet {
-            case none, rows, columns, ignore, solution
+            case none, rows, columns, ignore
         }
         
         var rowHints = [[Int]]()
         var columnHints = [[Int]]()
         var active = ActiveSet.none
-        var solution = [String]()
         
         for line in lines {
             switch line {
@@ -36,18 +40,14 @@ extension Puzzle {
                 active = .columns
             case "comment":
                 active = .ignore
-            case "solution":
-                active = .solution
             case "":
                 continue
             default:
                 switch active {
                 case .none:
-                    fatalError("no action set")
+                    throw PuzzleParseError(message: "no action directive found")
                 case .ignore:
                     continue;
-                case .solution:
-                    solution.append(line)
                 case .rows, .columns:
                     let numbers = line.components(separatedBy: ",").map({Int($0) ?? -1})
                     
@@ -68,28 +68,6 @@ extension Puzzle {
             fatalError("expected hint count to be multiple of 5")
         }
         
-        let puzzle: Puzzle
-        
-        if solution.isEmpty {
-            puzzle = Puzzle(rowHints: rowHints, columnHints: columnHints)
-        } else {
-            // var solutionMatrix = Matrix(size: rowHints.count)
-            // TODO: FIX
-            var solutionMatrix = Matrix(size: 15)
-            
-            for (rowIndex, line) in solution.enumerated() {
-                let interestingChars = line.filter({$0=="_" || $0=="▓"})
-                
-                for (columnIndex, c) in interestingChars.enumerated() {
-                    if c == "▓" {
-                        solutionMatrix[rowIndex, columnIndex] = .chiseled
-                    }
-                }
-            }
-            
-            puzzle = Puzzle(solution: solutionMatrix)
-        }
-            
-        return puzzle
+        return Puzzle(rowHints: rowHints, columnHints: columnHints)
     }
 }

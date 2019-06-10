@@ -9,8 +9,6 @@
 import Foundation
 
 public class Puzzle {
-    public var solution: Matrix
-    
     public let userRowHints: [[Int]]?
     public let userColumnHints: [[Int]]?
     
@@ -28,15 +26,6 @@ public class Puzzle {
         self.solution = Matrix(size: rowHints.count)
         self.userRowHints = rowHints
         self.userColumnHints = columnHints
-    }
-    
-    public static var demo: Puzzle {
-        let puzzle =
-            Puzzle.parse(file: "/Users/waldrumpus/Downloads/submarine.pea")
-        
-        puzzle.rules = Rule.defaultSet
-        
-        return puzzle
     }
     
     public func mark(rowIndex: Int, columnIndex: Int) -> Mark {
@@ -70,6 +59,11 @@ public class Puzzle {
         return rowsAndColumns
     }
     
+    var printSteps = true
+    
+    var attempt: Matrix?
+    
+    @discardableResult
     public func solve() -> [SolutionStep]? {
         if self.userRowHints == nil {
             print("this is the solution:")
@@ -101,11 +95,29 @@ public class Puzzle {
             before = after
         } while true
         
-        // DEBUG
-//        let rule = ShrinkAssociatedRule()
-//        let debug = rule.apply(to: before.row(14), hints: rowHints(14))
+        attempt = before
         
         return steps
+    }
+    
+    var isSolved: Bool {
+        guard userRowHints == nil && userColumnHints == nil
+            else { fatalError("solution checking impossible") }
+        
+        guard let attempt = attempt else { return false }
+        
+        for row in 0..<size {
+            for column in 0..<size {
+                let solutionChiseled = solution[row, column] == .chiseled
+                let attemptChiseled = attempt[row, column] == .chiseled
+                
+                if solutionChiseled != attemptChiseled {
+                    return false
+                }
+            }
+        }
+        
+        return true
     }
     
     func applyRules(to after: inout Matrix, before: Matrix, foundStep: (SolutionStep) -> ()) {
@@ -232,6 +244,11 @@ public class Puzzle {
     }
     
     func solutionIsConsistent(with matrix: Matrix) -> Bool {
+        
+        if userColumnHints != nil && userRowHints != nil {
+            return true
+        }
+        
         for rowIndex in 0..<size {
             for columnIndex in 0..<size {
                 switch (matrix[rowIndex, columnIndex], solution[rowIndex, columnIndex]) {
