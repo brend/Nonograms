@@ -83,6 +83,12 @@ public struct Matrix: Equatable {
         }
     }
     
+    public mutating func overwrite(row: [Mark], at rowIndex: Int) {
+        for (i, m) in row.enumerated() {
+            self[rowIndex, i] = m
+        }
+    }
+
     public mutating func integrate(column: [Mark], at columnIndex: Int) {
         for (i, m) in column.enumerated() {
             if m != .unknown {
@@ -92,6 +98,12 @@ public struct Matrix: Equatable {
                 
                 self[i, columnIndex] = m
             }
+        }
+    }
+    
+    public mutating func overwrite(column: [Mark], at columnIndex: Int) {
+        for (i, m) in column.enumerated() {
+            self[i, columnIndex] = m
         }
     }
     

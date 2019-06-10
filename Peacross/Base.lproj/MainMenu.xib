@@ -711,6 +711,16 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x57-1i-Biu">
+                        <rect key="frame" x="113" y="13" width="123" height="32"/>
+                        <buttonCell key="cell" type="push" title="Previous step" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3IF-Py-xWv">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="previousStep:" target="Voe-Tx-rLC" id="Dhz-qA-BPo"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="5Nr-wp-9fO" secondAttribute="bottom" constant="23" id="4Nj-gd-R2G"/>
@@ -721,7 +731,9 @@
                     <constraint firstItem="rgN-hH-B77" firstAttribute="leading" secondItem="Dh5-IP-Ruk" secondAttribute="leading" id="hyh-zC-fzC"/>
                     <constraint firstItem="rgN-hH-B77" firstAttribute="top" secondItem="Dh5-IP-Ruk" secondAttribute="bottom" constant="20" symbolic="YES" id="l99-lx-ojO"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rgN-hH-B77" secondAttribute="trailing" constant="20" symbolic="YES" id="uhJ-hn-QO0"/>
+                    <constraint firstItem="x57-1i-Biu" firstAttribute="baseline" secondItem="rgN-hH-B77" secondAttribute="baseline" id="vUY-ET-O2n"/>
                     <constraint firstAttribute="trailing" secondItem="Dh5-IP-Ruk" secondAttribute="trailing" constant="20" symbolic="YES" id="wry-tI-HPz"/>
+                    <constraint firstItem="x57-1i-Biu" firstAttribute="leading" secondItem="rgN-hH-B77" secondAttribute="trailing" constant="12" symbolic="YES" id="zF2-a2-7T0"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="-1998" y="219"/>

@@ -159,5 +159,31 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
         
         stepIndex += 1
     }
+    
+    @IBAction func previousStep(_ sender: Any) {
+        
+        guard mode == .solvePuzzle else { return }
+        
+        guard let steps = steps,
+            stepIndex > 0
+        else { return }
+        
+        stepIndex -= 1
+        
+        var state = solutionState
+        let step = steps[stepIndex]
+        let row = step.row
+        
+        row.overwrite(data: step.before, into: &state)
+        
+        solutionState = state
+        
+        let (rowIndex, columnIndex) = row.unpack()
+        
+        puzzleView.markedRow = rowIndex
+        puzzleView.markedColumn = columnIndex
+        
+        ruleLabel.stringValue = step.rule.name
+    }
 }
 

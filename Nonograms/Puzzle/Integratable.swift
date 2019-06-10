@@ -11,6 +11,7 @@ import Foundation
 public protocol Integratable {
     func data(from matrix: Matrix) -> [Mark]
     func integrate(data: [Mark], into matrix: inout Matrix)
+    func overwrite(data: [Mark], into matrix: inout Matrix)
     func hints(_ puzzle: Puzzle) -> [Int]
     func unpack() -> (rowIndex: Int?, columnIndex: Int?)
 }
@@ -20,6 +21,10 @@ struct ColumnIntegratable: Integratable, CustomStringConvertible {
     
     func integrate(data: [Mark], into matrix: inout Matrix) {
         matrix.integrate(column: data, at: columnIndex)
+    }
+    
+    func overwrite(data: [Mark], into matrix: inout Matrix) {
+        matrix.overwrite(column: data, at: columnIndex)
     }
     
     func data(from matrix: Matrix) -> [Mark] {
@@ -48,6 +53,10 @@ struct RowIntegratable: Integratable, CustomStringConvertible {
     
     func integrate(data: [Mark], into matrix: inout Matrix) {
         matrix.integrate(row: data, at: rowIndex)
+    }
+    
+    func overwrite(data: [Mark], into matrix: inout Matrix) {
+        matrix.overwrite(row: data, at: rowIndex)
     }
     
     func hints(_ puzzle: Puzzle) -> [Int] {
