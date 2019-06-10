@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
 
     @IBOutlet weak var ruleLabel: NSTextField!
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {        
         puzzleView.delegate = self
         puzzleView.becomeFirstResponder()
     }

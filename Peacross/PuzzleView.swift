@@ -208,8 +208,24 @@ class PuzzleView: NSView {
             let mark = (existingMark == .chiseled) ? Mark.unknown : .chiseled
             
             delegate?.setMark(row: rowIndex, column: columnIndex, mark: mark)
+            
             setNeedsDisplay(bounds)
+            
+            dragMark = mark
         }
+    }
+    
+    var dragMark = Mark.chiseled
+    
+    override func mouseDragged(with event: NSEvent) {
+        guard NSEvent.pressedMouseButtons == 1 else { return }
+        
+        guard let (rowIndex, columnIndex) = coordinates(from: event)
+            else { return }
+        
+        delegate?.setMark(row: rowIndex, column: columnIndex, mark: dragMark)
+        
+        setNeedsDisplay(bounds)
     }
     
     func coordinates(from event: NSEvent) -> (rowIndex: Int, columnIndex: Int)? {
