@@ -74,9 +74,9 @@ class PuzzleView: NSView {
             return
         }
         
-        NSColor.controlHighlightColor.setFill()
+        NSColor.lightGray.setFill()
         
-        let path = NSBezierPath(rect: bounds)
+        let path = NSBezierPath(rect: boxArea)
         
         path.fill()
         
@@ -107,7 +107,7 @@ class PuzzleView: NSView {
             NSBezierPath.fill(br)
         case .chiseled:
             NSColor.darkGray.setFill()
-            NSBezierPath.fill(br)
+            NSBezierPath.fill(br.insetBy(dx: 2, dy: 2))
         case .marked:
             //NSColor.red.setFill()
             NSColor.lightGray.setFill()
