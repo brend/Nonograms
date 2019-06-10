@@ -27,6 +27,7 @@
 		AF395C3522AE3E3C005B6234 /* Matrix (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C3422AE3E3C005B6234 /* Matrix (Parsing).swift */; };
 		AF395C3722AE4E85005B6234 /* HintProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C3622AE4E85005B6234 /* HintProvider.swift */; };
 		AF395C3922AE59A6005B6234 /* HintConsistencyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C3822AE59A6005B6234 /* HintConsistencyValidator.swift */; };
+		AF395C3B22AE8238005B6234 /* toad.pea in Resources */ = {isa = PBXBuildFile; fileRef = AF395C3A22AE8238005B6234 /* toad.pea */; };
 		AF3F3C86229AA1760061D90D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F3C85229AA1760061D90D /* main.swift */; };
 		AF4E5FDC22A3D02500CEAB86 /* MarkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */; };
 		AF4E5FDE22A3D8AC00CEAB86 /* AssocGen1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */; };
@@ -128,6 +129,7 @@
 		AF395C3422AE3E3C005B6234 /* Matrix (Parsing).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix (Parsing).swift"; sourceTree = "<group>"; };
 		AF395C3622AE4E85005B6234 /* HintProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintProvider.swift; sourceTree = "<group>"; };
 		AF395C3822AE59A6005B6234 /* HintConsistencyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintConsistencyValidator.swift; sourceTree = "<group>"; };
+		AF395C3A22AE8238005B6234 /* toad.pea */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = toad.pea; sourceTree = "<group>"; };
 		AF3F3C82229AA1760061D90D /* Picross */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Picross; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3F3C85229AA1760061D90D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTest.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				AF395C2722AD31E1005B6234 /* star.pea */,
 				AF395C2922AD31E1005B6234 /* submarine.pea */,
 				AF395C3222AD383A005B6234 /* L.matrix */,
+				AF395C3A22AE8238005B6234 /* toad.pea */,
 			);
 			path = Benchmark;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 			files = (
 				AF395C3122AD35C4005B6234 /* mario_face.matrix in Resources */,
 				AF395C2C22AD31E1005B6234 /* star.pea in Resources */,
+				AF395C3B22AE8238005B6234 /* toad.pea in Resources */,
 				AF395C3322AD383A005B6234 /* L.matrix in Resources */,
 				AF395C2F22AD31E1005B6234 /* boat_plus.matrix in Resources */,
 				AF395C2E22AD31E1005B6234 /* submarine.pea in Resources */,

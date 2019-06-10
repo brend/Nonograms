@@ -94,6 +94,11 @@ class BenchmarkTest: XCTestCase {
         XCTAssertNoThrow(try parseAndSolve(pea: "submarine"))
         XCTAssert(isSolved)
     }
+    
+    func testToad() {
+        XCTAssertNoThrow(try parseAndSolve(pea: "toad"))
+        XCTAssert(isSolved)
+    }
 
     func testL() {
         XCTAssertNoThrow(try parseAndSolve(matrix: "L"))

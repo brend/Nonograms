@@ -18,9 +18,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     
     var puzzleSize: Int { return solutionState.size }
     
-    var rowHints = [[Int]](repeating: [0], count: 5)
+    var rowHints = [[Int]](repeating: [0], count: 15)
     
-    var columnHints = [[Int]](repeating: [0], count: 5)
+    var columnHints = [[Int]](repeating: [0], count: 15)
     
     func getMark(row: Int, column: Int) -> Mark {
         return solutionState[row, column]
@@ -75,8 +75,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
             alert.messageText = "Saving is only possible in edit mode. You are currently in solve mode.";
             
             alert.runModal()
-        @unknown default:
-            fatalError()
         }
     }
     
@@ -104,9 +102,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
         
         steps = nil
         stepIndex = 0
-        solutionState = Matrix(size: 5)
-        rowHints = [[Int]](repeating: [0], count: 5)
-        columnHints = [[Int]](repeating: [0], count: 5)
+        solutionState = Matrix(size: 15)
+        rowHints = [[Int]](repeating: [0], count: 15)
+        columnHints = [[Int]](repeating: [0], count: 15)
         mode = .editPuzzle
         
         switch url.pathExtension.lowercased() {
@@ -144,7 +142,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     
     var stepIndex = 0
     
-    var solutionState = Matrix(size: 5)
+    var solutionState = Matrix(size: 15)
     
     @IBAction func nextStep(_ sender: Any) {
         
