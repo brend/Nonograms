@@ -20,12 +20,13 @@
 		AF395C2022AD23E4005B6234 /* ShrinkBoundedRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C1F22AD23E4005B6234 /* ShrinkBoundedRuleTest.swift */; };
 		AF395C2422AD3179005B6234 /* BenchmarkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C2322AD3179005B6234 /* BenchmarkTest.swift */; };
 		AF395C2C22AD31E1005B6234 /* star.pea in Resources */ = {isa = PBXBuildFile; fileRef = AF395C2722AD31E1005B6234 /* star.pea */; };
-		AF395C2D22AD31E1005B6234 /* ninja.pea in Resources */ = {isa = PBXBuildFile; fileRef = AF395C2822AD31E1005B6234 /* ninja.pea */; };
 		AF395C2E22AD31E1005B6234 /* submarine.pea in Resources */ = {isa = PBXBuildFile; fileRef = AF395C2922AD31E1005B6234 /* submarine.pea */; };
 		AF395C2F22AD31E1005B6234 /* boat_plus.matrix in Resources */ = {isa = PBXBuildFile; fileRef = AF395C2A22AD31E1005B6234 /* boat_plus.matrix */; };
 		AF395C3122AD35C4005B6234 /* mario_face.matrix in Resources */ = {isa = PBXBuildFile; fileRef = AF395C3022AD35C3005B6234 /* mario_face.matrix */; };
 		AF395C3322AD383A005B6234 /* L.matrix in Resources */ = {isa = PBXBuildFile; fileRef = AF395C3222AD383A005B6234 /* L.matrix */; };
 		AF395C3522AE3E3C005B6234 /* Matrix (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C3422AE3E3C005B6234 /* Matrix (Parsing).swift */; };
+		AF395C3722AE4E85005B6234 /* HintProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C3622AE4E85005B6234 /* HintProvider.swift */; };
+		AF395C3922AE59A6005B6234 /* HintConsistencyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF395C3822AE59A6005B6234 /* HintConsistencyValidator.swift */; };
 		AF3F3C86229AA1760061D90D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F3C85229AA1760061D90D /* main.swift */; };
 		AF4E5FDC22A3D02500CEAB86 /* MarkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */; };
 		AF4E5FDE22A3D8AC00CEAB86 /* AssocGen1Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5FDD22A3D8AC00CEAB86 /* AssocGen1Test.swift */; };
@@ -77,7 +78,6 @@
 		AFEE503022A3C91500EA7CDF /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E05229AAA8A00BBA25B /* Matrix.swift */; };
 		AFEE503122A3C91500EA7CDF /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E29229C41B900BBA25B /* Mark.swift */; };
 		AFEE503222A3C91500EA7CDF /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E36229C426900BBA25B /* Auxiliary.swift */; };
-		AFEE503322A3C91500EA7CDF /* Puzzleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */; };
 		AFEE503422A3C91500EA7CDF /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E40229FDE4C00BBA25B /* Run.swift */; };
 		AFEE503522A3C91500EA7CDF /* Puzzle (Parsing).swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */; };
 		AFEE503622A3C91500EA7CDF /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB1E5822A012D700BBA25B /* Array.swift */; };
@@ -121,12 +121,13 @@
 		AF395C1F22AD23E4005B6234 /* ShrinkBoundedRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkBoundedRuleTest.swift; sourceTree = "<group>"; };
 		AF395C2322AD3179005B6234 /* BenchmarkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkTest.swift; sourceTree = "<group>"; };
 		AF395C2722AD31E1005B6234 /* star.pea */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = star.pea; sourceTree = "<group>"; };
-		AF395C2822AD31E1005B6234 /* ninja.pea */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ninja.pea; sourceTree = "<group>"; };
 		AF395C2922AD31E1005B6234 /* submarine.pea */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = submarine.pea; sourceTree = "<group>"; };
 		AF395C2A22AD31E1005B6234 /* boat_plus.matrix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = boat_plus.matrix; sourceTree = "<group>"; };
 		AF395C3022AD35C3005B6234 /* mario_face.matrix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mario_face.matrix; sourceTree = "<group>"; };
 		AF395C3222AD383A005B6234 /* L.matrix */ = {isa = PBXFileReference; lastKnownFileType = text; path = L.matrix; sourceTree = "<group>"; };
 		AF395C3422AE3E3C005B6234 /* Matrix (Parsing).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix (Parsing).swift"; sourceTree = "<group>"; };
+		AF395C3622AE4E85005B6234 /* HintProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintProvider.swift; sourceTree = "<group>"; };
+		AF395C3822AE59A6005B6234 /* HintConsistencyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintConsistencyValidator.swift; sourceTree = "<group>"; };
 		AF3F3C82229AA1760061D90D /* Picross */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Picross; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3F3C85229AA1760061D90D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AF4E5FDB22A3D02500CEAB86 /* MarkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTest.swift; sourceTree = "<group>"; };
@@ -157,7 +158,6 @@
 		AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewDelegate.swift; sourceTree = "<group>"; };
 		AFAB1E29229C41B900BBA25B /* Mark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
 		AFAB1E36229C426900BBA25B /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxiliary.swift; sourceTree = "<group>"; };
-		AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzleable.swift; sourceTree = "<group>"; };
 		AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSingularRunsRule.swift; sourceTree = "<group>"; };
 		AFAB1E40229FDE4C00BBA25B /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSmallPathsRule.swift; sourceTree = "<group>"; };
@@ -231,7 +231,6 @@
 			children = (
 				AF395C3022AD35C3005B6234 /* mario_face.matrix */,
 				AF395C2A22AD31E1005B6234 /* boat_plus.matrix */,
-				AF395C2822AD31E1005B6234 /* ninja.pea */,
 				AF395C2722AD31E1005B6234 /* star.pea */,
 				AF395C2922AD31E1005B6234 /* submarine.pea */,
 				AF395C3222AD383A005B6234 /* L.matrix */,
@@ -340,10 +339,11 @@
 				AF395C3422AE3E3C005B6234 /* Matrix (Parsing).swift */,
 				AFAB1E05229AAA8A00BBA25B /* Matrix.swift */,
 				AFAB1E36229C426900BBA25B /* Auxiliary.swift */,
-				AFAB1E39229FCB0F00BBA25B /* Puzzleable.swift */,
 				AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */,
 				AFAB1E5822A012D700BBA25B /* Array.swift */,
 				AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */,
+				AF395C3622AE4E85005B6234 /* HintProvider.swift */,
+				AF395C3822AE59A6005B6234 /* HintConsistencyValidator.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -567,7 +567,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF395C3122AD35C4005B6234 /* mario_face.matrix in Resources */,
-				AF395C2D22AD31E1005B6234 /* ninja.pea in Resources */,
 				AF395C2C22AD31E1005B6234 /* star.pea in Resources */,
 				AF395C3322AD383A005B6234 /* L.matrix in Resources */,
 				AF395C2F22AD31E1005B6234 /* boat_plus.matrix in Resources */,
@@ -627,18 +626,19 @@
 				AFEE502C22A3C8A900EA7CDF /* FullFirstHintRule.swift in Sources */,
 				AF395C1E22AD2190005B6234 /* ShrinkBoundedRule.swift in Sources */,
 				AFEE501F22A3C8A800EA7CDF /* ZeroRule.swift in Sources */,
-				AFEE503322A3C91500EA7CDF /* Puzzleable.swift in Sources */,
 				AFEE502E22A3C8A900EA7CDF /* CloseUnassociatedPathsRule.swift in Sources */,
 				AFEE502422A3C8A800EA7CDF /* SumRule.swift in Sources */,
 				AF2C01D522A846EC001CAB36 /* ChannelSequence.swift in Sources */,
 				AF57323022A81E16005334F7 /* Channel.swift in Sources */,
 				AFEE502622A3C8A800EA7CDF /* CompleteFlushRule.swift in Sources */,
+				AF395C3922AE59A6005B6234 /* HintConsistencyValidator.swift in Sources */,
 				AFEE502A22A3C8A900EA7CDF /* DistanceRule.swift in Sources */,
 				AFEE502D22A3C8A900EA7CDF /* ShrinkAssociatedRule.swift in Sources */,
 				AFC7F4AA22AB94F4007E6C9B /* CloseToLeftAssociated.swift in Sources */,
 				AFEE503022A3C91500EA7CDF /* Matrix.swift in Sources */,
 				AFEE503122A3C91500EA7CDF /* Mark.swift in Sources */,
 				AFEE502722A3C8A800EA7CDF /* CompleteUnambiguousRule.swift in Sources */,
+				AF395C3722AE4E85005B6234 /* HintProvider.swift in Sources */,
 				AFEE502222A3C8A800EA7CDF /* MarkSmallPathsRule.swift in Sources */,
 				AFEE502322A3C8A800EA7CDF /* MarkLongestHintRule.swift in Sources */,
 			);

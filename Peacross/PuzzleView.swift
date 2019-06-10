@@ -116,6 +116,8 @@ class PuzzleView: NSView {
             let insetBoxRect = br.insetBy(dx: br.width / 8, dy: br.height / 8)
             NSBezierPath.strokeLine(from: insetBoxRect.topLeft, to: insetBoxRect.bottomRight)
             NSBezierPath.strokeLine(from: insetBoxRect.topRight, to: insetBoxRect.bottomLeft)
+        default:
+            fatalError()
         }
     }
     

@@ -94,4 +94,36 @@ public struct Matrix: Equatable {
             }
         }
     }
+    
+    func rows() -> [Integratable] {
+        var rows = [Integratable]()
+        
+        for i in 0..<size {
+            rows.append(RowIntegratable(rowIndex: i))
+        }
+        
+        return rows
+    }
+    
+    func columns() -> [Integratable] {
+        var columns = [Integratable]()
+        
+        for i in 0..<size {
+            columns.append(ColumnIntegratable(columnIndex: i))
+        }
+        
+        return columns
+    }
+    
+    func rowsAndColumns() -> [Integratable] {
+        var rowsAndColumns = [Integratable]()
+        
+        for i in 0..<size {
+            rowsAndColumns.append(RowIntegratable(rowIndex: i))
+            rowsAndColumns.append(ColumnIntegratable(columnIndex: i))
+        }
+        
+        return rowsAndColumns
+    }
+    
 }

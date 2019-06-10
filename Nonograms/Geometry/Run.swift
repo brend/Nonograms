@@ -274,7 +274,7 @@ func associateGen5(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
     associatedRuns = []
     hintIndex = hints.count - 1
     
-    while !remainingRuns.isEmpty {
+    while !remainingRuns.isEmpty && hintIndex >= 0 {
         let run = remainingRuns.removeLast()
         let hint = hints[hintIndex]
         

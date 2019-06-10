@@ -13,12 +13,20 @@ class BenchmarkTest: XCTestCase {
     
     var puzzle: Puzzle?
     
+    var answer: Matrix?
+    
+    var solutionAttempt: Matrix?
+    
     override func setUp() {
         puzzle = nil
+        answer = nil
+        solutionAttempt = nil
     }
     
     override func tearDown() {
         puzzle = nil
+        answer = nil
+        solutionAttempt = nil
     }
     
     func bundlePath(for file: String, filetype: String) -> String {
@@ -34,14 +42,20 @@ class BenchmarkTest: XCTestCase {
         puzzle!.rules = Rule.defaultSet
         puzzle!.printSteps = false
         
-        puzzle!.solve()
+        guard let steps = puzzle!.solve() else { return }
+        
+        let matrix = Matrix(size: puzzle!.size)
+        
+        solutionAttempt = SolutionStep.apply(steps: steps, to: matrix)
     }
     
     func parseAndSolve(matrix filename: String) throws {
         let path = bundlePath(for: filename, filetype: "matrix")
         let matrix = try Matrix.parse(matrixFile: path)
+        let (rowHints, columnHints) = HintProvider(matrix: matrix).hints()
         
-        puzzle = Puzzle(solution: matrix)
+        answer = matrix
+        puzzle = Puzzle(rowHints: rowHints, columnHints: columnHints)
         
         solve()
     }
@@ -54,22 +68,22 @@ class BenchmarkTest: XCTestCase {
         solve()
     }
     
-    var isSolved: Bool { return puzzle?.isSolved ?? false }
+    var isSolved: Bool {
+        let validator = HintConsistencyValidator(puzzle!)
+        
+        return validator.hintsCompleteAndConsistent(with: solutionAttempt!)
+    }
 
     func testMarioFace() {
         XCTAssertNoThrow(try parseAndSolve(matrix: "mario_face"))
         XCTAssert(isSolved)
     }
-    
-    func testBoatPlus() {
-        XCTAssertNoThrow(try parseAndSolve(matrix: "boat_plus"))
-        XCTAssert(isSolved)
-    }
-    
-    func testNinja() {
-        XCTAssertNoThrow(try parseAndSolve(pea: "ninja"))
-        XCTAssert(isSolved)
-    }
+
+    // "boat plus" is ambiguous
+//    func testBoatPlus() {
+//        XCTAssertNoThrow(try parseAndSolve(matrix: "boat_plus"))
+//        XCTAssert(isSolved)
+//    }
     
     func testStar() {
         XCTAssertNoThrow(try parseAndSolve(pea: "star"))

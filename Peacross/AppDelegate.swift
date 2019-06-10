@@ -12,31 +12,38 @@ import Nonograms
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     
-    var puzzle: Puzzle? = Puzzle.demo
+    enum DocMode {
+        case editPuzzle, solvePuzzle
+    }
     
-    var puzzleSize: Int { return puzzle?.size ?? 0 }
+    var puzzleSize: Int { return solutionState.size }
+    
+    var rowHints = [[Int]](repeating: [0], count: 5)
+    
+    var columnHints = [[Int]](repeating: [0], count: 5)
     
     func getMark(row: Int, column: Int) -> Mark {
-        
-        if let state = solutionState {
-            return state[row, column]
-        } else {
-            return puzzle?.mark(rowIndex: row, columnIndex: column) ?? .unknown
-        }
+        return solutionState[row, column]
     }
     
     func setMark(row: Int, column: Int, mark: Mark) {
-        puzzle?.set(mark: mark, rowIndex: row, columnIndex: column)
+        solutionState[row, column] = mark
+        recalculateHints()
     }
     
     func rowHints(for rowIndex: Int) -> [Int] {
-        return puzzle?.rowHints(rowIndex) ?? []
+        return rowHints[rowIndex]
     }
     
     func columnHints(for columnIndex: Int) -> [Int] {
-        return puzzle?.columnHints(columnIndex) ?? []
+        return columnHints[columnIndex]
     }
     
+    func recalculateHints() {
+        let hintProvider = HintProvider(matrix: solutionState)
+        
+        (rowHints, columnHints) = hintProvider.hints()
+    }
 
     @IBOutlet weak var window: NSWindow!
 
@@ -46,32 +53,34 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         puzzleView.delegate = self
-        print(puzzleView.becomeFirstResponder())
+        puzzleView.becomeFirstResponder()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
     }
 
     @IBAction func saveDocument(_ sender: Any?) {
+        
+        fatalError("not implemented")
+        
         let savePanel = NSSavePanel()
         
         guard savePanel.runModal() == .OK,
             let url = savePanel.url
             else { return }
         
-        guard let puzzle = puzzle else { return }
-        
-        let text = puzzle.toPeaFile()
-        
-        guard let data = text.data(using: .utf8) else { return }
-        
-        do {
-            try data.write(to: url)
-        } catch {
-            print("\(error)")
-        }
+//        let text = puzzle.toPeaFile()
+//
+//        guard let data = text.data(using: .utf8) else { return }
+//
+//        do {
+//            try data.write(to: url)
+//        } catch {
+//            print("\(error)")
+//        }
     }
+    
+    var mode = DocMode.editPuzzle
     
     @IBAction func openDocument(_ sender: Any) {
         let openPanel = NSOpenPanel()
@@ -81,9 +90,38 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
                 return
         }
         
-        let puzzle = Puzzle.parse(file: url.path)
+        steps = nil
+        stepIndex = 0
+        solutionState = Matrix(size: 5)
+        rowHints = [[Int]](repeating: [0], count: 5)
+        columnHints = [[Int]](repeating: [0], count: 5)
+        mode = .editPuzzle
         
-        self.puzzle = puzzle
+        switch url.pathExtension.lowercased() {
+        case "matrix":
+            guard let matrix = try? Matrix.parse(matrixFile: url.path)
+                else { fatalError() }
+            
+            solutionState = matrix
+            mode = .editPuzzle
+        case "pea":
+            let puzzle: Puzzle
+            
+            do {
+                puzzle = try Puzzle.parse(peaFile: url.path)
+            } catch {
+                NSAlert(error: error).runModal()
+                return
+            }
+            
+            solutionState = Matrix(size: puzzle.size)
+            rowHints = puzzle.rowHints
+            columnHints = puzzle.columnHints
+            steps = puzzle.solve()
+            mode = .solvePuzzle
+        default:
+            fatalError()
+        }
         
         puzzleView.setNeedsDisplay(puzzleView.bounds)
     }
@@ -94,24 +132,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     
     var stepIndex = 0
     
-    var solutionState: Matrix?
+    var solutionState = Matrix(size: 5)
     
     @IBAction func nextStep(_ sender: Any) {
         
-        guard let puzzle = puzzle else { return }
-        
-        if steps == nil {
-            steps = puzzle.solve()
-            solutionState = Matrix(size: puzzle.size)
-            stepIndex = 0
-            ruleLabel.stringValue = ""
-        }
+        guard mode == .solvePuzzle else { return }
         
         guard let steps = steps,
-            var state = solutionState,
             stepIndex < steps.count
         else { return }
         
+        var state = solutionState
         let step = steps[stepIndex]
         let row = step.row
         
