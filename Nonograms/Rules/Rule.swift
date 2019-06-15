@@ -86,19 +86,16 @@ public class Rule {
             CompleteFlushRule(),
             CompleteReverseFlushRule(),
             CompleteUnambiguousRule(),
-            //PerfectFitRule(),
             ShrinkRule(),
             DistanceRule(),
             CloseToLeftRule(),
             CloseToLeftAssociatedRule(),
             FullFirstHintRule(),
-            
             ShrinkAssociatedRule(),
             CloseUnassociatedPathsRule(),
-            
-//            CloseUnusablePathsRule(),
             CenterUniqueEmptyPathsRule(),
-            ShrinkBoundedRule()
+            ShrinkBoundedRule(),
+            MarkFinishedRunRule(),
         ]
     }
 }

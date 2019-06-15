@@ -24,7 +24,7 @@ public class Puzzle {
     
     public var rules = [Rule]()
     
-    var printSteps = true
+    public var printSteps = true
     
     var attempt: Matrix?
     

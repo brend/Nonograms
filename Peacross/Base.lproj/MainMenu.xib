@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Peacross" customModuleProvider="target">
             <connections>
+                <outlet property="autoplaySpeedSlider" destination="x4P-7n-shM" id="Mqd-Ac-xCn"/>
                 <outlet property="puzzleView" destination="Dh5-IP-Ruk" id="U3l-CP-Wly"/>
                 <outlet property="ruleLabel" destination="5Nr-wp-9fO" id="kdX-Q1-mki"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -684,14 +685,14 @@
         <window title="Peacross" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="425" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="657" height="444"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="425" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="657" height="444"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Dh5-IP-Ruk" customClass="PuzzleView" customModule="Peacross" customModuleProvider="target">
-                        <rect key="frame" x="20" y="61" width="385" height="279"/>
+                        <rect key="frame" x="20" y="61" width="617" height="363"/>
                     </customView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rgN-hH-B77">
                         <rect key="frame" x="14" y="13" width="99" height="32"/>
@@ -714,7 +715,7 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Nr-wp-9fO">
-                        <rect key="frame" x="368" y="23" width="37" height="17"/>
+                        <rect key="frame" x="600" y="23" width="37" height="17"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Label" id="gdk-6U-cnW">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -724,32 +725,64 @@
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Etx-L8-5A2">
                         <rect key="frame" x="236" y="13" width="97" height="32"/>
                         <buttonCell key="cell" type="push" title="Auto play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="u4u-vK-P3x">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="autoplay:" target="Voe-Tx-rLC" id="A4G-bo-sHh"/>
                         </connections>
                     </button>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x4P-7n-shM">
+                        <rect key="frame" x="377" y="21" width="96" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="92" id="zKE-wO-elX"/>
+                        </constraints>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="URA-jm-SJy"/>
+                        <connections>
+                            <action selector="autoplaySpeedChanged:" target="Voe-Tx-rLC" id="bue-C6-mJf"/>
+                        </connections>
+                    </slider>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0qz-zv-Xlp">
+                        <rect key="frame" x="340" y="22" width="33" height="17"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Slow" id="ho3-5L-xyP">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JkF-hw-gWY">
+                        <rect key="frame" x="477" y="22" width="30" height="17"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Fast" id="GFz-bf-nuh">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5Nr-wp-9fO" firstAttribute="baseline" secondItem="Etx-L8-5A2" secondAttribute="baseline" id="0LO-pM-QFa"/>
-                    <constraint firstItem="5Nr-wp-9fO" firstAttribute="baseline" secondItem="x57-1i-Biu" secondAttribute="baseline" id="5KQ-VL-mtW"/>
+                    <constraint firstItem="Etx-L8-5A2" firstAttribute="baseline" secondItem="x57-1i-Biu" secondAttribute="baseline" id="0tE-Sr-oRb"/>
                     <constraint firstAttribute="bottom" secondItem="Dh5-IP-Ruk" secondAttribute="bottom" constant="61" id="8qq-Oz-MzJ"/>
                     <constraint firstItem="Dh5-IP-Ruk" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="EMs-1G-2BE"/>
+                    <constraint firstItem="0qz-zv-Xlp" firstAttribute="baseline" secondItem="JkF-hw-gWY" secondAttribute="baseline" id="FfE-Xm-wfF"/>
                     <constraint firstItem="Dh5-IP-Ruk" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="Kb4-ZX-3kp"/>
-                    <constraint firstItem="5Nr-wp-9fO" firstAttribute="leading" secondItem="Etx-L8-5A2" secondAttribute="trailing" constant="43" id="Qcf-yo-On5"/>
+                    <constraint firstItem="0qz-zv-Xlp" firstAttribute="leading" secondItem="Etx-L8-5A2" secondAttribute="trailing" constant="15" id="Pds-7T-jfO"/>
+                    <constraint firstItem="JkF-hw-gWY" firstAttribute="centerY" secondItem="x4P-7n-shM" secondAttribute="centerY" id="THj-A3-QLs"/>
+                    <constraint firstItem="Etx-L8-5A2" firstAttribute="leading" secondItem="x57-1i-Biu" secondAttribute="trailing" constant="12" symbolic="YES" id="ZGk-Dn-TFx"/>
+                    <constraint firstItem="JkF-hw-gWY" firstAttribute="leading" secondItem="x4P-7n-shM" secondAttribute="trailing" constant="8" symbolic="YES" id="apl-VU-NYi"/>
+                    <constraint firstItem="5Nr-wp-9fO" firstAttribute="baseline" secondItem="x4P-7n-shM" secondAttribute="baseline" id="foa-t2-HlZ"/>
                     <constraint firstItem="rgN-hH-B77" firstAttribute="leading" secondItem="Dh5-IP-Ruk" secondAttribute="leading" id="hyh-zC-fzC"/>
                     <constraint firstItem="rgN-hH-B77" firstAttribute="top" secondItem="Dh5-IP-Ruk" secondAttribute="bottom" constant="20" symbolic="YES" id="l99-lx-ojO"/>
-                    <constraint firstAttribute="trailing" secondItem="5Nr-wp-9fO" secondAttribute="trailing" constant="22" id="na8-aN-ker"/>
+                    <constraint firstAttribute="bottom" secondItem="x4P-7n-shM" secondAttribute="bottom" constant="23" id="opb-fT-tFT"/>
+                    <constraint firstAttribute="trailing" secondItem="5Nr-wp-9fO" secondAttribute="trailing" constant="22" id="pqU-Nt-yse"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rgN-hH-B77" secondAttribute="trailing" constant="20" symbolic="YES" id="uhJ-hn-QO0"/>
                     <constraint firstItem="x57-1i-Biu" firstAttribute="baseline" secondItem="rgN-hH-B77" secondAttribute="baseline" id="vUY-ET-O2n"/>
+                    <constraint firstItem="x4P-7n-shM" firstAttribute="leading" secondItem="0qz-zv-Xlp" secondAttribute="trailing" constant="8" symbolic="YES" id="vdy-k7-eX1"/>
                     <constraint firstAttribute="trailing" secondItem="Dh5-IP-Ruk" secondAttribute="trailing" constant="20" symbolic="YES" id="wry-tI-HPz"/>
-                    <constraint firstItem="Etx-L8-5A2" firstAttribute="leading" secondItem="x57-1i-Biu" secondAttribute="trailing" constant="12" symbolic="YES" id="yjM-cr-x7U"/>
+                    <constraint firstItem="5Nr-wp-9fO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JkF-hw-gWY" secondAttribute="trailing" constant="8" symbolic="YES" id="yhx-fQ-kIG"/>
                     <constraint firstItem="x57-1i-Biu" firstAttribute="leading" secondItem="rgN-hH-B77" secondAttribute="trailing" constant="12" symbolic="YES" id="zF2-a2-7T0"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-1998" y="219"/>
+            <point key="canvasLocation" x="-2114.5" y="261"/>
         </window>
     </objects>
 </document>

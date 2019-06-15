@@ -69,12 +69,14 @@ class PuzzleView: NSView {
     
     // MARK: - Rendering
     
+    let theme = Theme.dotMatrix
+    
     override func draw(_ dirtyRect: NSRect) {
         guard let delegate = delegate else {
             return
         }
         
-        NSColor.lightGray.setFill()
+        theme.backgroundColor.setFill()
         
         let path = NSBezierPath(rect: boxArea)
         
@@ -91,10 +93,13 @@ class PuzzleView: NSView {
         highlightRowAndColumn()
         
         for i in 0..<delegate.puzzleSize {
-            strokeRow(i)
-            strokeColumn(i)
             drawRowHints(i)
             drawColumnHints(i)
+        }
+        
+        for i in 0...delegate.puzzleSize {
+            strokeRow(i)
+            strokeColumn(i)
         }
     }
     
@@ -103,17 +108,16 @@ class PuzzleView: NSView {
         
         switch mark {
         case .unknown:
-            NSColor.lightGray.setFill()
+            theme.unknownBoxColor.setFill()
             NSBezierPath.fill(br)
         case .chiseled:
-            NSColor.darkGray.setFill()
+            theme.chiseledBoxColor.setFill()
             NSBezierPath.fill(br.insetBy(dx: 2, dy: 2))
         case .marked:
-            //NSColor.red.setFill()
-            NSColor.lightGray.setFill()
+            theme.markedBoxColor.setFill()
             NSBezierPath.fill(br)
-            NSColor.darkGray.setStroke()
-            let insetBoxRect = br.insetBy(dx: br.width / 8, dy: br.height / 8)
+            theme.markColor.setStroke()
+            let insetBoxRect = br.insetBy(dx: br.width / 3, dy: br.height / 3)
             NSBezierPath.strokeLine(from: insetBoxRect.topLeft, to: insetBoxRect.bottomRight)
             NSBezierPath.strokeLine(from: insetBoxRect.topRight, to: insetBoxRect.bottomLeft)
         default:
@@ -127,13 +131,20 @@ class PuzzleView: NSView {
         let left = NSPoint(x: area.minX, y: y)
         let right = NSPoint(x: area.maxX, y: y)
         
+        let path = NSBezierPath()
+
         if rowIndex.isMultiple(of: 5) {
-            NSColor(deviceRed: 0.51, green: 0.80, blue: 96, alpha: 1).setStroke()
+            theme.rowRulerColor.setStroke()
+            path.lineWidth = 2
         } else {
-            NSColor.white.setStroke()
+            theme.rowDividerColor.setStroke()
         }
         
-        NSBezierPath.strokeLine(from: left, to: right)
+        path.move(to: left)
+        path.line(to: right)
+        path.lineWidth = 2
+        
+        path.stroke()
     }
     
     func strokeColumn(_ columnIndex: Int) {
@@ -142,13 +153,19 @@ class PuzzleView: NSView {
         let top = NSPoint(x: x, y: area.maxY)
         let bottom = NSPoint(x: x, y: area.minY)
         
+        let path = NSBezierPath()
+
         if columnIndex.isMultiple(of: 5) {
-            NSColor(deviceRed: 0.51, green: 0.80, blue: 96, alpha: 1).setStroke()
+            theme.columnRulerColor.setStroke()
+            path.lineWidth = 2
         } else {
-            NSColor.white.setStroke()
+            theme.columnDividerColor.setStroke()
         }
         
-        NSBezierPath.strokeLine(from: top, to: bottom)
+        path.move(to: top)
+        path.line(to: bottom)
+        
+        path.stroke()
     }
     
     let hintFont = NSFont(name: "Courier New", size: 18)
@@ -177,7 +194,7 @@ class PuzzleView: NSView {
     }
     
     func highlightRowAndColumn() {
-        NSColor(deviceRed: 0, green: 0, blue: 1, alpha: 0.2).setFill()
+        theme.moveHighlightColor.setFill()
         
         if let columnIndex = markedColumn {
             let colRect = NSRect(x: boxArea.minX + boxSize.width * CGFloat(columnIndex),

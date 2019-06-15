@@ -124,6 +124,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
                 return
             }
             
+            puzzle.printSteps = false
+            
             solutionState = Matrix(size: puzzle.size)
             rowHints = puzzle.rowHints
             columnHints = puzzle.columnHints
@@ -143,6 +145,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
     var stepIndex = 0
     
     var solutionState = Matrix(size: 15)
+    
+    @IBOutlet weak var autoplaySpeedSlider: NSSlider!
     
     @IBAction func nextStep(_ sender: Any) {
         
@@ -196,8 +200,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
         ruleLabel.stringValue = step.rule.name
     }
     
+    var autoplayTimer: Timer?
+    
     @IBAction func autoplay(_ sender: Any) {
-        Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) {timer in
+        
+        if let timer = autoplayTimer {
+            timer.invalidate()
+            autoplayTimer = nil
+        } else {
+            startAutoplayTimer()
+        }
+    }
+    
+    func startAutoplayTimer() {
+        let interval = 1 / autoplaySpeedSlider.doubleValue
+        
+        autoplayTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) {timer in
             if self.stepIndex >= (self.steps?.count ?? 0) {
                 timer.invalidate()
             }
@@ -205,5 +223,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, PuzzleViewDelegate {
             self.nextStep(self)
         }
     }
+    
+    @IBAction func autoplaySpeedChanged(_ sender: Any) {
+        if let timer = autoplayTimer {
+            timer.invalidate()
+            startAutoplayTimer()
+        }
+    }
+    
 }
 

@@ -54,6 +54,9 @@
 		AFBE6DA522A3C6A90017A3D8 /* Nonograms.h in Headers */ = {isa = PBXBuildFile; fileRef = AFBE6D9722A3C6A90017A3D8 /* Nonograms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFC7F4AA22AB94F4007E6C9B /* CloseToLeftAssociated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7F4A922AB94F4007E6C9B /* CloseToLeftAssociated.swift */; };
 		AFC7F4AC22ABB17C007E6C9B /* CloseUnusablePathsRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7F4AB22ABB17C007E6C9B /* CloseUnusablePathsRuleTest.swift */; };
+		AFD051A722B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD051A622B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift */; };
+		AFD051A922B4D842007B2BA1 /* MarkFinishedRunRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD051A822B4D842007B2BA1 /* MarkFinishedRunRule.swift */; };
+		AFD051AB22B4DB0B007B2BA1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD051AA22B4DB0B007B2BA1 /* Theme.swift */; };
 		AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3322A2DAF6001BF05D /* NSRect.swift */; };
 		AFEE501B22A3C6DF00EA7CDF /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
 		AFEE501C22A3C6E600EA7CDF /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
@@ -184,6 +187,9 @@
 		AFBE6DA422A3C6A90017A3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC7F4A922AB94F4007E6C9B /* CloseToLeftAssociated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseToLeftAssociated.swift; sourceTree = "<group>"; };
 		AFC7F4AB22ABB17C007E6C9B /* CloseUnusablePathsRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseUnusablePathsRuleTest.swift; sourceTree = "<group>"; };
+		AFD051A622B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkFinishedRunRuleTest.swift; sourceTree = "<group>"; };
+		AFD051A822B4D842007B2BA1 /* MarkFinishedRunRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkFinishedRunRule.swift; sourceTree = "<group>"; };
+		AFD051AA22B4DB0B007B2BA1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseToLeftRule.swift; sourceTree = "<group>"; };
 		AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintRule.swift; sourceTree = "<group>"; };
 		AFEBEE1C22A29A1C001BF05D /* Integratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integratable.swift; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 				AFC7F4AB22ABB17C007E6C9B /* CloseUnusablePathsRuleTest.swift */,
 				AF395C1B22AD1DE8005B6234 /* CenterUniqueEmptyPathsRuleTest.swift */,
 				AF395C1F22AD23E4005B6234 /* ShrinkBoundedRuleTest.swift */,
+				AFD051A622B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -330,6 +337,7 @@
 				AFAE6D3122AD165F006316B0 /* CloseUnusablePathsRule.swift */,
 				AF395C1922AD1B58005B6234 /* CenterUniqueEmptyPathsRule.swift */,
 				AF395C1D22AD2190005B6234 /* ShrinkBoundedRule.swift */,
+				AFD051A822B4D842007B2BA1 /* MarkFinishedRunRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -358,6 +366,7 @@
 				AFAB1E17229C3C5A00BBA25B /* AppDelegate.swift */,
 				AFAB1E25229C3E4B00BBA25B /* PuzzleView.swift */,
 				AFAB1E27229C40A300BBA25B /* PuzzleViewDelegate.swift */,
+				AFD051AA22B4DB0B007B2BA1 /* Theme.swift */,
 				AFAB1E19229C3C5D00BBA25B /* Assets.xcassets */,
 				AFAB1E1B229C3C5D00BBA25B /* MainMenu.xib */,
 				AFAB1E23229C3E2300BBA25B /* PuzzleView.xib */,
@@ -595,6 +604,7 @@
 			files = (
 				AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */,
 				AFAB1E26229C3E4B00BBA25B /* PuzzleView.swift in Sources */,
+				AFD051AB22B4DB0B007B2BA1 /* Theme.swift in Sources */,
 				AFAB1E18229C3C5A00BBA25B /* AppDelegate.swift in Sources */,
 				AFAB1E28229C40A300BBA25B /* PuzzleViewDelegate.swift in Sources */,
 			);
@@ -616,6 +626,7 @@
 				AFAE6D3222AD165F006316B0 /* CloseUnusablePathsRule.swift in Sources */,
 				AFEE502F22A3C91500EA7CDF /* Puzzle.swift in Sources */,
 				AFEE502122A3C8A800EA7CDF /* CompleteSingularRunsRule.swift in Sources */,
+				AFD051A922B4D842007B2BA1 /* MarkFinishedRunRule.swift in Sources */,
 				AF57323222A82026005334F7 /* Association.swift in Sources */,
 				AFEE502822A3C8A800EA7CDF /* PerfectFitRule.swift in Sources */,
 				AFEE502922A3C8A800EA7CDF /* ShrinkRule.swift in Sources */,
@@ -656,6 +667,7 @@
 				AF2C01D722A849B7001CAB36 /* SumRuleTest.swift in Sources */,
 				AF4E5FEB22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift in Sources */,
 				AF12EB4622A5899900E4EAB4 /* CloseToLeftAssociatedRuleTest.swift in Sources */,
+				AFD051A722B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift in Sources */,
 				AF4E5FE722A3ED6700CEAB86 /* AssocGen2Test.swift in Sources */,
 				AF395C2422AD3179005B6234 /* BenchmarkTest.swift in Sources */,
 				AF4E5FED22A4082500CEAB86 /* PathsTest.swift in Sources */,

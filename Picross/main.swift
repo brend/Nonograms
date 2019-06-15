@@ -123,7 +123,7 @@ import Nonograms
 //            [0]
 //        ])
 
-let puzzle = try! Puzzle.parse(peaFile: "/Users/waldrumpus/Downloads/submarine.pea")
+let puzzle = try! Puzzle.parse(peaFile: "/Users/waldrumpus/Downloads/toad.pea")
 
 puzzle.rules = Rule.defaultSet
 
