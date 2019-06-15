@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Run: Equatable {
+struct Run: Equatable, CustomDebugStringConvertible {
+    
     let start, length: Int
     let associatedHintIndex: Int?
     let associatedPath: Range<Int>?
@@ -30,6 +31,13 @@ struct Run: Equatable {
         
         return Run(start: start, length: length, associatedHintIndex: hintIndex, associatedPath: path)
     }
+    
+    var debugDescription: String {
+        let hintText = (associatedHintIndex == nil) ? "nil" : "\(associatedHintIndex!)"
+        
+        return "Run(\(start), length \(length) -> \(hintText))"
+    }
+
 }
 
 func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {

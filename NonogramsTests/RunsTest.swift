@@ -168,4 +168,19 @@ class RunsTest: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    func testToad() {
+        let row = Mark.parse("|x|x|▓|_|_|_|_|_|▓|▓|▓|▓|_|_|_|_|_|▓|x|x|")
+        //                     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9
+        let hints = [1, 8, 1]
+        let expected =
+        [
+            Run(start: 2, length: 1, associatedHintIndex: 0, associatedPath: 2..<18),
+            Run(start: 8, length: 4, associatedHintIndex: 1, associatedPath: 2..<18),
+            Run(start: 17, length: 1, associatedHintIndex: 2, associatedPath: 2..<18)
+        ]
+        let actual = runsEx(row, of: .chiseled, hints: hints)
+        
+        XCTAssertEqual(expected, actual)
+    }
 }
