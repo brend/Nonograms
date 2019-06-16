@@ -8,6 +8,7 @@
 
 import Foundation
 
+// WARNING: this rule seems to be incorrect; see testTower
 class ShrinkBoundedRule: Rule {
     let shrinkRule = ShrinkRule()
     

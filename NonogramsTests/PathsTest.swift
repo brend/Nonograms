@@ -84,4 +84,13 @@ class PathsTest: XCTestCase {
 //        XCTAssertEqual(expected, actual)
 //    }
 
+    func testPlacements4() {
+        let hints = [4, 1]
+        let p0 = Path(4..<8), p1 = Path(9..<15)
+        let emptyPaths = [p0, p1]
+        let expected = [[Placement]]()
+        let actual = findAllPlacements(hints: hints, hintIndicesToDistribute: hints, emptyPaths: emptyPaths)
+        
+        XCTAssertEqual(expected, actual)
+    }
 }

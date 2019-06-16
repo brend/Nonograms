@@ -21,5 +21,23 @@ class CenterUniqueEmptyPathsRuleTest: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    func test2() {
+        let row      = Mark.parse("xxx_x|____x|_____")
+        let hints = [1, 2, 1]
+        let expected = Mark.parse("xxx_x|____x|_____")
+        let actual = rule.apply(to: row, hints: hints)
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test3() {
+        let row      = Mark.parse("|x|▓|x|_|x|_|_|_|_|▓|▓|_|_|_|_|")
+        let hints = [1, 1, 6]
+        let expected = row
+        let actual = rule.apply(to: row, hints: hints)
+        
+        XCTAssertEqual(expected, actual)
+    }
 
 }

@@ -22,5 +22,14 @@ class MarkFinishedRunRuleTest: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    func test2() {
+        let row      = Mark.parse("|_|_|_|▓|_|▓|_|_|_|_|▓|_|_|_|_|")
+        let hints = [4, 1, 1]
+        let expected = Mark.parse("|_|_|_|▓|_|▓|_|_|_|_|▓|_|_|_|_|")
+        let actual = rule.apply(to: row, hints: hints)
+        
+        XCTAssertEqual(expected, actual)
+    }
 
 }

@@ -123,10 +123,15 @@ import Nonograms
 //            [0]
 //        ])
 
-let puzzle = try! Puzzle.parse(peaFile: "/Users/waldrumpus/Downloads/toad.pea")
+//let puzzle = try! Puzzle.parse(peaFile: "/Users/waldrumpus/Downloads/toad.pea")
+let matrix = try Matrix.parse(matrixFile: "/Users/waldrumpus/Downloads/tower.matrix")
+let (rowHints, columnHints) = HintProvider(matrix: matrix).hints()
+let puzzle = Puzzle(rowHints: rowHints, columnHints: columnHints)
+
+
 
 puzzle.rules = Rule.defaultSet
 
-let steps = puzzle.solve()
+let steps = puzzle.solve(solution: matrix)
 
 print("end")

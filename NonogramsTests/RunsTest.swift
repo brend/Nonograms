@@ -183,4 +183,19 @@ class RunsTest: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    func testTower() {
+        let row = Mark.parse("|_|_|_|▓|_|▓|_|_|_|_|▓|_|_|_|_|")
+        //                     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+        let hints = [4, 1, 1]
+        let expected =
+        [
+            Run(start: 3, length: 1, associatedHintIndex: 0, associatedPath: 0..<15),
+            Run(start: 5, length: 1, associatedHintIndex: nil, associatedPath: nil),
+            Run(start: 10, length: 1, associatedHintIndex: nil, associatedPath: nil)
+        ]
+        let actual = runsEx(row, of: .chiseled, hints: hints, printDebugInfo: true)
+        
+        XCTAssertEqual(expected, actual)
+    }
 }

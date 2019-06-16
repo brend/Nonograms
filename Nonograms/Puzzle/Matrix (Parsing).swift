@@ -28,12 +28,13 @@ extension Matrix {
         var solutionMatrix = Matrix(size: lines.count)
         
         for (rowIndex, line) in lines.enumerated() {
-            let interestingChars = line.filter({$0=="_" || $0=="▓"})
+            let interestingChars = line.filter({$0=="_" || $0=="▓" || $0=="x"})
             
             for (columnIndex, c) in interestingChars.enumerated() {
-                if c == "▓" {
-                    solutionMatrix[rowIndex, columnIndex] = .chiseled
-                }
+                
+                let mark = Mark(rawValue: String(c))!
+                
+                solutionMatrix[rowIndex, columnIndex] = mark
             }
         }
         

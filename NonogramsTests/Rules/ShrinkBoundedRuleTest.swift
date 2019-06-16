@@ -21,5 +21,14 @@ class ShrinkBoundedRuleTest: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+//    func test2() {
+//        let row      = Mark.parse("|x|x|_|_|x|▓|▓|▓|_|_|▓|_|_|_|_|")
+//        let hints = [3, 1, 1, 3]
+//        let expected = Mark.parse("|x|x|_|_|x|▓|▓|▓|_|_|▓|_|_|_|_|")
+//        let actual = rule.apply(to: row, hints: hints)
+//        
+//        XCTAssertEqual(expected, actual)
+//    }
 
 }

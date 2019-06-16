@@ -57,6 +57,7 @@
 		AFD051A722B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD051A622B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift */; };
 		AFD051A922B4D842007B2BA1 /* MarkFinishedRunRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD051A822B4D842007B2BA1 /* MarkFinishedRunRule.swift */; };
 		AFD051AB22B4DB0B007B2BA1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD051AA22B4DB0B007B2BA1 /* Theme.swift */; };
+		AFD051AD22B4E93C007B2BA1 /* tower.matrix in Resources */ = {isa = PBXBuildFile; fileRef = AFD051AC22B4E93C007B2BA1 /* tower.matrix */; };
 		AFEBEE3422A2DAF6001BF05D /* NSRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBEE3322A2DAF6001BF05D /* NSRect.swift */; };
 		AFEE501B22A3C6DF00EA7CDF /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
 		AFEE501C22A3C6E600EA7CDF /* Nonograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBE6D9522A3C6A90017A3D8 /* Nonograms.framework */; };
@@ -190,6 +191,7 @@
 		AFD051A622B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkFinishedRunRuleTest.swift; sourceTree = "<group>"; };
 		AFD051A822B4D842007B2BA1 /* MarkFinishedRunRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkFinishedRunRule.swift; sourceTree = "<group>"; };
 		AFD051AA22B4DB0B007B2BA1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		AFD051AC22B4E93C007B2BA1 /* tower.matrix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tower.matrix; path = ../../../../Downloads/tower.matrix; sourceTree = "<group>"; };
 		AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseToLeftRule.swift; sourceTree = "<group>"; };
 		AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFirstHintRule.swift; sourceTree = "<group>"; };
 		AFEBEE1C22A29A1C001BF05D /* Integratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integratable.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		AF395C2522AD319F005B6234 /* Benchmark */ = {
 			isa = PBXGroup;
 			children = (
+				AFD051AC22B4E93C007B2BA1 /* tower.matrix */,
 				AF395C3022AD35C3005B6234 /* mario_face.matrix */,
 				AF395C2A22AD31E1005B6234 /* boat_plus.matrix */,
 				AF395C2722AD31E1005B6234 /* star.pea */,
@@ -281,17 +284,17 @@
 		AF4E5FE122A3DC8800CEAB86 /* Rules */ = {
 			isa = PBXGroup;
 			children = (
-				AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */,
-				AF4E5FEA22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift */,
-				AF12EB4322A5882B00E4EAB4 /* MarkSmallPathsRuleTest.swift */,
+				AF395C1B22AD1DE8005B6234 /* CenterUniqueEmptyPathsRuleTest.swift */,
 				AF12EB4522A5899900E4EAB4 /* CloseToLeftAssociatedRuleTest.swift */,
+				AF4E5FDF22A3DB1900CEAB86 /* CloseUnassociatedPathsRuleTest.swift */,
+				AFC7F4AB22ABB17C007E6C9B /* CloseUnusablePathsRuleTest.swift */,
+				AFBDABD022A97C78005FA6E9 /* FullFirstHintRuleTest.swift */,
+				AFD051A622B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift */,
+				AF12EB4322A5882B00E4EAB4 /* MarkSmallPathsRuleTest.swift */,
+				AF4E5FEA22A3FBAA00CEAB86 /* ShrinkAssociatedRuleTest.swift */,
+				AF395C1F22AD23E4005B6234 /* ShrinkBoundedRuleTest.swift */,
 				AF2C01D622A849B7001CAB36 /* SumRuleTest.swift */,
 				AF2C01DA22A84C7C001CAB36 /* SumWithSpacesRuleTest.swift */,
-				AFBDABD022A97C78005FA6E9 /* FullFirstHintRuleTest.swift */,
-				AFC7F4AB22ABB17C007E6C9B /* CloseUnusablePathsRuleTest.swift */,
-				AF395C1B22AD1DE8005B6234 /* CenterUniqueEmptyPathsRuleTest.swift */,
-				AF395C1F22AD23E4005B6234 /* ShrinkBoundedRuleTest.swift */,
-				AFD051A622B4D675007B2BA1 /* MarkFinishedRunRuleTest.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -312,32 +315,32 @@
 		AFAB1DFB229AA9CB00BBA25B /* Rules */ = {
 			isa = PBXGroup;
 			children = (
-				AFAB1DFC229AA9D700BBA25B /* Rule.swift */,
 				AFAB1DFE229AA9EB00BBA25B /* CenterRule.swift */,
-				AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */,
-				AFAB1E07229AAB6600BBA25B /* MarkFinishedRule.swift */,
-				AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */,
-				AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */,
-				AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */,
-				AFAB1E46229FE78600BBA25B /* SumRule.swift */,
-				AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */,
+				AF395C1922AD1B58005B6234 /* CenterUniqueEmptyPathsRule.swift */,
+				AFC7F4A922AB94F4007E6C9B /* CloseToLeftAssociated.swift */,
+				AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */,
+				AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */,
+				AFAE6D3122AD165F006316B0 /* CloseUnusablePathsRule.swift */,
 				AFAB1E5222A002EC00BBA25B /* CompleteFlushRule.swift */,
 				AF4E5FE222A3DFBF00CEAB86 /* CompleteReverseFlushRule.swift */,
+				AFAB1E3E229FDC3500BBA25B /* CompleteSingularRunsRule.swift */,
 				AFAB1E5422A00D9100BBA25B /* CompleteUnambiguousRule.swift */,
-				AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */,
-				AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */,
 				AFAB1E5E22A12E4300BBA25B /* DistanceRule.swift */,
-				AFEBEE1822A179B9001BF05D /* CloseToLeftRule.swift */,
-				AFC7F4A922AB94F4007E6C9B /* CloseToLeftAssociated.swift */,
-				AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */,
-				AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */,
-				AFEBEE3822A2F12C001BF05D /* CloseUnassociatedPathsRule.swift */,
-				AF2C01D822A84A82001CAB36 /* SumWithSpacesRule.swift */,
 				AFBDABD222AB057C005FA6E9 /* FullFirstHintAssociatedRule.swift */,
-				AFAE6D3122AD165F006316B0 /* CloseUnusablePathsRule.swift */,
-				AF395C1922AD1B58005B6234 /* CenterUniqueEmptyPathsRule.swift */,
-				AF395C1D22AD2190005B6234 /* ShrinkBoundedRule.swift */,
+				AFEBEE1A22A17E3D001BF05D /* FullFirstHintRule.swift */,
+				AFAB1E07229AAB6600BBA25B /* MarkFinishedRule.swift */,
 				AFD051A822B4D842007B2BA1 /* MarkFinishedRunRule.swift */,
+				AFAB1E44229FE4A000BBA25B /* MarkLongestHintRule.swift */,
+				AFAB1E48229FEA5800BBA25B /* MarkSingularRunRule.swift */,
+				AFAB1E42229FE0FF00BBA25B /* MarkSmallPathsRule.swift */,
+				AFAB1E5622A011A600BBA25B /* PerfectFitRule.swift */,
+				AFAB1DFC229AA9D700BBA25B /* Rule.swift */,
+				AFEBEE3522A2ED63001BF05D /* ShrinkAssociatedRule.swift */,
+				AF395C1D22AD2190005B6234 /* ShrinkBoundedRule.swift */,
+				AFAB1E5C22A02BB500BBA25B /* ShrinkRule.swift */,
+				AFAB1E46229FE78600BBA25B /* SumRule.swift */,
+				AF2C01D822A84A82001CAB36 /* SumWithSpacesRule.swift */,
+				AFAB1E00229AAA0700BBA25B /* ZeroRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -345,16 +348,16 @@
 		AFAB1E04229AAA6E00BBA25B /* Puzzle */ = {
 			isa = PBXGroup;
 			children = (
+				AFAB1E5822A012D700BBA25B /* Array.swift */,
+				AFAB1E36229C426900BBA25B /* Auxiliary.swift */,
+				AF395C3822AE59A6005B6234 /* HintConsistencyValidator.swift */,
+				AF395C3622AE4E85005B6234 /* HintProvider.swift */,
 				AFEBEE1C22A29A1C001BF05D /* Integratable.swift */,
-				AFAB1E02229AAA6900BBA25B /* Puzzle.swift */,
 				AF395C3422AE3E3C005B6234 /* Matrix (Parsing).swift */,
 				AFAB1E05229AAA8A00BBA25B /* Matrix.swift */,
-				AFAB1E36229C426900BBA25B /* Auxiliary.swift */,
 				AFAB1E4E229FF72400BBA25B /* Puzzle (Parsing).swift */,
-				AFAB1E5822A012D700BBA25B /* Array.swift */,
+				AFAB1E02229AAA6900BBA25B /* Puzzle.swift */,
 				AFEBEE1E22A29FA5001BF05D /* SolutionStep.swift */,
-				AF395C3622AE4E85005B6234 /* HintProvider.swift */,
-				AF395C3822AE59A6005B6234 /* HintConsistencyValidator.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				AF395C3122AD35C4005B6234 /* mario_face.matrix in Resources */,
 				AF395C2C22AD31E1005B6234 /* star.pea in Resources */,
 				AF395C3B22AE8238005B6234 /* toad.pea in Resources */,
+				AFD051AD22B4E93C007B2BA1 /* tower.matrix in Resources */,
 				AF395C3322AD383A005B6234 /* L.matrix in Resources */,
 				AF395C2F22AD31E1005B6234 /* boat_plus.matrix in Resources */,
 				AF395C2E22AD31E1005B6234 /* submarine.pea in Resources */,

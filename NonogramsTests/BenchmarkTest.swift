@@ -104,4 +104,9 @@ class BenchmarkTest: XCTestCase {
         XCTAssertNoThrow(try parseAndSolve(matrix: "L"))
         XCTAssert(isSolved)
     }
+    
+    func testTower() {
+        XCTAssertNoThrow(try parseAndSolve(matrix: "tower"))
+        XCTAssert(isSolved)
+    }
 }

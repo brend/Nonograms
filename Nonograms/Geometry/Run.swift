@@ -40,7 +40,7 @@ struct Run: Equatable, CustomDebugStringConvertible {
 
 }
 
-func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
+func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil, printDebugInfo: Bool = false) -> [Run] {
     var runs = [Run]()
     var index = 0
     var currentRunLength = 0
@@ -77,12 +77,33 @@ func runsEx(_ row: [Mark], of mark: Mark, hints: [Int]? = nil) -> [Run] {
     
     if let hints = hints {
         let assocGen1 = associateGen1(runs: runs, to: hints, row: row)
+        if printDebugInfo {
+            print(assocGen1)
+        }
         let assocGen2 = associateGen2(runs: assocGen1, to: hints, row: row)
+        if printDebugInfo {
+            print(assocGen2)
+        }
         let assocGen3 = associateGen3(runs: assocGen2, to: hints, row: row)
+        if printDebugInfo {
+            print(assocGen3)
+        }
         let assocGen4 = associateGen4(runs: assocGen3, to: hints, row: row)
+        if printDebugInfo {
+            print(assocGen4)
+        }
         let assocGen5 = associateGen5(runs: assocGen4, to: hints, row: row)
+        if printDebugInfo {
+            print(assocGen5)
+        }
         let assocGen6 = associateGen6(runs: assocGen5, to: hints, row: row)
+        if printDebugInfo {
+            print(assocGen6)
+        }
         let assocGen7 = associateGen7(runs: assocGen6, to: hints, row: row)
+        if printDebugInfo {
+            print(assocGen7)
+        }
 
         return assocGen7
     } else {
@@ -357,12 +378,12 @@ func associateGen7(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
     guard hints.count == runs.count else { return runs }
     
     func distanceTooSmall(_ i: Int, _ j: Int) -> Bool {
-        guard j < hints.count else { return false }
+        guard i >= 0 && j < hints.count else { return false }
         
         let run1 = runs[i], run2 = runs[j]
         let combinedLength = run2.nextAfter - run1.start
         
-        return combinedLength <= hints[i] && combinedLength <= hints[j]
+        return combinedLength <= hints[i]
     }
     
     let paths = pathsEx(row, hints: hints)
@@ -380,4 +401,19 @@ func associateGen7(runs: [Run], to hints: [Int], row: [Mark]) -> [Run] {
     }
     
     return associatedRuns
+    
+//    var bothWaysAssociatedRuns = [Run]()
+//
+//    for i in stride(from: hints.count - 1, to: 0, by: -1) {
+//        if distanceTooSmall(i - 1, i) {
+//            return associatedRuns
+//        }
+//
+//        let run = associatedRuns[i]
+//        let path = paths.first(where: {$0.contains(run.start)})!
+//
+//        bothWaysAssociatedRuns.append(run.associate(with: i, path: path.range))
+//    }
+//
+//    return bothWaysAssociatedRuns
 }

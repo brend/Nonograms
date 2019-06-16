@@ -112,16 +112,26 @@ func emptyPathsEx(_ row: [Mark], hints: [Int]) -> [Path] {
     return paths.filter({!$0.slice(row).contains(.chiseled)})
 }
 
-struct Placement: Equatable, CustomStringConvertible {
+struct Placement: Equatable, CustomStringConvertible, CustomDebugStringConvertible {
     let hintIndex: Int
     let path: Path
     
     var description: String {
         return "h\(hintIndex) -> \(path)"
     }
+    
+    var debugDescription: String { return description }
 }
 
 func findAllPlacements(hints: [Int], hintIndicesToDistribute: [Int], emptyPaths: [Path]) -> [[Placement]] {
+    let pathsForPlacement = emptyPaths.map {PathForPlacement($0)}
+    
+    return findAllPlacements(hints: hints,
+                             hintIndicesToDistribute: hintIndicesToDistribute,
+                             emptyPaths: pathsForPlacement)
+}
+
+func findAllPlacements(hints: [Int], hintIndicesToDistribute: [Int], emptyPaths: [PathForPlacement]) -> [[Placement]] {
     guard !hintIndicesToDistribute.isEmpty else { return [] }
     
     guard hintIndicesToDistribute.count <= emptyPaths.count else { return [] }
@@ -133,12 +143,20 @@ func findAllPlacements(hints: [Int], hintIndicesToDistribute: [Int], emptyPaths:
     
     for (i, path) in emptyPaths.enumerated() {
         if path.fits(hint: hint) {
-            let myPlacement = Placement(hintIndex: hintIndex, path: path)
+            let myPlacement = Placement(hintIndex: hintIndex, path: path.path)
             
             if indices.isEmpty {
                 results.append([myPlacement])
             } else {
-                let remainingPaths = Array(emptyPaths.suffix(from: i + 1))
+                var remainingPaths = Array(emptyPaths.suffix(from: i + 1))
+                
+                // if there's space left in my path add the rest to the remaining paths
+                if path.remainingSpace > hint + 1 {
+                    let restOfMyPath = path.subtractSpace(hint + 1)
+                    
+                    remainingPaths.insert(restOfMyPath, at: 0)
+                }
+                
                 let subResults = findAllPlacements(hints: hints,
                                                    hintIndicesToDistribute: indices,
                                                    emptyPaths: remainingPaths)
@@ -153,4 +171,26 @@ func findAllPlacements(hints: [Int], hintIndicesToDistribute: [Int], emptyPaths:
     }
     
     return results
+}
+
+struct PathForPlacement {
+    let path: Path
+    let remainingSpace: Int
+    
+    init(_ path: Path) {
+        self.init(path, remainingSpace: path.length)
+    }
+    
+    init(_ path: Path, remainingSpace: Int) {
+        self.path = path
+        self.remainingSpace = remainingSpace
+    }
+    
+    func fits(hint: Int) -> Bool {
+        return path.fits(hint: hint)
+    }
+    
+    func subtractSpace(_ length: Int) -> PathForPlacement {
+        return PathForPlacement(path, remainingSpace: remainingSpace - length)
+    }
 }
