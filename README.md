@@ -31,3 +31,5 @@ Tests to verify the operation of the rules and other components.
 A macOS application that can be used to either create new puzzles (matrices) and save them,
 or load existing puzzles (in hint form), generate a solution and play back the steps
 visually.
+
+![The Peacross application](https://raw.githubusercontent.com/brend/nonograms/master/resources/peacross-main.png)
