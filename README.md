@@ -32,4 +32,4 @@ A macOS application that can be used to either create new puzzles (matrices) and
 or load existing puzzles (in hint form), generate a solution and play back the steps
 visually.
 
-![The Peacross application](https://raw.githubusercontent.com/brend/nonograms/master/resources/peacross-main.png)
+![The Peacross application](./resources/peacross-main.png)
