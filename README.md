@@ -1,7 +1,7 @@
 # Nonograms
 A nonogram solver complete with GUI
 
-##Using Nonograms
+## Using Nonograms
 Nonograms consists of three parts.
 
 ### The Nonograms Framework
